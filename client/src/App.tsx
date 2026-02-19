@@ -4,18 +4,36 @@ import FormConfig from './components/FormConfig'
 import RoutineView from './components/RoutineView'
 import { apiService } from './services/apiService'
 import { Routine } from './types/routine'
-import { Dumbbell, History, Layout } from 'lucide-react'
+import { Dumbbell, History, Layout, Trash2, Calendar } from 'lucide-react'
+import { jsPDF } from "jspdf";
+import html2canvas from 'html2canvas';
+
+interface SavedRoutine extends Routine {
+    id: string;
+    savedAt: string;
+}
 
 function App() {
     const [routine, setRoutine] = useState<Routine | null>(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
+    const [view, setView] = useState<'generator' | 'history'>('generator')
+    const [history, setHistory] = useState<SavedRoutine[]>([])
 
     const headerRef = useRef<HTMLElement>(null)
     const heroRef = useRef<HTMLDivElement>(null)
     const footerRef = useRef<HTMLElement>(null)
     const routineBarRef = useRef<HTMLDivElement>(null)
     const errorRef = useRef<HTMLDivElement>(null)
+    const historyRef = useRef<HTMLDivElement>(null)
+
+    // Load history from localStorage
+    useEffect(() => {
+        const savedHistory = localStorage.getItem('routine_pro_history')
+        if (savedHistory) {
+            setHistory(JSON.parse(savedHistory))
+        }
+    }, [])
 
     // Header entrance animation
     useEffect(() => {
@@ -35,7 +53,7 @@ function App() {
                 { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
                 '-=0.3'
             )
-            tl.fromTo('.header-nav a',
+            tl.fromTo('.header-nav button',
                 { y: -20, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', stagger: 0.1 },
                 '-=0.2'
@@ -46,7 +64,7 @@ function App() {
                 '-=0.2'
             )
 
-            // Footer
+            // Footer entrance
             gsap.fromTo(footerRef.current,
                 { opacity: 0 },
                 { opacity: 1, duration: 1, delay: 1.2, ease: 'power2.out' }
@@ -55,32 +73,30 @@ function App() {
         return () => ctx.revert()
     }, [])
 
-    // Hero section animation
+    // Hero or History section animation
     useEffect(() => {
-        if (!routine && heroRef.current) {
+        const target = view === 'generator' ? heroRef.current : historyRef.current;
+        if (target) {
             const ctx = gsap.context(() => {
-                const tl = gsap.timeline({ delay: 0.4 })
-                tl.fromTo('.hero-title',
-                    { y: 60, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+                const tl = gsap.timeline({ delay: 0.1 })
+                tl.fromTo(target,
+                    { y: 40, opacity: 0, scale: 0.98 },
+                    { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out' }
                 )
-                tl.fromTo('.hero-subtitle',
-                    { y: 40, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' },
-                    '-=0.4'
-                )
-                // Floating glow pulse on the accent word
-                gsap.to('.hero-accent', {
-                    textShadow: '0 0 20px rgba(34, 197, 94, 0.6), 0 0 40px rgba(34, 197, 94, 0.3)',
-                    duration: 2,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'sine.inOut'
-                })
-            }, heroRef.current)
+                if (view === 'generator') {
+                    // Floating glow pulse on the accent word
+                    gsap.to('.hero-accent', {
+                        textShadow: '0 0 20px rgba(34, 197, 94, 0.6), 0 0 40px rgba(34, 197, 94, 0.3)',
+                        duration: 2,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: 'sine.inOut'
+                    })
+                }
+            }, target)
             return () => ctx.revert()
         }
-    }, [routine])
+    }, [view, routine === null])
 
     // Error shake animation
     useEffect(() => {
@@ -102,6 +118,155 @@ function App() {
         }
     }, [routine])
 
+    const handlePrintAndDownloadPDF = async () => {
+        if (!routine) return;
+
+        // 1. Open Print Tab (Existing Logic)
+        const printWindow = window.open('', '_blank');
+        if (printWindow) {
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>${routine.name}</title>
+                        <style>
+                            body { font-family: sans-serif; padding: 20px; background: white; color: black; }
+                            .day-card { border: 1px solid #ddd; margin-bottom: 20px; page-break-inside: avoid; padding: 15px; border-radius: 10px; }
+                            h2, h3 { margin-top: 0; color: #059669; }
+                            table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+                            th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; }
+                            th { font-size: 0.8em; color: #666; text-transform: uppercase; }
+                            .exercise-row p { margin: 2px 0; }
+                        </style>
+                    </head>
+                    <body>
+                        <h2>${routine.name}</h2>
+                        <p>Objetivo: ${routine.goal} | Nivel: ${routine.level}</p>
+                        <div class="days-container">
+                            ${routine.routineDays.map(day => `
+                                <div class="day-card">
+                                    <h3>${day.dayName} - ${day.focus}</h3>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Ejercicio</th>
+                                                <th>S×R</th>
+                                                <th>Desc.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${day.exercises.map(ex => `
+                                                <tr class="exercise-row">
+                                                    <td>
+                                                        <p><strong>${ex.name}</strong></p>
+                                                        <p style="font-size: 0.8em; color: #666;">${ex.type} • ${ex.muscle_group}</p>
+                                                    </td>
+                                                    <td>${ex.sets} × ${ex.reps}</td>
+                                                    <td>${ex.rest}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <script>window.print();</script>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        // 2. Trigger Actual PDF Download (Using jsPDF + html2canvas on the printable window content is hard, 
+        // let's render the current view instead or use a more direct jsPDF approach)
+        const doc = new jsPDF('p', 'mm', 'a4');
+        let yPos = 20;
+
+        doc.setFontSize(22);
+        doc.setTextColor(5, 150, 105);
+        doc.text(routine.name, 20, yPos);
+        yPos += 10;
+
+        doc.setFontSize(12);
+        doc.setTextColor(100, 100, 100);
+        doc.text(`Objetivo: ${routine.goal} | Nivel: ${routine.level}`, 20, yPos);
+        yPos += 15;
+
+        routine.routineDays.forEach((day, index) => {
+            if (yPos > 250) {
+                doc.addPage();
+                yPos = 20;
+            }
+
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0);
+            doc.text(`${day.dayName} - ${day.focus}`, 20, yPos);
+            yPos += 10;
+
+            doc.setFontSize(10);
+            doc.setTextColor(150, 150, 150);
+            doc.text("Ejercicio", 20, yPos);
+            doc.text("S×R", 140, yPos, { align: 'center' });
+            doc.text("Desc.", 180, yPos, { align: 'right' });
+            yPos += 5;
+            doc.line(20, yPos, 190, yPos);
+            yPos += 7;
+
+            day.exercises.forEach(ex => {
+                if (yPos > 270) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+                doc.setFontSize(11);
+                doc.setTextColor(0, 0, 0);
+                doc.text(ex.name, 20, yPos);
+
+                doc.setFontSize(11);
+                doc.text(`${ex.sets} x ${ex.reps}`, 140, yPos, { align: 'center' });
+                doc.text(ex.rest, 180, yPos, { align: 'right' });
+
+                yPos += 5;
+                doc.setFontSize(8);
+                doc.setTextColor(120, 120, 120);
+                doc.text(`${ex.type} • ${ex.muscle_group}`, 20, yPos);
+
+                yPos += 8;
+            });
+            yPos += 10;
+        });
+
+        doc.save(`${routine.name.replace(/\s+/g, '_')}.pdf`);
+    };
+
+    const handleSaveRoutine = () => {
+        if (!routine) return;
+
+        const newSavedRoutine: SavedRoutine = {
+            ...routine,
+            id: crypto.randomUUID(),
+            savedAt: new Date().toLocaleString('es-AR')
+        };
+
+        const updatedHistory = [newSavedRoutine, ...history];
+        setHistory(updatedHistory);
+        localStorage.setItem('routine_pro_history', JSON.stringify(updatedHistory));
+
+        // Show a quick success feedback (could be a toast, but using simple visual change)
+        gsap.to('.save-btn', {
+            scale: 1.1,
+            backgroundColor: '#047857',
+            duration: 0.3,
+            yoyo: true,
+            repeat: 1
+        });
+    };
+
+    const deleteFromHistory = (id: string, e: React.MouseEvent) => {
+        e.stopPropagation();
+        const updatedHistory = history.filter(item => item.id !== id);
+        setHistory(updatedHistory);
+        localStorage.setItem('routine_pro_history', JSON.stringify(updatedHistory));
+    };
+
     const handleGenerate = async (config: any) => {
         setLoading(true)
         setError(null)
@@ -119,23 +284,18 @@ function App() {
         <div className="min-h-screen bg-black flex flex-col overflow-hidden">
             {/* Decorative triangle from top-right corner */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                {/* Outer triangle - darkest green */}
                 <div
                     className="absolute top-0 right-0 w-full h-full opacity-20"
                     style={{ clipPath: 'polygon(100% 0, 100% 55%, 45% 0)', background: 'linear-gradient(135deg, #064e3b, #065f46)' }}
                 />
-                {/* Middle triangle - medium green */}
                 <div
                     className="absolute top-0 right-0 w-full h-full opacity-15"
                     style={{ clipPath: 'polygon(100% 0, 100% 45%, 55% 0)', background: 'linear-gradient(135deg, #059669, #047857)' }}
                 />
-                {/* Inner triangle - lighter green */}
                 <div
                     className="absolute top-0 right-0 w-full h-full opacity-10"
                     style={{ clipPath: 'polygon(100% 0, 100% 35%, 65% 0)', background: 'linear-gradient(135deg, #34d399, #10b981)' }}
                 />
-
-                {/* Ambient glows */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-600/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-600/5 rounded-full blur-3xl" />
             </div>
@@ -144,19 +304,25 @@ function App() {
             <header ref={headerRef} className="bg-gray-950 border-b border-green-900/30 py-6 px-4 sticky top-0 z-50 backdrop-blur-md bg-gray-950/80" style={{ opacity: 0 }}>
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer">
+                        <div className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer" onClick={() => { setView('generator'); setRoutine(null); }}>
                             <Dumbbell size={24} />
                         </div>
                         <h1 className="header-title text-xl font-bold text-white tracking-tight">Routine<span className="text-green-500">Pro</span></h1>
                     </div>
 
                     <nav className="header-nav hidden md:flex items-center gap-8">
-                        <a href="#" className="flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-green-500 transition-colors">
+                        <button
+                            onClick={() => { setView('generator'); setRoutine(null); }}
+                            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+                        >
                             <Layout size={18} /> Generador
-                        </a>
-                        <a href="#" className="flex items-center gap-2 text-sm font-semibold text-gray-600 hover:cursor-not-allowed">
+                        </button>
+                        <button
+                            onClick={() => { setView('history'); setRoutine(null); }}
+                            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'history' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+                        >
                             <History size={18} /> Historial
-                        </a>
+                        </button>
                     </nav>
 
                     <button className="header-btn bg-green-600/10 text-green-500 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-green-600 hover:text-white transition-all border border-green-600/20 hover:scale-105 active:scale-95">
@@ -166,29 +332,27 @@ function App() {
             </header>
 
             <main className="flex-grow relative z-10">
-                {!routine ? (
-                    <div ref={heroRef} className="py-10 px-4">
-                        <div className="text-center mb-10">
-                            <h2 className="hero-title text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
-                                Entrena con <span className="hero-accent text-green-500">Inteligencia</span>
-                            </h2>
-                            <p className="hero-subtitle text-gray-500 text-xl max-w-2xl mx-auto">
-                                Algoritmos de entrenamiento basados en ciencia para maximizar tus resultados en el gimnasio.
-                            </p>
-                        </div>
-
-                        <FormConfig onGenerate={handleGenerate} loading={loading} />
-
-                        {error && (
-                            <div ref={errorRef} className="max-w-md mx-auto mt-8 p-4 bg-red-950/50 border border-red-900/50 text-red-400 rounded-2xl text-center font-medium">
-                                {error}
+                {view === 'generator' ? (
+                    !routine ? (
+                        <div ref={heroRef} className="py-10 px-4">
+                            <div className="text-center mb-10">
+                                <h2 className="hero-title text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
+                                    Entrena con <span className="hero-accent text-green-500">Inteligencia</span>
+                                </h2>
+                                <p className="hero-subtitle text-gray-500 text-xl max-w-2xl mx-auto">
+                                    Algoritmos de entrenamiento basados en ciencia para maximizar tus resultados en el gimnasio.
+                                </p>
                             </div>
-                        )}
-                    </div>
-                ) : (
-                    <div className="pb-20">
-                        <div ref={routineBarRef} className="bg-gray-950 border-b border-green-900/30 mb-8 py-4 px-4">
-                            <div className="max-w-7xl mx-auto flex justify-between items-center">
+                            <FormConfig onGenerate={handleGenerate} loading={loading} />
+                            {error && (
+                                <div ref={errorRef} className="max-w-md mx-auto mt-8 p-4 bg-red-950/50 border border-red-900/50 text-red-400 rounded-2xl text-center font-medium">
+                                    {error}
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <div className="pb-10">
+                            <div ref={routineBarRef} className="max-w-7xl mx-auto py-8 px-4 flex justify-between items-center" style={{ opacity: 0 }}>
                                 <button
                                     onClick={() => setRoutine(null)}
                                     className="text-sm font-bold text-gray-400 hover:text-green-500 flex items-center gap-2 transition-colors hover:-translate-x-1 transform duration-200"
@@ -196,16 +360,69 @@ function App() {
                                     ← Crear nueva rutina
                                 </button>
                                 <div className="flex gap-4">
-                                    <button className="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-700 border border-gray-700 hover:scale-105 active:scale-95 transition-all">
-                                        PDF / Imprimir
+                                    <button
+                                        onClick={handlePrintAndDownloadPDF}
+                                        className="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-700 border border-gray-700 hover:scale-105 active:scale-95 transition-all"
+                                    >
+                                        PDF
                                     </button>
-                                    <button className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 shadow-lg shadow-green-500/20 hover:scale-105 active:scale-95 transition-all">
+                                    <button
+                                        onClick={handleSaveRoutine}
+                                        className="save-btn bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 shadow-lg shadow-green-500/20 hover:scale-105 active:scale-95 transition-all"
+                                    >
                                         Guardar Rutina
                                     </button>
                                 </div>
                             </div>
+                            <RoutineView routine={routine} />
                         </div>
-                        <RoutineView routine={routine} />
+                    )
+                ) : (
+                    <div ref={historyRef} className="max-w-5xl mx-auto py-12 px-4">
+                        <div className="flex items-center justify-between mb-8">
+                            <h2 className="text-3xl font-black text-white tracking-tight">Tu Historial</h2>
+                            <span className="text-gray-500 text-sm font-medium">{history.length} rutinas guardadas</span>
+                        </div>
+
+                        {history.length === 0 ? (
+                            <div className="bg-gray-900/50 border border-gray-800 rounded-3xl p-12 text-center">
+                                <History size={48} className="mx-auto text-gray-700 mb-4" />
+                                <p className="text-gray-500 text-lg">Aún no tienes rutinas guardadas.</p>
+                                <button
+                                    onClick={() => setView('generator')}
+                                    className="mt-6 text-green-500 font-bold hover:underline"
+                                >
+                                    ¡Empieza a generar una ahora!
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {history.map((item) => (
+                                    <div
+                                        key={item.id}
+                                        className="bg-gray-900 border border-green-900/10 rounded-2xl p-6 hover:border-green-500/30 transition-all cursor-pointer group relative"
+                                        onClick={() => { setRoutine(item); setView('generator'); }}
+                                    >
+                                        <button
+                                            onClick={(e) => deleteFromHistory(item.id, e)}
+                                            className="absolute top-4 right-4 text-gray-600 hover:text-red-500 transition-colors p-2"
+                                        >
+                                            <Trash2 size={18} />
+                                        </button>
+
+                                        <div className="flex items-center gap-3 text-green-500 mb-3">
+                                            <Calendar size={16} />
+                                            <span className="text-xs font-mono">{item.savedAt}</span>
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{item.name}</h3>
+                                        <div className="flex gap-2">
+                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{item.goal}</span>
+                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{item.level}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 )}
             </main>
