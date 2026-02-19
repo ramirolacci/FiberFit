@@ -150,9 +150,9 @@ function App() {
 
             <main className="flex-grow relative z-10">
                 {!routine ? (
-                    <div ref={heroRef} className="py-20 px-4">
-                        <div className="text-center mb-16">
-                            <h2 className="hero-title text-5xl font-black text-white mb-4 tracking-tight">
+                    <div ref={heroRef} className="py-10 px-4">
+                        <div className="text-center mb-10">
+                            <h2 className="hero-title text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
                                 Entrena con <span className="hero-accent text-green-500">Inteligencia</span>
                             </h2>
                             <p className="hero-subtitle text-gray-500 text-xl max-w-2xl mx-auto">
@@ -194,10 +194,10 @@ function App() {
             </main>
 
             {/* Footer */}
-            <footer ref={footerRef} className="bg-gray-950 border-t border-green-900/30 py-12 px-4 relative z-10" style={{ opacity: 0 }}>
+            <footer ref={footerRef} className="bg-gray-950 border-t border-green-900/30 py-4 px-4 relative z-10" style={{ opacity: 0 }}>
                 <div className="max-w-7xl mx-auto text-center">
                     <p className="text-gray-600 text-sm">
-                        © 2024 RoutinePro AI. Diseñado para atletas, por atletas.
+                        © 2026 RoutinePro | Desarrollado por <a href="https://waveframe.com.ar/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline hover:text-green-500 transition-colors">WaveFrame Studio</a>.
                     </p>
                 </div>
             </footer>
