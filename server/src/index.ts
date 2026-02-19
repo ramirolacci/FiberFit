@@ -7,10 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// En una app real, esto vendría de Supabase
-const mockExercises: any[] = [
-    // ... lista de ejercicios reales cargados desde la DB
-];
+import { EXERCISE_DATABASE } from './logic/ExerciseDatabase';
+
+const exercisesData = EXERCISE_DATABASE;
 
 app.post('/generate-routine', (req: Request, res: Response) => {
     try {
@@ -21,7 +20,7 @@ app.post('/generate-routine', (req: Request, res: Response) => {
             return res.status(400).json({ error: 'Faltan parámetros de configuración.' });
         }
 
-        const generator = new RoutineGenerator(mockExercises);
+        const generator = new RoutineGenerator(exercisesData);
         const routine = generator.generate({
             goal: goal as Goal,
             daysPerWeek: Number(daysPerWeek),
