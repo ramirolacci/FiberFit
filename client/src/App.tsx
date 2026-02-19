@@ -3,10 +3,12 @@ import gsap from 'gsap'
 import FormConfig from './components/FormConfig'
 import RoutineView from './components/RoutineView'
 import { apiService } from './services/apiService'
-import { Routine } from './types/routine'
+import { Routine, GOAL_MAP, LEVEL_MAP, TYPE_MAP, MUSCLE_GROUP_MAP } from './types/routine'
 import { Dumbbell, History, Layout, Trash2, Calendar } from 'lucide-react'
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+
+// Helper mappings for Spanish display (Removed redundant local maps as they are now imported from types)
 
 interface SavedRoutine extends Routine {
     id: string;
@@ -140,7 +142,7 @@ function App() {
                     </head>
                     <body>
                         <h2>${routine.name}</h2>
-                        <p>Objetivo: ${routine.goal} | Nivel: ${routine.level}</p>
+                        <p>Objetivo: ${GOAL_MAP[routine.goal] || routine.goal} | Nivel: ${LEVEL_MAP[routine.level] || routine.level}</p>
                         <div class="days-container">
                             ${routine.routineDays.map(day => `
                                 <div class="day-card">
@@ -158,7 +160,7 @@ function App() {
                                                 <tr class="exercise-row">
                                                     <td>
                                                         <p><strong>${ex.name}</strong></p>
-                                                        <p style="font-size: 0.8em; color: #666;">${ex.type} • ${ex.muscle_group}</p>
+                                                        <p style="font-size: 0.8em; color: #666;">${TYPE_MAP[ex.type] || ex.type} • ${MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
                                                     </td>
                                                     <td>${ex.sets} × ${ex.reps}</td>
                                                     <td>${ex.rest}</td>
@@ -188,7 +190,7 @@ function App() {
 
         doc.setFontSize(12);
         doc.setTextColor(100, 100, 100);
-        doc.text(`Objetivo: ${routine.goal} | Nivel: ${routine.level}`, 20, yPos);
+        doc.text(`Objetivo: ${GOAL_MAP[routine.goal] || routine.goal} | Nivel: ${LEVEL_MAP[routine.level] || routine.level}`, 20, yPos);
         yPos += 15;
 
         routine.routineDays.forEach((day, index) => {
@@ -227,7 +229,7 @@ function App() {
                 yPos += 5;
                 doc.setFontSize(8);
                 doc.setTextColor(120, 120, 120);
-                doc.text(`${ex.type} • ${ex.muscle_group}`, 20, yPos);
+                doc.text(`${ex.type === 'compound' ? 'Compuesto' : 'Aislado'} • ${ex.muscle_group}`, 20, yPos);
 
                 yPos += 8;
             });
@@ -416,8 +418,8 @@ function App() {
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{item.name}</h3>
                                         <div className="flex gap-2">
-                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{item.goal}</span>
-                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{item.level}</span>
+                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{GOAL_MAP[item.goal] || item.goal}</span>
+                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{LEVEL_MAP[item.level] || item.level}</span>
                                         </div>
                                     </div>
                                 ))}

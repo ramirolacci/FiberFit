@@ -39,3 +39,45 @@ export interface Routine {
   routineDays: RoutineDay[];
   createdAt: string;
 }
+
+export const GOAL_MAP: Record<string, string> = {
+  volume: 'Volumen',
+  definition: 'Definición',
+  power: 'Fuerza/Potencia',
+  functional: 'Funcional'
+};
+
+export const LEVEL_MAP: Record<string, string> = {
+  beginner: 'Principiante',
+  intermediate: 'Intermedio',
+  advanced: 'Avanzado'
+};
+
+export const EQUIPMENT_MAP: Record<string, string> = {
+  'full-gym': 'Gimnasio Completo',
+  'dumbbells-only': 'Solo Mancuernas',
+  'bodyweight': 'Peso Corporal',
+  'home-gym': 'Gimnasio en Casa'
+};
+
+export const MUSCLE_GROUP_MAP: Record<string, string> = {
+  chest: 'Pecho',
+  back: 'Espalda',
+  legs: 'Piernas',
+  shoulders: 'Hombros',
+  arms: 'Brazos',
+  core: 'Core',
+  full_body: 'Cuerpo Completo',
+  glutes: 'Glúteos',
+  quads: 'Cuádriceps',
+  hamstrings: 'Isquios',
+  calves: 'Pantorrillas',
+  triceps: 'Tríceps',
+  biceps: 'Bíceps',
+  forearms: 'Antebrazos'
+};
+
+export const TYPE_MAP: Record<string, string> = {
+  compound: 'Compuesto',
+  isolation: 'Aislado'
+};

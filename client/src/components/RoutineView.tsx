@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { Routine, RoutineDay } from '../types/routine';
+import { Routine, RoutineDay, GOAL_MAP, LEVEL_MAP, TYPE_MAP, MUSCLE_GROUP_MAP } from '../types/routine';
 
 interface Props {
     routine: Routine;
@@ -56,8 +56,8 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
             <div className="text-center mb-12">
                 <h2 className="routine-title text-4xl font-extrabold text-white mb-2">{routine.name}</h2>
                 <p className="routine-subtitle text-gray-500 text-lg">
-                    Objetivo: <span className="text-green-500 capitalize font-semibold">{routine.goal}</span> •
-                    Nivel: <span className="text-green-500 capitalize font-semibold">{routine.level}</span>
+                    Objetivo: <span className="text-green-500 capitalize font-semibold">{GOAL_MAP[routine.goal] || routine.goal}</span> •
+                    Nivel: <span className="text-green-500 capitalize font-semibold">{LEVEL_MAP[routine.level] || routine.level}</span>
                 </p>
             </div>
 
@@ -137,7 +137,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                             <tr key={i} className="exercise-row group">
                                 <td className="py-4">
                                     <p className="font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200">{ex.name}</p>
-                                    <p className="text-xs text-gray-500 capitalize">{ex.type} • {ex.muscle_group}</p>
+                                    <p className="text-xs text-gray-500 capitalize">{TYPE_MAP[ex.type] || ex.type} • {MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
                                 </td>
                                 <td className="py-4 text-center font-medium text-gray-400">
                                     {ex.sets} × {ex.reps}
