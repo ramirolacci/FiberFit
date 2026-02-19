@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import { Goal, Level, Equipment } from '../types/routine';
 
 interface FormProps {
@@ -15,24 +16,117 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
         sessionDuration: 60,
     });
 
+    const formRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+
+    // Form entrance animation
+    useEffect(() => {
+        if (!formRef.current) return;
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({ delay: 0.8 })
+
+            // Container slides up with scale
+            tl.fromTo(formRef.current,
+                { y: 80, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out' }
+            )
+
+            // Title reveal
+            tl.fromTo('.form-title',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
+                '-=0.4'
+            )
+
+            // Form fields stagger in
+            tl.fromTo('.form-field',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', stagger: 0.1 },
+                '-=0.2'
+            )
+
+            // Slider reveal
+            tl.fromTo('.form-slider',
+                { x: -40, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
+                '-=0.1'
+            )
+
+            // Button bounces in
+            tl.fromTo('.form-submit',
+                { y: 20, opacity: 0, scale: 0.9 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' },
+                '-=0.2'
+            )
+
+            // Subtle pulse on the container border
+            gsap.to(formRef.current, {
+                boxShadow: '0 0 40px rgba(34, 197, 94, 0.08), 0 25px 50px -12px rgba(0, 0, 0, 0.6)',
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+                delay: 2
+            })
+        }, formRef.current)
+        return () => ctx.revert()
+    }, [])
+
+    // Button loading animation
+    useEffect(() => {
+        if (!buttonRef.current) return;
+        if (loading) {
+            gsap.to(buttonRef.current, {
+                scale: 0.97,
+                duration: 0.3,
+                ease: 'power2.inOut'
+            })
+            // Pulse while loading
+            gsap.to(buttonRef.current, {
+                opacity: 0.8,
+                duration: 0.6,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            })
+        } else {
+            gsap.killTweensOf(buttonRef.current)
+            gsap.to(buttonRef.current, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.3,
+                ease: 'back.out(1.7)'
+            })
+        }
+    }, [loading])
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Button click animation
+        if (buttonRef.current) {
+            gsap.fromTo(buttonRef.current,
+                { scale: 0.95 },
+                { scale: 1, duration: 0.3, ease: 'elastic.out(1, 0.5)' }
+            )
+        }
+
         onGenerate(formData);
     };
 
-    const inputClasses = "w-full p-3 mt-1 bg-gray-900 border border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none text-gray-200";
+    const inputClasses = "w-full p-3 mt-1 bg-gray-900 border border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none text-gray-200 hover:border-green-800 duration-300";
     const labelClasses = "text-sm font-semibold text-gray-400 ml-1";
 
     return (
-        <div className="max-w-2xl mx-auto p-8 bg-gray-900/80 backdrop-blur-md rounded-3xl border border-green-900/20 shadow-2xl shadow-green-900/10">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
+        <div ref={formRef} className="max-w-2xl mx-auto p-8 bg-gray-900/80 backdrop-blur-md rounded-3xl border border-green-900/20 shadow-2xl shadow-green-900/10" style={{ opacity: 0 }}>
+            <h2 className="form-title text-3xl font-bold text-white mb-8 text-center bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
                 Configura tu Entrenamiento
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Objetivo */}
-                    <div>
+                    <div className="form-field">
                         <label className={labelClasses}>Objetivo</label>
                         <select
                             value={formData.goal}
@@ -47,7 +141,7 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                     </div>
 
                     {/* Días por semana */}
-                    <div>
+                    <div className="form-field">
                         <label className={labelClasses}>Días por semana</label>
                         <select
                             value={formData.daysPerWeek}
@@ -60,7 +154,7 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                     </div>
 
                     {/* Nivel */}
-                    <div>
+                    <div className="form-field">
                         <label className={labelClasses}>Nivel</label>
                         <select
                             value={formData.level}
@@ -74,7 +168,7 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                     </div>
 
                     {/* Equipamiento */}
-                    <div>
+                    <div className="form-field">
                         <label className={labelClasses}>Equipo Disponible</label>
                         <select
                             value={formData.equipment}
@@ -89,7 +183,7 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                 </div>
 
                 {/* Tiempo por sesión */}
-                <div>
+                <div className="form-slider">
                     <label className={labelClasses}>Tiempo por sesión (minutos): {formData.sessionDuration} min</label>
                     <input
                         type="range"
@@ -103,12 +197,21 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                 </div>
 
                 <button
+                    ref={buttonRef}
                     type="submit"
                     disabled={loading}
-                    className={`w-full py-4 px-6 rounded-2xl font-bold text-white shadow-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] ${loading ? 'bg-gray-700' : 'bg-gradient-to-r from-green-600 to-emerald-500 hover:shadow-green-500/25'
+                    className={`form-submit w-full py-4 px-6 rounded-2xl font-bold text-white shadow-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] ${loading ? 'bg-gray-700' : 'bg-gradient-to-r from-green-600 to-emerald-500 hover:shadow-green-500/25 hover:shadow-xl'
                         }`}
                 >
-                    {loading ? 'Generando Rutina...' : 'Generar Mi Rutina'}
+                    {loading ? (
+                        <span className="flex items-center justify-center gap-3">
+                            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                            </svg>
+                            Generando Rutina...
+                        </span>
+                    ) : 'Generar Mi Rutina'}
                 </button>
             </form>
         </div>

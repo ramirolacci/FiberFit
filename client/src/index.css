@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,6 +19,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -29,11 +35,57 @@ body {
   width: 100%;
 }
 
-/* Custom range slider for green accent */
+/* Custom range slider */
 input[type="range"] {
   accent-color: #22c55e;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   background: #1a1a1a;
+  border-radius: 999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  transition: transform 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+/* Select dropdown styling for dark mode */
+select option {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* Smooth focus transitions for all interactive elements */
+select:focus,
+button:focus-visible {
+  outline: 2px solid rgba(34, 197, 94, 0.5);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e40;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(34, 197, 94, 0.3);
+  color: white;
 }
