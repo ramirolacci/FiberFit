@@ -34,8 +34,15 @@ export class RoutineGenerator {
             routineDays = this.generate5DaySplit(goal, equipment, level);
         }
 
+        const goalNames: Record<string, string> = {
+            volume: 'Volumen',
+            definition: 'Definición',
+            power: 'Fuerza',
+            functional: 'Funcional'
+        };
+
         return {
-            name: `Rutina Pro - ${this.capitalize(goal)}`,
+            name: `Rutina de ${goalNames[goal] || goal}`,
             goal,
             level,
             daysPerWeek,

@@ -52,7 +52,7 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
     }, [routine])
 
     return (
-        <div ref={containerRef} className="w-full mx-auto py-12 px-4" style={{ perspective: '1000px' }}>
+        <div ref={containerRef} className="w-full max-w-7xl mx-auto py-12 px-4" style={{ perspective: '1000px' }}>
             <div className="text-center mb-12">
                 <h2 className="routine-title text-4xl font-extrabold text-white mb-2">{routine.name}</h2>
                 <p className="routine-subtitle text-gray-500 text-lg">
@@ -61,7 +61,7 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
                 </p>
             </div>
 
-            <div className="flex gap-8 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
+            <div className="flex flex-wrap justify-center gap-8 pb-10">
                 {routine.routineDays.map((day, idx) => (
                     <DayCard key={idx} day={day} index={idx} />
                 ))}
@@ -111,7 +111,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     return (
         <div
             ref={cardRef}
-            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors min-w-[320px] flex-shrink-0 snap-center flex flex-col"
+            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors w-[340px] min-h-[580px] flex-shrink-0 snap-center flex flex-col"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ transformStyle: 'preserve-3d' }}
@@ -127,9 +127,9 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                 <table className="w-full text-left">
                     <thead>
                         <tr className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                            <th className="pb-4">Ejercicio</th>
-                            <th className="pb-4 text-center">S×R</th>
-                            <th className="pb-4 text-right">Desc.</th>
+                            <th className="pb-4 w-[50%]">Ejercicio</th>
+                            <th className="pb-4 text-center w-[25%] px-2">S×R</th>
+                            <th className="pb-4 text-right w-[25%]">Desc.</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-800">
