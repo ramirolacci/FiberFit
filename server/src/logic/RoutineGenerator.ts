@@ -1,10 +1,10 @@
 import { Exercise, Goal, Level, Equipment, Routine, RoutineDay, WorkoutExercise } from '../types/routine';
 
 /**
- * Lógica de entrenamiento mejorada:
- * - Selección aleatoria de ejercicios para evitar repetición.
- * - Ajuste dinámico de series y repeticiones según el objetivo.
- * - Soporte para diferentes niveles de equipamiento.
+ * Lógica de entrenamiento avanzada:
+ * - Selección aleatoria multimuscular.
+ * - Generación de supersets (ejercicios combinados).
+ * - Estructuras de entrenamiento flexibles (3 y 5 días).
  */
 
 export class RoutineGenerator {
@@ -26,23 +26,16 @@ export class RoutineGenerator {
         let routineDays: RoutineDay[] = [];
 
         if (daysPerWeek === 3) {
-            // Estructura de 3 días: Alternancia de Full Body o PPL simplificado
-            const split = level === 'advanced' ? 'PPL' : 'Full Body';
+            // Estructura de 3 días: Alternancia de Full Body o PPL
+            const split = level === 'beginner' ? 'Full Body' : 'PPL';
             routineDays = this.generate3DaySplit(split, goal, equipment, level);
         } else {
-            // Estructura de 5 días: PPL + Upper/Lower
+            // Estructura de 5 días: Upper/Lower + PPL o similar
             routineDays = this.generate5DaySplit(goal, equipment, level);
         }
 
-        const goalNames: Record<string, string> = {
-            volume: 'Volumen',
-            definition: 'Definición',
-            power: 'Fuerza',
-            functional: 'Funcional'
-        };
-
         return {
-            name: `Rutina de ${goalNames[goal] || goal}`,
+            name: `Rutina de ${this.getGoalName(goal)}`,
             goal,
             level,
             daysPerWeek,
@@ -59,20 +52,26 @@ export class RoutineGenerator {
         if (split === 'Full Body') {
             const daysNames = ['Lunes', 'Miércoles', 'Viernes'];
             daysNames.forEach((name) => {
+                const dayExercises = this.selectDiverseFullBody(goal, equipment, level, usedExerciseIds);
                 days.push({
                     dayName: name,
                     focus: 'Cuerpo Completo',
-                    exercises: this.selectDiverseFullBody(goal, equipment, level, usedExerciseIds),
+                    exercises: this.injectSupersets(dayExercises, goal),
                 });
             });
         } else {
-            const daysNames = ['Lunes (Empuje)', 'Miércoles (Tracción)', 'Viernes (Piernas)'];
-            const types = ['push', 'pull', 'legs'];
-            daysNames.forEach((name, i) => {
+            // PPL but with secondary muscles
+            const config = [
+                { name: 'Lunes (Empuje)', type: 'push', focus: 'Pecho, Hombros y Tríceps' },
+                { name: 'Miércoles (Tracción)', type: 'pull', focus: 'Espalda y Bíceps' },
+                { name: 'Viernes (Piernas)', type: 'legs', focus: 'Piernas y Core' }
+            ];
+            config.forEach(day => {
+                const dayExercises = this.selectExercisesForMuscleGroups(day.type, goal, equipment, level, 6, usedExerciseIds);
                 days.push({
-                    dayName: name,
-                    focus: this.capitalize(types[i]),
-                    exercises: this.selectExercisesForMuscleGroups(types[i], goal, equipment, level, 5, usedExerciseIds),
+                    dayName: day.name,
+                    focus: day.focus,
+                    exercises: this.injectSupersets(dayExercises, goal),
                 });
             });
         }
@@ -85,18 +84,19 @@ export class RoutineGenerator {
         const usedExerciseIds = new Set<string>();
 
         const config = [
-            { name: 'Lunes (Empuje)', type: 'push' },
-            { name: 'Martes (Tracción)', type: 'pull' },
-            { name: 'Miércoles (Piernas)', type: 'legs' },
-            { name: 'Viernes (Tren Superior)', type: 'upper' },
-            { name: 'Sábado (Tren Inferior)', type: 'lower' }
+            { name: 'Lunes (Empuje)', type: 'push', focus: 'Pecho y Tríceps' },
+            { name: 'Martes (Tracción)', type: 'pull', focus: 'Espalda y Bíceps' },
+            { name: 'Miércoles (Piernas)', type: 'legs', focus: 'Cuádriceps y Glúteos' },
+            { name: 'Viernes (Tren Superior)', type: 'upper', focus: 'Pecho, Espalda y Hombros' },
+            { name: 'Sábado (Tren Inferior)', type: 'lower', focus: 'Isquios, Pantorrillas y Core' }
         ];
 
         config.forEach(day => {
+            const dayExercises = this.selectExercisesForMuscleGroups(day.type, goal, equipment, level, 6, usedExerciseIds);
             days.push({
                 dayName: day.name,
-                focus: this.capitalize(day.type),
-                exercises: this.selectExercisesForMuscleGroups(day.type, goal, equipment, level, 5, usedExerciseIds),
+                focus: day.focus,
+                exercises: this.injectSupersets(dayExercises, goal),
             });
         });
 
@@ -104,17 +104,19 @@ export class RoutineGenerator {
     }
 
     private selectDiverseFullBody(goal: Goal, equipment: Equipment, level: Level, usedIds: Set<string>): WorkoutExercise[] {
-        const groups = [
-            { muscle: ['chest', 'shoulders'], type: 'compound' },
-            { muscle: ['back'], type: 'compound' },
-            { muscle: ['quads', 'legs'], type: 'compound' },
-            { muscle: ['hamstrings', 'glutes'], type: 'compound' },
-            { muscle: ['core'], type: 'isolation' }
+        const categories = [
+            ['chest'],
+            ['back'],
+            ['quads', 'legs'],
+            ['shoulders'],
+            ['hamstrings', 'glutes'],
+            ['core']
         ];
 
         const selected: Exercise[] = [];
-        groups.forEach(group => {
-            const exercise = this.findRandomExercise(group.muscle, group.type, equipment, level, usedIds);
+        categories.forEach((muscles, i) => {
+            const type = i < 3 ? 'compound' : undefined; // Priorizar compuestos para los primeros 3
+            const exercise = this.findRandomExercise(muscles, type, equipment, level, usedIds);
             if (exercise) {
                 selected.push(exercise);
                 usedIds.add(exercise.id);
@@ -128,24 +130,80 @@ export class RoutineGenerator {
         const muscleGroups = this.getMuscleGroupsForCategory(category);
         const selected: Exercise[] = [];
 
-        // Asegurar al menos 2 compuestos
+        // 1. Asegurar compuestos de los músculos principales
+        const primaryMuscles = [muscleGroups[0]];
         for (let i = 0; i < 2; i++) {
-            const ex = this.findRandomExercise(muscleGroups, 'compound', equipment, level, usedIds);
+            const ex = this.findRandomExercise(primaryMuscles, 'compound', equipment, level, usedIds);
             if (ex) {
                 selected.push(ex);
                 usedIds.add(ex.id);
             }
         }
 
-        // El resto variados
+        // 2. Completar con variados (aislamiento o compuestos secundarios)
         while (selected.length < count) {
-            const ex = this.findRandomExercise(muscleGroups, undefined, equipment, level, usedIds);
-            if (!ex) break;
-            selected.push(ex);
-            usedIds.add(ex.id);
+            const currentMuscles = [muscleGroups[Math.floor(Math.random() * muscleGroups.length)]];
+            const ex = this.findRandomExercise(currentMuscles, undefined, equipment, level, usedIds);
+            if (!ex) {
+                // Si no hay más de ese músculo, probar con cualquier músculo de la categoría
+                const fallbackEx = this.findRandomExercise(muscleGroups, undefined, equipment, level, usedIds);
+                if (!fallbackEx) break;
+                selected.push(fallbackEx);
+                usedIds.add(fallbackEx.id);
+            } else {
+                selected.push(ex);
+                usedIds.add(ex.id);
+            }
         }
 
         return selected.map(ex => this.applyRepSchema(ex, goal));
+    }
+
+    /**
+     * Inyecta supersets (ejercicios combinados) en una lista de ejercicios.
+     * Combina ejercicios de aislamiento o un bieset de antagonistas.
+     */
+    private injectSupersets(exercises: WorkoutExercise[], goal: Goal): WorkoutExercise[] {
+        if (exercises.length < 4) return exercises;
+
+        const result: WorkoutExercise[] = [...exercises];
+        let supersetCounter = 1;
+
+        // Intentar crear 1 o 2 supersets por día si no es modo Power (fuerza máxima)
+        const maxSupersets = goal === 'power' ? 0 : (exercises.length > 5 ? 2 : 1);
+
+        for (let s = 0; s < maxSupersets; s++) {
+            // Buscar dos ejercicios que no sean el primero (reservado para compuesto pesado)
+            // y que sean preferiblemente de aislamiento o músculos pequeños
+            let firstIdx = -1;
+            let secondIdx = -1;
+
+            for (let i = 1; i < result.length - 1; i++) {
+                if (!result[i].supersetId && (result[i].type === 'isolation' || i > 2)) {
+                    for (let j = i + 1; j < result.length; j++) {
+                        if (!result[j].supersetId && (result[j].type === 'isolation' || j > 3)) {
+                            firstIdx = i;
+                            secondIdx = j;
+                            break;
+                        }
+                    }
+                }
+                if (firstIdx !== -1) break;
+            }
+
+            if (firstIdx !== -1 && secondIdx !== -1) {
+                const sid = `ss-${supersetCounter++}`;
+                result[firstIdx].supersetId = sid;
+                result[firstIdx].supersetLabel = `Combinado ${sid.split('-')[1]}`;
+                result[secondIdx].supersetId = sid;
+                result[secondIdx].supersetLabel = `Combinado ${sid.split('-')[1]}`;
+
+                // Los descansos en supersets suelen ser más cortos o al final del bloque
+                result[firstIdx].rest = '0s'; // Pasar directo al siguiente
+            }
+        }
+
+        return result;
     }
 
     private findRandomExercise(muscles: string[], type: string | undefined, equipment: Equipment, level: Level, excludeIds: Set<string>): Exercise | null {
@@ -156,8 +214,8 @@ export class RoutineGenerator {
             !excludeIds.has(ex.id)
         );
 
-        // Si no hay ejercicios excluyendo los usados, permitimos repetición si es necesario
-        if (pool.length === 0) {
+        if (pool.length === 0 && excludeIds.size > 0) {
+            // Fallback: permitir usados si no hay opciones
             pool = this.exercises.filter(ex =>
                 muscles.includes(ex.muscle_group) &&
                 (type === undefined || ex.type === type) &&
@@ -174,8 +232,8 @@ export class RoutineGenerator {
             push: ['chest', 'shoulders', 'triceps'],
             pull: ['back', 'biceps', 'shoulders'],
             legs: ['quads', 'hamstrings', 'glutes', 'calves', 'legs'],
-            upper: ['chest', 'back', 'shoulders', 'arms'],
-            lower: ['quads', 'hamstrings', 'glutes', 'core', 'legs']
+            upper: ['chest', 'back', 'shoulders', 'biceps', 'triceps'],
+            lower: ['quads', 'hamstrings', 'glutes', 'calves', 'core', 'legs']
         };
         return map[cat] || ['full_body'];
     }
@@ -202,7 +260,13 @@ export class RoutineGenerator {
         return { ...ex, sets, reps, rest };
     }
 
-    private capitalize(s: string) {
-        return s.charAt(0).toUpperCase() + s.slice(1);
+    private getGoalName(goal: Goal): string {
+        const names: Record<string, string> = {
+            volume: 'Volumen',
+            definition: 'Definición',
+            power: 'Fuerza',
+            functional: 'Funcional'
+        };
+        return names[goal] || goal;
     }
 }

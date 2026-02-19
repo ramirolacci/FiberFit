@@ -156,16 +156,21 @@ function App() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            ${day.exercises.map(ex => `
-                                                <tr class="exercise-row">
-                                                    <td>
+                                            ${day.exercises.map((ex, i) => {
+                const isSuperset = !!ex.supersetId;
+                const nextIsSameSuperset = isSuperset && day.exercises[i + 1]?.supersetId === ex.supersetId;
+                return `
+                                                <tr class="exercise-row ${isSuperset ? 'superset-row' : ''}">
+                                                    <td style="${isSuperset ? 'border-left: 3px solid #059669; padding-left: 10px;' : ''}">
+                                                        ${isSuperset && (i === 0 || day.exercises[i - 1].supersetId !== ex.supersetId) ? `<div style="font-size: 0.6em; color: #059669; font-weight: bold; margin-bottom: 2px;">EJERCICIO COMBINADO</div>` : ''}
                                                         <p><strong>${ex.name}</strong></p>
                                                         <p style="font-size: 0.8em; color: #666;">${TYPE_MAP[ex.type] || ex.type} • ${MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
                                                     </td>
                                                     <td>${ex.sets} × ${ex.reps}</td>
-                                                    <td>${ex.rest}</td>
+                                                    <td>${ex.rest === '0s' ? 'Sigue →' : ex.rest}</td>
                                                 </tr>
-                                            `).join('')}
+                                                `;
+            }).join('')}
                                         </tbody>
                                     </table>
                                 </div>
@@ -213,23 +218,39 @@ function App() {
             doc.line(20, yPos, 190, yPos);
             yPos += 7;
 
-            day.exercises.forEach(ex => {
+            day.exercises.forEach((ex, i) => {
                 if (yPos > 270) {
                     doc.addPage();
                     yPos = 20;
                 }
+
+                const isSuperset = !!ex.supersetId;
+                const prevIsSameSuperset = isSuperset && day.exercises[i - 1]?.supersetId === ex.supersetId;
+
+                if (isSuperset) {
+                    doc.setDrawColor(5, 150, 105);
+                    doc.setLineWidth(1);
+                    doc.line(18, yPos - 4, 18, yPos + 6);
+
+                    if (!prevIsSameSuperset) {
+                        doc.setFontSize(7);
+                        doc.setTextColor(5, 150, 105);
+                        doc.text('EJERCICIO COMBINADO', 20, yPos - 5);
+                    }
+                }
+
                 doc.setFontSize(11);
                 doc.setTextColor(0, 0, 0);
                 doc.text(ex.name, 20, yPos);
 
                 doc.setFontSize(11);
                 doc.text(`${ex.sets} x ${ex.reps}`, 140, yPos, { align: 'center' });
-                doc.text(ex.rest, 180, yPos, { align: 'right' });
+                doc.text(ex.rest === '0s' ? 'Sigue' : ex.rest, 180, yPos, { align: 'right' });
 
                 yPos += 5;
                 doc.setFontSize(8);
                 doc.setTextColor(120, 120, 120);
-                doc.text(`${ex.type === 'compound' ? 'Compuesto' : 'Aislado'} • ${ex.muscle_group}`, 20, yPos);
+                doc.text(`${TYPE_MAP[ex.type] || ex.type} • ${MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}`, 20, yPos);
 
                 yPos += 8;
             });

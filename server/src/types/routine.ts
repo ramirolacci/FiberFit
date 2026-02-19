@@ -17,6 +17,8 @@ export interface WorkoutExercise extends Exercise {
     sets: number;
     reps: string;
     rest: string; // e.g., "90s"
+    supersetId?: string;
+    supersetLabel?: string;
 }
 
 export interface RoutineDay {

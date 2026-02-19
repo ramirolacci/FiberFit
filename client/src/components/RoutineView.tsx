@@ -52,7 +52,7 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
     }, [routine])
 
     return (
-        <div ref={containerRef} className="w-full max-w-7xl mx-auto py-12 px-4" style={{ perspective: '1000px' }}>
+        <div ref={containerRef} className="w-full max-w-[1600px] mx-auto py-12 px-4" style={{ perspective: '1000px' }}>
             <div className="text-center mb-12">
                 <h2 className="routine-title text-4xl font-extrabold text-white mb-2">{routine.name}</h2>
                 <p className="routine-subtitle text-gray-500 text-lg">
@@ -111,7 +111,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     return (
         <div
             ref={cardRef}
-            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors w-[340px] min-h-[580px] flex-shrink-0 snap-center flex flex-col"
+            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors w-[460px] min-h-[620px] flex-shrink-0 flex flex-col"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ transformStyle: 'preserve-3d' }}
@@ -124,29 +124,64 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
             </div>
 
             <div className="p-6">
-                <table className="w-full text-left">
+                <table className="w-full text-left border-collapse">
                     <thead>
                         <tr className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                            <th className="pb-4 w-[50%]">Ejercicio</th>
+                            <th className="pb-4 w-[40px]"></th>
+                            <th className="pb-4 w-[45%]">Ejercicio</th>
                             <th className="pb-4 text-center w-[25%] px-2">S×R</th>
-                            <th className="pb-4 text-right w-[25%]">Desc.</th>
+                            <th className="pb-4 text-right w-[20%]">Desc.</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-800">
-                        {day.exercises.map((ex, i) => (
-                            <tr key={i} className="exercise-row group">
-                                <td className="py-4">
-                                    <p className="font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200">{ex.name}</p>
-                                    <p className="text-xs text-gray-500 capitalize">{TYPE_MAP[ex.type] || ex.type} • {MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
-                                </td>
-                                <td className="py-4 text-center font-medium text-gray-400">
-                                    {ex.sets} × {ex.reps}
-                                </td>
-                                <td className="py-4 text-right text-sm text-gray-500">
-                                    {ex.rest}
-                                </td>
-                            </tr>
-                        ))}
+                        {day.exercises.map((ex, i) => {
+                            const isSuperset = !!ex.supersetId;
+                            const nextIsSameSuperset = isSuperset && day.exercises[i + 1]?.supersetId === ex.supersetId;
+                            const prevIsSameSuperset = isSuperset && day.exercises[i - 1]?.supersetId === ex.supersetId;
+                            const isSupersetStart = isSuperset && !prevIsSameSuperset;
+                            const supersetCount = isSupersetStart ? day.exercises.filter(e => e.supersetId === ex.supersetId).length : 0;
+
+                            return (
+                                <tr
+                                    key={i}
+                                    className={`exercise-row group transition-colors ${isSuperset ? 'bg-green-500/5' : ''} ${isSuperset && !nextIsSameSuperset ? 'border-b-gray-800' : ''}`}
+                                >
+                                    {isSuperset ? (
+                                        isSupersetStart ? (
+                                            <td
+                                                rowSpan={supersetCount}
+                                                className="relative w-[40px] border-l-2 border-green-500 overflow-hidden bg-green-500/10"
+                                            >
+                                                <div
+                                                    className="absolute inset-0 flex items-center justify-center p-1"
+                                                >
+                                                    <span
+                                                        className="text-[9px] font-black text-green-500 uppercase tracking-widest whitespace-nowrap transform -rotate-90 origin-center"
+                                                        style={{ minWidth: '100px' }}
+                                                    >
+                                                        EJERCICIO COMBINADO
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        ) : null
+                                    ) : (
+                                        <td className="w-[40px]"></td>
+                                    )}
+                                    <td className="py-4 px-2">
+                                        <div className="pl-2">
+                                            <p className="font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200">{ex.name}</p>
+                                            <p className="text-xs text-gray-500 capitalize">{TYPE_MAP[ex.type] || ex.type} • {MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
+                                        </div>
+                                    </td>
+                                    <td className="py-4 text-center font-medium text-gray-400">
+                                        {ex.sets} × {ex.reps}
+                                    </td>
+                                    <td className="py-4 text-right text-sm text-gray-500">
+                                        {ex.rest === '0s' ? 'Sigue →' : ex.rest}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
