@@ -20,12 +20,12 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
         onGenerate(formData);
     };
 
-    const inputClasses = "w-full p-3 mt-1 bg-white border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none";
-    const labelClasses = "text-sm font-semibold text-gray-700 ml-1";
+    const inputClasses = "w-full p-3 mt-1 bg-gray-900 border border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none text-gray-200";
+    const labelClasses = "text-sm font-semibold text-gray-400 ml-1";
 
     return (
-        <div className="max-w-2xl mx-auto p-8 bg-gray-50/50 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        <div className="max-w-2xl mx-auto p-8 bg-gray-900/80 backdrop-blur-md rounded-3xl border border-green-900/20 shadow-2xl shadow-green-900/10">
+            <h2 className="text-3xl font-bold text-white mb-8 text-center bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
                 Configura tu Entrenamiento
             </h2>
 
@@ -98,14 +98,14 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                         step="15"
                         value={formData.sessionDuration}
                         onChange={(e) => setFormData({ ...formData, sessionDuration: Number(e.target.value) })}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-4"
+                        className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-green-500 mt-4"
                     />
                 </div>
 
                 <button
                     type="submit"
                     disabled={loading}
-                    className={`w-full py-4 px-6 rounded-2xl font-bold text-white shadow-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] ${loading ? 'bg-gray-400' : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:shadow-blue-500/25'
+                    className={`w-full py-4 px-6 rounded-2xl font-bold text-white shadow-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] ${loading ? 'bg-gray-700' : 'bg-gradient-to-r from-green-600 to-emerald-500 hover:shadow-green-500/25'
                         }`}
                 >
                     {loading ? 'Generando Rutina...' : 'Generar Mi Rutina'}
