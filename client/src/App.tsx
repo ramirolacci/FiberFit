@@ -117,8 +117,25 @@ function App() {
 
     return (
         <div className="min-h-screen bg-black flex flex-col overflow-hidden">
-            {/* Ambient background glow */}
-            <div className="fixed inset-0 pointer-events-none">
+            {/* Decorative triangle from top-right corner */}
+            <div className="fixed inset-0 pointer-events-none z-0">
+                {/* Outer triangle - darkest green */}
+                <div
+                    className="absolute top-0 right-0 w-full h-full opacity-20"
+                    style={{ clipPath: 'polygon(100% 0, 100% 55%, 45% 0)', background: 'linear-gradient(135deg, #064e3b, #065f46)' }}
+                />
+                {/* Middle triangle - medium green */}
+                <div
+                    className="absolute top-0 right-0 w-full h-full opacity-15"
+                    style={{ clipPath: 'polygon(100% 0, 100% 45%, 55% 0)', background: 'linear-gradient(135deg, #059669, #047857)' }}
+                />
+                {/* Inner triangle - lighter green */}
+                <div
+                    className="absolute top-0 right-0 w-full h-full opacity-10"
+                    style={{ clipPath: 'polygon(100% 0, 100% 35%, 65% 0)', background: 'linear-gradient(135deg, #34d399, #10b981)' }}
+                />
+
+                {/* Ambient glows */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-600/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-600/5 rounded-full blur-3xl" />
             </div>
