@@ -52,7 +52,7 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
     }, [routine])
 
     return (
-        <div ref={containerRef} className="max-w-6xl mx-auto py-12 px-4" style={{ perspective: '1000px' }}>
+        <div ref={containerRef} className="w-full mx-auto py-12 px-4" style={{ perspective: '1000px' }}>
             <div className="text-center mb-12">
                 <h2 className="routine-title text-4xl font-extrabold text-white mb-2">{routine.name}</h2>
                 <p className="routine-subtitle text-gray-500 text-lg">
@@ -61,7 +61,7 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="flex gap-8 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
                 {routine.routineDays.map((day, idx) => (
                     <DayCard key={idx} day={day} index={idx} />
                 ))}
@@ -111,7 +111,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     return (
         <div
             ref={cardRef}
-            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors"
+            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors min-w-[320px] flex-shrink-0 snap-center flex flex-col"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ transformStyle: 'preserve-3d' }}
@@ -151,7 +151,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                 </table>
             </div>
 
-            <div className="px-6 py-4 bg-gray-950 border-t border-green-900/20">
+            <div className="px-6 py-4 bg-gray-950 border-t border-green-900/20 mt-auto">
                 <button className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors hover:translate-x-1 transform duration-200 inline-block">
                     Ver guía de ejecución →
                 </button>
