@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Routine, RoutineDay, GOAL_MAP, LEVEL_MAP, TYPE_MAP, MUSCLE_GROUP_MAP } from '../types/routine';
 
@@ -72,6 +72,8 @@ const RoutineView: React.FC<Props> = ({ routine }) => {
 
 const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) => {
     const cardRef = useRef<HTMLDivElement>(null);
+    const [hoveredExercise, setHoveredExercise] = useState<string | null>(null);
+    const previewRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
     const handleMouseEnter = () => {
         if (!cardRef.current) return;
@@ -138,6 +140,8 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                             const isSuperset = !!ex.supersetId;
                             const isSupersetStart = isSuperset && (i === 0 || !day.exercises[i - 1]?.supersetId);
 
+                            const imageUrl = ex.image_url;
+
                             let supersetCount = 0;
                             if (isSupersetStart) {
                                 for (let j = i; j < day.exercises.length; j++) {
@@ -178,9 +182,39 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                                         <td className="w-[40px]"></td>
                                     )}
                                     <td className="py-4 px-2">
-                                        <div className="pl-2">
-                                            <p className="font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200">{ex.name}</p>
+                                        <div className="pl-2 relative">
+                                            <p
+                                                className="font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200 cursor-help"
+                                                onMouseEnter={() => setHoveredExercise(ex.id + i)}
+                                                onMouseLeave={() => setHoveredExercise(null)}
+                                            >
+                                                {ex.name}
+                                            </p>
                                             <p className="text-xs text-gray-500 capitalize">{TYPE_MAP[ex.type] || ex.type} • {MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
+
+                                            {/* Hover Preview Tooltip */}
+                                            {imageUrl && (
+                                                <div
+                                                    ref={el => previewRefs.current[ex.id + i] = el}
+                                                    className={`absolute left-0 bottom-full mb-2 z-50 w-48 overflow-hidden rounded-2xl border border-white/20 bg-gray-900/90 backdrop-blur-xl shadow-2xl transition-all duration-300 pointer-events-none ${hoveredExercise === ex.id + i ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'}`}
+                                                >
+                                                    <div className="p-2">
+                                                        <img
+                                                            src={imageUrl}
+                                                            alt={ex.name}
+                                                            className="w-full h-32 object-cover rounded-xl border border-white/10"
+                                                            onError={(e) => {
+                                                                // If image fails, hide it or use a default one
+                                                                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop';
+                                                            }}
+                                                        />
+                                                        <div className="mt-2 px-1">
+                                                            <p className="text-[10px] font-bold text-white uppercase tracking-wider">{ex.name}</p>
+                                                            <p className="text-[8px] text-green-500 font-semibold">{MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()]}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </td>
                                     <td className="py-4 text-center font-medium text-gray-400">

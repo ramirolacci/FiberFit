@@ -11,6 +11,7 @@ export interface Exercise {
     equipment: Equipment[];
     difficulty: Level;
     video_url?: string;
+    image_url?: string;
 }
 
 export interface WorkoutExercise extends Exercise {
