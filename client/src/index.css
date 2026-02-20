@@ -89,3 +89,26 @@ button:focus-visible {
   background: rgba(34, 197, 94, 0.3);
   color: white;
 }
+
+/* Ocultar barra de scroll para una interfaz más limpia en móvil */
+@media (max-width: 768px) {
+  *::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE y Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

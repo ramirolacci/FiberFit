@@ -113,25 +113,25 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     return (
         <div
             ref={cardRef}
-            className="day-card bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-white/20 transition-colors w-[460px] min-h-[620px] flex-shrink-0 flex flex-col"
+            className="day-card bg-white/10 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-white/20 transition-colors w-full max-w-[500px] md:w-[460px] min-h-[580px] md:min-h-[620px] flex-shrink-0 flex flex-col"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ transformStyle: 'preserve-3d' }}
         >
-            <div className="bg-white/5 p-6 border-b border-white/10 relative overflow-hidden">
+            <div className="bg-white/5 p-4 md:p-6 border-b border-white/10 relative overflow-hidden">
                 {/* Subtle green glow in card header */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl" />
                 <h3 className="text-xl font-bold text-white relative z-10">{day.dayName}</h3>
                 <p className="text-green-500 text-sm font-medium relative z-10">{day.focus}</p>
             </div>
 
-            <div className="p-6">
+            <div className="p-4 md:p-6">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                            <th className="pb-4 w-[40px]"></th>
+                        <tr className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">
+                            <th className="pb-4 w-[30px] md:w-[40px]"></th>
                             <th className="pb-4 w-[45%]">Ejercicio</th>
-                            <th className="pb-4 text-center w-[25%] px-2">S×R</th>
+                            <th className="pb-4 text-center w-[25%] px-1 md:px-2">S×R</th>
                             <th className="pb-4 text-right w-[20%]">Desc.</th>
                         </tr>
                     </thead>
@@ -164,14 +164,14 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                                         isSupersetStart ? (
                                             <td
                                                 rowSpan={supersetCount}
-                                                className="relative w-[40px] border-l-2 border-green-500 overflow-hidden bg-green-500/10"
+                                                className="relative w-[30px] md:w-[40px] border-l-2 border-green-500 overflow-hidden bg-green-500/10"
                                             >
                                                 <div
                                                     className="absolute inset-0 flex items-center justify-center p-1"
                                                 >
                                                     <span
-                                                        className="text-[9px] font-black text-green-500 uppercase tracking-widest whitespace-nowrap transform -rotate-90 origin-center"
-                                                        style={{ minWidth: '80px' }}
+                                                        className="text-[8px] md:text-[9px] font-black text-green-500 uppercase tracking-widest whitespace-nowrap transform -rotate-90 origin-center"
+                                                        style={{ minWidth: '60px' }}
                                                     >
                                                         COMBINADO
                                                     </span>
@@ -179,18 +179,18 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                                             </td>
                                         ) : null
                                     ) : (
-                                        <td className="w-[40px]"></td>
+                                        <td className="w-[30px] md:w-[40px]"></td>
                                     )}
                                     <td className="py-4 px-2">
                                         <div className="pl-2 relative">
                                             <p
-                                                className="font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200 cursor-help"
+                                                className="text-sm md:text-base font-semibold text-gray-200 group-hover:text-green-500 transition-colors duration-200 cursor-help"
                                                 onMouseEnter={() => setHoveredExercise(ex.id + i)}
                                                 onMouseLeave={() => setHoveredExercise(null)}
                                             >
                                                 {ex.name}
                                             </p>
-                                            <p className="text-xs text-gray-500 capitalize">{TYPE_MAP[ex.type] || ex.type} • {MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
+                                            <p className="text-[10px] md:text-xs text-gray-500 capitalize">{TYPE_MAP[ex.type] || ex.type} • {MUSCLE_GROUP_MAP[ex.muscle_group.toLowerCase()] || ex.muscle_group}</p>
 
                                             {/* Hover Preview Tooltip */}
                                             {imageUrl && (
@@ -217,10 +217,10 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                                             )}
                                         </div>
                                     </td>
-                                    <td className="py-4 text-center font-medium text-gray-400">
+                                    <td className="py-4 text-center text-xs md:text-sm font-medium text-gray-400">
                                         {ex.sets} × {ex.reps}
                                     </td>
-                                    <td className="py-4 text-right text-sm text-gray-500">
+                                    <td className="py-4 text-right text-[10px] md:text-sm text-gray-500">
                                         {ex.rest === '0s' ? 'Sigue →' : ex.rest}
                                     </td>
                                 </tr>
@@ -230,7 +230,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                 </table>
             </div>
 
-            <div className="px-6 py-4 bg-white/5 border-t border-white/10 mt-auto">
+            <div className="px-4 md:px-6 py-3 md:py-4 bg-white/5 border-t border-white/10 mt-auto">
                 <button className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors hover:translate-x-1 transform duration-200 inline-block">
                     Ver guía de ejecución →
                 </button>
