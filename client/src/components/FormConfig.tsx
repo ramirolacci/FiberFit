@@ -114,11 +114,18 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
         onGenerate(formData);
     };
 
-    const inputClasses = "w-full p-3 mt-1 bg-gray-900 border border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none text-gray-200 hover:border-green-800 duration-300";
+    const inputClasses = "w-full p-3 mt-1 bg-white/5 border border-white/10 rounded-xl shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none text-gray-100 hover:border-white/30 duration-300 backdrop-blur-sm";
     const labelClasses = "text-sm font-semibold text-gray-400 ml-1";
 
+    const formatDuration = (minutes: number) => {
+        if (minutes < 60) return `${minutes} min`;
+        const h = Math.floor(minutes / 60);
+        const m = minutes % 60;
+        return m > 0 ? `${h}h ${m}min` : `${h}h`;
+    };
+
     return (
-        <div ref={formRef} className="max-w-2xl mx-auto p-8 bg-gray-900/80 backdrop-blur-md rounded-3xl border border-green-900/20 shadow-2xl shadow-green-900/10" style={{ opacity: 0 }}>
+        <div ref={formRef} className="max-w-2xl mx-auto p-8 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl shadow-black/50" style={{ opacity: 0 }}>
             <h2 className="form-title text-3xl font-bold text-white mb-8 text-center bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
                 Configura tu Entrenamiento
             </h2>
@@ -184,7 +191,7 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
 
                 {/* Tiempo por sesión */}
                 <div className="form-slider">
-                    <label className={labelClasses}>Tiempo por sesión (minutos): {formData.sessionDuration} min</label>
+                    <label className={labelClasses}>Tiempo por sesión: {formatDuration(formData.sessionDuration)}</label>
                     <input
                         type="range"
                         min="30"
@@ -192,7 +199,7 @@ const FormConfig: React.FC<FormProps> = ({ onGenerate, loading }) => {
                         step="15"
                         value={formData.sessionDuration}
                         onChange={(e) => setFormData({ ...formData, sessionDuration: Number(e.target.value) })}
-                        className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-green-500 mt-4"
+                        className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-green-500 mt-4"
                     />
                 </div>
 
