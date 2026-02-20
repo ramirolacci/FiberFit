@@ -136,15 +136,25 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                     <tbody className="divide-y divide-white/10">
                         {day.exercises.map((ex, i) => {
                             const isSuperset = !!ex.supersetId;
-                            const nextIsSameSuperset = isSuperset && day.exercises[i + 1]?.supersetId === ex.supersetId;
-                            const prevIsSameSuperset = isSuperset && day.exercises[i - 1]?.supersetId === ex.supersetId;
-                            const isSupersetStart = isSuperset && !prevIsSameSuperset;
-                            const supersetCount = isSupersetStart ? day.exercises.filter(e => e.supersetId === ex.supersetId).length : 0;
+                            const isSupersetStart = isSuperset && (i === 0 || !day.exercises[i - 1]?.supersetId);
+
+                            let supersetCount = 0;
+                            if (isSupersetStart) {
+                                for (let j = i; j < day.exercises.length; j++) {
+                                    if (day.exercises[j].supersetId) {
+                                        supersetCount++;
+                                    } else {
+                                        break;
+                                    }
+                                }
+                            }
+
+                            const nextIsSameSuperset = isSuperset && !!day.exercises[i + 1]?.supersetId;
 
                             return (
                                 <tr
                                     key={i}
-                                    className={`exercise-row group transition-colors ${isSuperset ? 'bg-green-500/5' : ''} ${isSuperset && !nextIsSameSuperset ? 'border-b-gray-800' : ''}`}
+                                    className={`exercise-row group transition-colors ${isSuperset ? 'bg-green-500/5' : ''} ${isSuperset && !nextIsSameSuperset ? 'border-b-white/10' : 'border-b-transparent'}`}
                                 >
                                     {isSuperset ? (
                                         isSupersetStart ? (
@@ -157,9 +167,9 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                                                 >
                                                     <span
                                                         className="text-[9px] font-black text-green-500 uppercase tracking-widest whitespace-nowrap transform -rotate-90 origin-center"
-                                                        style={{ minWidth: '100px' }}
+                                                        style={{ minWidth: '80px' }}
                                                     >
-                                                        EJERCICIO COMBINADO
+                                                        COMBINADO
                                                     </span>
                                                 </div>
                                             </td>
