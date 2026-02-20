@@ -111,12 +111,12 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     return (
         <div
             ref={cardRef}
-            className="day-card bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-green-900/20 transition-colors w-[460px] min-h-[620px] flex-shrink-0 flex flex-col"
+            className="day-card bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-white/20 transition-colors w-[460px] min-h-[620px] flex-shrink-0 flex flex-col"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ transformStyle: 'preserve-3d' }}
         >
-            <div className="bg-gradient-to-br from-gray-900 to-black p-6 border-b border-green-900/30 relative overflow-hidden">
+            <div className="bg-white/5 p-6 border-b border-white/10 relative overflow-hidden">
                 {/* Subtle green glow in card header */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl" />
                 <h3 className="text-xl font-bold text-white relative z-10">{day.dayName}</h3>
@@ -133,7 +133,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                             <th className="pb-4 text-right w-[20%]">Desc.</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-800">
+                    <tbody className="divide-y divide-white/10">
                         {day.exercises.map((ex, i) => {
                             const isSuperset = !!ex.supersetId;
                             const nextIsSameSuperset = isSuperset && day.exercises[i + 1]?.supersetId === ex.supersetId;
@@ -186,7 +186,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                 </table>
             </div>
 
-            <div className="px-6 py-4 bg-gray-950 border-t border-green-900/20 mt-auto">
+            <div className="px-6 py-4 bg-white/5 border-t border-white/10 mt-auto">
                 <button className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors hover:translate-x-1 transform duration-200 inline-block">
                     Ver guía de ejecución →
                 </button>
