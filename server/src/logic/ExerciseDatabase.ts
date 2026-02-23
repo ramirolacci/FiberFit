@@ -23,12 +23,12 @@ export const EXERCISE_DATABASE: Exercise[] = [
     { id: 'tr4', name: 'Fondos en Paralelas (Tríceps)', muscle_group: 'triceps', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1591948972141-aa6052f5371c?q=80&w=600&auto=format&fit=crop' },
 
     // PULL - ESPALDA
-    { id: 'bk1', name: 'Dominadas Prinas (Pull Ups)', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=600&auto=format&fit=crop' }, // Actual Pull Ups
-    { id: 'bk2', name: 'Jalón al Pecho', muscle_group: 'back', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bk3', name: 'Remo con Barra T', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1603503363848-69525281866e?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bk4', name: 'Remo con Mancuerna a una mano', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1583454102339-06d2460d6934?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bk5', name: 'Remo en Polea Baja', muscle_group: 'back', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bk6', name: 'Pull Over en Polea Alta', muscle_group: 'back', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' },
+    { id: 'bk1', name: 'Dominadas Prinas (Pull Ups)', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: '/assets/espalda/Dominadas Prinas (Pull Ups).gif' },
+    { id: 'bk2', name: 'Jalón al Pecho', muscle_group: 'back', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/espalda/Jalón al Pecho.jpg' },
+    { id: 'bk3', name: 'Remo con Barra T', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: '/assets/espalda/Remo con Barra T.gif' },
+    { id: 'bk4', name: 'Remo con Mancuerna a una mano', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/espalda/Remo con Mancuerna a una mano.gif' },
+    { id: 'bk5', name: 'Remo en Polea Baja', muscle_group: 'back', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/espalda/Remo en Polea Baja.gif' },
+    { id: 'bk6', name: 'Pull Over en Polea Alta', muscle_group: 'back', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: '/assets/espalda/Pull Over en Polea Alta.gif' },
 
     // PULL - BÍCEPS
     { id: 'bi1', name: 'Curl de Bíceps con Barra', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop' },
