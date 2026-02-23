@@ -15,6 +15,23 @@ interface SavedRoutine extends Routine {
     savedAt: string;
 }
 
+const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: string, setView: (v: 'generator' | 'history') => void, setRoutine: (r: any) => void, isMobile?: boolean }) => (
+    <nav className={`${isMobile ? 'flex md:hidden justify-center gap-6 mt-6 pb-2' : 'hidden md:flex items-center gap-8'}`}>
+        <button
+            onClick={() => { setView('generator'); setRoutine(null); }}
+            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+        >
+            <Layout size={18} /> Generador
+        </button>
+        <button
+            onClick={() => { setView('history'); setRoutine(null); }}
+            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'history' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+        >
+            <History size={18} /> Historial
+        </button>
+    </nav>
+);
+
 function App() {
     const [routine, setRoutine] = useState<Routine | null>(null)
     const [loading, setLoading] = useState(false)
@@ -333,20 +350,7 @@ function App() {
                         <h1 className="header-title text-xl font-bold text-white tracking-tight">Routine<span className="text-green-500">Pro</span></h1>
                     </div>
 
-                    <nav className="header-nav hidden md:flex items-center gap-8">
-                        <button
-                            onClick={() => { setView('generator'); setRoutine(null); }}
-                            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
-                        >
-                            <Layout size={18} /> Generador
-                        </button>
-                        <button
-                            onClick={() => { setView('history'); setRoutine(null); }}
-                            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'history' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
-                        >
-                            <History size={18} /> Historial
-                        </button>
-                    </nav>
+                    <NavLinks view={view} setView={setView} setRoutine={setRoutine} />
 
                     <button className="header-btn bg-green-600/10 text-green-500 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-green-600 hover:text-white transition-all border border-green-600/20 hover:scale-105 active:scale-95">
                         Iniciar Sesión
@@ -365,6 +369,7 @@ function App() {
                                 <p className="hero-subtitle text-gray-500 text-xl max-w-2xl mx-auto">
                                     Algoritmos de entrenamiento basados en ciencia para maximizar tus resultados en el gimnasio.
                                 </p>
+                                <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
                             </div>
                             <FormConfig onGenerate={handleGenerate} loading={loading} />
                             {error && (
@@ -397,6 +402,7 @@ function App() {
                                     </button>
                                 </div>
                             </div>
+                            <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
                             <RoutineView routine={routine} />
                         </div>
                     )
@@ -406,6 +412,7 @@ function App() {
                             <h2 className="text-3xl font-black text-white tracking-tight">Tu Historial</h2>
                             <span className="text-gray-500 text-sm font-medium">{history.length} rutinas guardadas</span>
                         </div>
+                        <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
 
                         {history.length === 0 ? (
                             <div className="bg-gray-900/50 border border-gray-800 rounded-3xl p-12 text-center">
