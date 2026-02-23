@@ -10,11 +10,11 @@ export const EXERCISE_DATABASE: Exercise[] = [
     { id: 'ch6', name: 'Press en Máquina Hammer', muscle_group: 'chest', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/pecho/Press en Máquina Hammer.gif' },
 
     // PUSH - HOMBROS
-    { id: 'sh1', name: 'Press Militar de Pie con Barra', muscle_group: 'shoulders', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?q=80&w=600&auto=format&fit=crop' }, // OHP
-    { id: 'sh2', name: 'Press de Hombros con Mancuernas', muscle_group: 'shoulders', type: 'compound', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1541534741688-6078c64b52d2?q=80&w=600&auto=format&fit=crop' }, // DB overhead
-    { id: 'sh3', name: 'Vuelos Laterales con Mancuernas', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1583454102339-06d2460d6934?q=80&w=600&auto=format&fit=crop' }, // Lateral raises
-    { id: 'sh4', name: 'Vuelos Frontales', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1583454102339-06d2460d6934?q=80&w=600&auto=format&fit=crop' },
-    { id: 'sh5', name: 'Face Pulls', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1591948972141-aa6052f5371c?q=80&w=600&auto=format&fit=crop' },
+    { id: 'sh1', name: 'Press Militar de Pie con Barra', muscle_group: 'shoulders', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: '/assets/hombros/Press Militar de Pie con Barra.gif' },
+    { id: 'sh2', name: 'Press de Hombros con Mancuernas', muscle_group: 'shoulders', type: 'compound', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/hombros/Press de Hombros con Mancuernas.gif' },
+    { id: 'sh3', name: 'Vuelos Laterales con Mancuernas', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/hombros/Vuelos Laterales con Mancuernas.gif' },
+    { id: 'sh4', name: 'Vuelos Frontales', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/hombros/Vuelos Frontales.gif' },
+    { id: 'sh5', name: 'Face Pulls', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/hombros/Face Pulls.gif' },
 
     // PUSH - TRÍCEPS
     { id: 'tr1', name: 'Press Francés con Barra Z', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' },
