@@ -2,12 +2,12 @@ import { Exercise } from '../types/routine';
 
 export const EXERCISE_DATABASE: Exercise[] = [
     // PUSH - PECHO
-    { id: 'ch1', name: 'Press de Banca Plano con Barra', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop' }, // Proper Bench/Deadlift setup
-    { id: 'ch2', name: 'Press Superior con Mancuernas', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' }, // Man with DBs
-    { id: 'ch3', name: 'Aperturas en Polea Alta', muscle_group: 'chest', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' }, // Cable Machine
-    { id: 'ch4', name: 'Push Ups (Flexiones)', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'home-gym', 'dumbbells-only', 'bodyweight'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1598971639058-fab3c023bf58?q=80&w=600&auto=format&fit=crop' }, // Athlete in pushup posture
-    { id: 'ch5', name: 'Fondos de Pecho (Dips)', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'advanced', image_url: 'https://images.unsplash.com/photo-1591948972141-aa6052f5371c?q=80&w=600&auto=format&fit=crop' }, // Dip Station
-    { id: 'ch6', name: 'Press en Máquina Hammer', muscle_group: 'chest', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600&auto=format&fit=crop' }, // Hammer machine
+    { id: 'ch1', name: 'Press de Banca Plano con Barra', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'beginner', image_url: '/assets/pecho/Press de Banca Plano con Barra.gif' },
+    { id: 'ch2', name: 'Press Superior con Mancuernas', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/pecho/Press Superior con Mancuernas.gif' },
+    { id: 'ch3', name: 'Aperturas en Polea Alta', muscle_group: 'chest', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: '/assets/pecho/Aperturas en Polea Alta.gif' },
+    { id: 'ch4', name: 'Push Ups (Flexiones)', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'home-gym', 'dumbbells-only', 'bodyweight'], difficulty: 'beginner', image_url: '/assets/pecho/f91e252ccec48090bf58266cc20b0742.gif' },
+    { id: 'ch5', name: 'Fondos de Pecho (Dips)', muscle_group: 'chest', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'advanced', image_url: '/assets/pecho/Fondos de Pecho (Dips).gif' },
+    { id: 'ch6', name: 'Press en Máquina Hammer', muscle_group: 'chest', type: 'compound', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/pecho/Press en Máquina Hammer.gif' },
 
     // PUSH - HOMBROS
     { id: 'sh1', name: 'Press Militar de Pie con Barra', muscle_group: 'shoulders', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?q=80&w=600&auto=format&fit=crop' }, // OHP
