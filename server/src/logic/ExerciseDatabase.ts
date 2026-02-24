@@ -47,8 +47,8 @@ export const EXERCISE_DATABASE: Exercise[] = [
     { id: 'lg8', name: 'Elevación de Talones (Calf Raise)', muscle_group: 'calves', type: 'isolation', equipment: ['full-gym', 'home-gym', 'dumbbells-only'], difficulty: 'beginner', image_url: '/assets/piernas y gluteos/Elevación de Talones (Calf Raise).gif' },
 
     // CORE
-    { id: 'cr1', name: 'Plancha Abdominal (Plank)', muscle_group: 'core', type: 'isolation', equipment: ['full-gym', 'home-gym', 'bodyweight'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop' }, // Plank
-    { id: 'cr2', name: 'Crunch con Cable', muscle_group: 'core', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' },
-    { id: 'cr3', name: 'Elevación de Piernas Colgado', muscle_group: 'core', type: 'isolation', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=600&auto=format&fit=crop' }, // Pullup bar setup
-    { id: 'cr4', name: 'Rueda Abdominal (Ab Wheel)', muscle_group: 'core', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'advanced', image_url: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop' },
+    { id: 'cr1', name: 'Plancha Abdominal (Plank)', muscle_group: 'core', type: 'isolation', equipment: ['full-gym', 'home-gym', 'bodyweight'], difficulty: 'beginner', image_url: '/assets/core/Plancha Abdominal (Plank).jpg' }, // Plank
+    { id: 'cr2', name: 'Crunch con Cable', muscle_group: 'core', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: '/assets/core/Crunch con Cable.gif' },
+    { id: 'cr3', name: 'Elevación de Piernas Colgado', muscle_group: 'core', type: 'isolation', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: '/assets/core/Elevación de Piernas Colgado.gif' }, // Pullup bar setup
+    { id: 'cr4', name: 'Rueda Abdominal (Ab Wheel)', muscle_group: 'core', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'advanced', image_url: '/assets/core/Rueda Abdominal (Ab Wheel).gif' },
 ];
