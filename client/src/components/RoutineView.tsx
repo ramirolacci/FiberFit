@@ -113,19 +113,19 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     return (
         <div
             ref={cardRef}
-            className="day-card bg-white/10 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-white/20 transition-colors w-full max-w-[500px] md:w-[460px] min-h-[580px] md:min-h-[620px] flex-shrink-0 flex flex-col"
+            className="day-card bg-white/10 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl shadow-black/50 border border-white/20 transition-colors w-full max-w-[500px] md:w-[460px] min-h-[580px] md:min-h-[620px] flex-shrink-0 flex flex-col"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ transformStyle: 'preserve-3d' }}
         >
-            <div className="bg-white/5 p-4 md:p-6 border-b border-white/10 relative overflow-hidden">
+            <div className="bg-white/5 p-4 md:p-6 border-b border-white/10 relative overflow-hidden rounded-t-[inherit]">
                 {/* Subtle green glow in card header */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl" />
                 <h3 className="text-xl font-bold text-white relative z-10">{day.dayName}</h3>
                 <p className="text-green-500 text-sm font-medium relative z-10">{day.focus}</p>
             </div>
 
-            <div className="p-4 md:p-6">
+            <div className="p-4 md:p-6 relative z-20">
                 <table className="w-full text-left border-collapse">
                     <thead>
                         <tr className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">
@@ -230,7 +230,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                 </table>
             </div>
 
-            <div className="px-4 md:px-6 py-3 md:py-4 bg-white/5 border-t border-white/10 mt-auto">
+            <div className="px-4 md:px-6 py-3 md:py-4 bg-white/5 border-t border-white/10 mt-auto rounded-b-[inherit]">
                 <button className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors hover:translate-x-1 transform duration-200 inline-block">
                     Ver guía de ejecución →
                 </button>
