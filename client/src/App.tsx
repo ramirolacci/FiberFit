@@ -16,7 +16,7 @@ interface SavedRoutine extends Routine {
 }
 
 const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: string, setView: (v: 'generator' | 'history') => void, setRoutine: (r: any) => void, isMobile?: boolean }) => (
-    <nav className={`${isMobile ? 'flex md:hidden justify-center gap-6 mt-6 pb-2' : 'hidden md:flex items-center gap-8'}`}>
+    <nav className={`${isMobile ? 'flex md:hidden justify-center gap-6 mt-6 pb-2' : 'header-nav hidden md:flex items-center gap-8'}`}>
         <button
             onClick={() => { setView('generator'); setRoutine(null); }}
             className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
@@ -88,7 +88,7 @@ function App() {
                 { opacity: 0 },
                 { opacity: 1, duration: 1, delay: 1.2, ease: 'power2.out' }
             )
-        })
+        }, headerRef) // Scope to header
         return () => ctx.revert()
     }, [])
 
