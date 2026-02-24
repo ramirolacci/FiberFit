@@ -17,10 +17,10 @@ export const EXERCISE_DATABASE: Exercise[] = [
     { id: 'sh5', name: 'Face Pulls', muscle_group: 'shoulders', type: 'isolation', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/hombros/Face Pulls.gif' },
 
     // PUSH - TRÍCEPS
-    { id: 'tr1', name: 'Press Francés con Barra Z', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' },
-    { id: 'tr2', name: 'Extensión de Tríceps en Polea Alta', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop' }, // Cable tricep
-    { id: 'tr3', name: 'Copa de Tríceps (Sentado)', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1583454102339-06d2460d6934?q=80&w=600&auto=format&fit=crop' },
-    { id: 'tr4', name: 'Fondos en Paralelas (Tríceps)', muscle_group: 'triceps', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1591948972141-aa6052f5371c?q=80&w=600&auto=format&fit=crop' },
+    { id: 'tr1', name: 'Press Francés con Barra Z', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: '/assets/biceps y triceps/Press Francés con Barra Z.gif' },
+    { id: 'tr2', name: 'Extensión de Tríceps en Polea Alta', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym'], difficulty: 'beginner', image_url: '/assets/biceps y triceps/Extensión de Tríceps en Polea Alta.gif' }, // Cable tricep
+    { id: 'tr3', name: 'Copa de Tríceps (Sentado)', muscle_group: 'triceps', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/biceps y triceps/Copa de Tríceps (Sentado.gif' },
+    { id: 'tr4', name: 'Fondos en Paralelas (Tríceps)', muscle_group: 'triceps', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: '/assets/biceps y triceps/Fondos en Paralelas (Tríceps).gif' },
 
     // PULL - ESPALDA
     { id: 'bk1', name: 'Dominadas Prinas (Pull Ups)', muscle_group: 'back', type: 'compound', equipment: ['full-gym', 'bodyweight'], difficulty: 'intermediate', image_url: '/assets/espalda/Dominadas Prinas (Pull Ups).gif' },
@@ -31,10 +31,10 @@ export const EXERCISE_DATABASE: Exercise[] = [
     { id: 'bk6', name: 'Pull Over en Polea Alta', muscle_group: 'back', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: '/assets/espalda/Pull Over en Polea Alta.gif' },
 
     // PULL - BÍCEPS
-    { id: 'bi1', name: 'Curl de Bíceps con Barra', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bi2', name: 'Curl Martillo con Mancuernas', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1583454102339-06d2460d6934?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bi3', name: 'Curl Predicador (Scott)', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: 'https://images.unsplash.com/photo-1603503363848-69525281866e?q=80&w=600&auto=format&fit=crop' },
-    { id: 'bi4', name: 'Curl Concentrado', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'dumbbells-only'], difficulty: 'beginner', image_url: 'https://images.unsplash.com/photo-1583454102339-06d2460d6934?q=80&w=600&auto=format&fit=crop' },
+    { id: 'bi1', name: 'Curl de Bíceps con Barra', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'home-gym'], difficulty: 'beginner', image_url: '/assets/biceps y triceps/Curl de Bíceps con Barra.gif' },
+    { id: 'bi2', name: 'Curl Martillo con Mancuernas', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'dumbbells-only', 'home-gym'], difficulty: 'beginner', image_url: '/assets/biceps y triceps/Curl Martillo con Mancuernas.gif' },
+    { id: 'bi3', name: 'Curl Predicador (Scott)', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym'], difficulty: 'intermediate', image_url: '/assets/biceps y triceps/Curl Predicador (Scott).gif' },
+    { id: 'bi4', name: 'Curl Concentrado', muscle_group: 'biceps', type: 'isolation', equipment: ['full-gym', 'dumbbells-only'], difficulty: 'beginner', image_url: '/assets/biceps y triceps/Curl Concentrado.gif' },
 
     // LEGS - PIERNAS
     { id: 'lg1', name: 'Sentadilla Trasera con Barra', muscle_group: 'quads', type: 'compound', equipment: ['full-gym', 'home-gym'], difficulty: 'intermediate', image_url: '/assets/piernas y gluteos/Sentadilla Trasera con Barra.gif' }, // Correct Squat/Barbell visual
