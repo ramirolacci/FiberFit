@@ -495,24 +495,26 @@ function App() {
                                 {history.map((item) => (
                                     <div
                                         key={item.id}
-                                        className="bg-gray-900 border border-green-900/10 rounded-2xl p-6 hover:border-green-500/30 transition-all cursor-pointer group relative"
+                                        className="bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-6 border border-white/10 hover:border-green-500/50 transition-all cursor-pointer group relative shadow-xl shadow-black/40 hover:shadow-green-500/10"
                                         onClick={() => { setRoutine(item); setView('generator'); }}
                                     >
                                         <button
                                             onClick={(e) => deleteFromHistory(item.id, e)}
-                                            className="absolute top-4 right-4 text-gray-600 hover:text-red-500 transition-colors p-2"
+                                            className="absolute top-6 right-6 text-gray-500 hover:text-red-500 transition-colors p-2 bg-white/5 rounded-xl hover:bg-red-500/10 group-hover:opacity-100 opacity-60"
                                         >
                                             <Trash2 size={18} />
                                         </button>
 
-                                        <div className="flex items-center gap-3 text-green-500 mb-3">
-                                            <Calendar size={16} />
-                                            <span className="text-xs font-mono">{item.savedAt}</span>
+                                        <div className="flex items-center gap-3 text-green-500 mb-4 bg-green-500/10 w-fit px-3 py-1 rounded-full border border-green-500/20">
+                                            <Calendar size={14} />
+                                            <span className="text-[10px] uppercase font-bold tracking-wider">{item.savedAt}</span>
                                         </div>
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{item.name}</h3>
+
+                                        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">{item.name}</h3>
+
                                         <div className="flex gap-2">
-                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{GOAL_MAP[item.goal] || item.goal}</span>
-                                            <span className="bg-gray-800 text-gray-400 text-[10px] uppercase font-bold px-2 py-1 rounded-md">{LEVEL_MAP[item.level] || item.level}</span>
+                                            <span className="bg-white/5 text-gray-400 text-[10px] uppercase font-bold px-3 py-1.5 rounded-lg border border-white/10 group-hover:border-green-500/20 transition-colors">{GOAL_MAP[item.goal] || item.goal}</span>
+                                            <span className="bg-white/5 text-gray-400 text-[10px] uppercase font-bold px-3 py-1.5 rounded-lg border border-white/10 group-hover:border-green-500/20 transition-colors">{LEVEL_MAP[item.level] || item.level}</span>
                                         </div>
                                     </div>
                                 ))}
