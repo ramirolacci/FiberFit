@@ -153,44 +153,57 @@ function App() {
     // Error shake animation
     useEffect(() => {
         if (error && errorRef.current) {
-            gsap.fromTo(errorRef.current,
-                { x: -10, opacity: 0, scale: 0.95 },
-                { x: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' }
-            )
+            const ctx = gsap.context(() => {
+                gsap.fromTo(errorRef.current,
+                    { x: -10, opacity: 0, scale: 0.95 },
+                    { x: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' }
+                )
+            }, errorRef)
+            return () => ctx.revert()
         }
     }, [error])
 
     // Routine bar entrance
     useEffect(() => {
         if (routine && routineBarRef.current) {
-            gsap.fromTo(routineBarRef.current,
-                { y: -30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }
-            )
+            const ctx = gsap.context(() => {
+                gsap.fromTo(routineBarRef.current,
+                    { y: -30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }
+                )
+            }, routineBarRef)
+            return () => ctx.revert()
         }
     }, [routine])
 
     // Toast animation
+    const toastRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         if (showToast) {
-            const tl = gsap.timeline();
-            tl.fromTo('.success-toast',
-                { y: 50, opacity: 0, scale: 0.9 },
-                { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }
-            );
+            const ctx = gsap.context(() => {
+                gsap.fromTo('.success-toast',
+                    { y: 50, opacity: 0, scale: 0.9 },
+                    { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }
+                );
+            }, toastRef);
 
             const timeout = setTimeout(() => {
-                gsap.to('.success-toast', {
-                    y: 20,
-                    opacity: 0,
-                    scale: 0.95,
-                    duration: 0.4,
-                    ease: 'power2.in',
-                    onComplete: () => setShowToast(false)
+                ctx.add(() => {
+                    gsap.to('.success-toast', {
+                        y: 20,
+                        opacity: 0,
+                        scale: 0.95,
+                        duration: 0.4,
+                        ease: 'power2.in',
+                        onComplete: () => setShowToast(false)
+                    });
                 });
             }, 1500);
 
-            return () => clearTimeout(timeout);
+            return () => {
+                clearTimeout(timeout);
+                ctx.revert();
+            };
         }
     }, [showToast])
 
@@ -353,13 +366,16 @@ function App() {
         setShowToast(true);
 
         // Visual feedback on button
-        gsap.to('.save-btn', {
-            scale: 1.05,
-            backgroundColor: '#047857',
-            duration: 0.2,
-            yoyo: true,
-            repeat: 1
+        const btnCtx = gsap.context(() => {
+            gsap.to('.save-btn', {
+                scale: 1.05,
+                backgroundColor: '#047857',
+                duration: 0.2,
+                yoyo: true,
+                repeat: 1
+            });
         });
+        setTimeout(() => btnCtx.revert(), 500);
     };
 
     const deleteFromHistory = (id: string, e: React.MouseEvent) => {
@@ -539,7 +555,7 @@ function App() {
             </footer>
 
             {showToast && (
-                <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-md">
+                <div ref={toastRef} className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-md">
                     <div className={`success-toast bg-gray-900/80 backdrop-blur-xl border ${toastType === 'success' ? 'border-green-500/30 shadow-green-500/10' : 'border-red-500/30 shadow-red-500/10'} rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4`}>
                         <div className="flex items-center gap-3">
                             <div className={`${toastType === 'success' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'} p-2 rounded-xl`}>
@@ -552,14 +568,8 @@ function App() {
                         </div>
                         <button
                             onClick={() => {
-                                gsap.to('.success-toast', {
-                                    y: 20,
-                                    opacity: 0,
-                                    scale: 0.95,
-                                    duration: 0.3,
-                                    ease: 'power2.in',
-                                    onComplete: () => setShowToast(false)
-                                });
+                                // Direct state change for manual close to avoid selector conflicts
+                                setShowToast(false);
                             }}
                             className="text-gray-500 hover:text-white transition-colors"
                         >
