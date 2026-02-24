@@ -127,13 +127,13 @@ function App() {
         const target = view === 'generator' ? heroRef.current : historyRef.current;
         if (target) {
             const ctx = gsap.context(() => {
-                const tl = gsap.timeline({ delay: 0.1 })
+                const tl = gsap.timeline();
                 tl.fromTo(target,
-                    { y: 40, opacity: 0, scale: 0.98 },
-                    { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out' }
-                )
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }
+                );
+
                 if (view === 'generator') {
-                    // Floating glow pulse on the accent word (Existence check)
                     const accent = target.querySelector('.hero-accent');
                     if (accent) {
                         gsap.to(accent, {
@@ -142,11 +142,11 @@ function App() {
                             repeat: -1,
                             yoyo: true,
                             ease: 'sine.inOut'
-                        })
+                        });
                     }
                 }
-            }, target)
-            return () => ctx.revert()
+            }, target);
+            return () => ctx.revert();
         }
     }, [view, routine === null])
 
@@ -425,7 +425,7 @@ function App() {
             </div>
 
             {/* Header */}
-            <header ref={headerRef} className="bg-gray-950 border-b border-green-900/30 py-6 px-4 sticky top-0 z-50 backdrop-blur-md bg-gray-950/80" style={{ opacity: 0 }}>
+            <header ref={headerRef} className="bg-gray-950 border-b border-green-900/30 py-6 px-4 sticky top-0 z-50 backdrop-blur-md bg-gray-950/80">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div ref={logoRef} className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer" onClick={() => { setView('generator'); setRoutine(null); }}>
@@ -466,7 +466,7 @@ function App() {
                         </div>
                     ) : (
                         <div className="pb-10">
-                            <div ref={routineBarRef} className="max-w-7xl mx-auto py-8 px-4 flex justify-between items-center" style={{ opacity: 0 }}>
+                            <div ref={routineBarRef} className="max-w-7xl mx-auto py-8 px-4 flex justify-between items-center">
                                 <button
                                     onClick={() => setRoutine(null)}
                                     className="text-sm font-bold text-gray-400 hover:text-green-500 flex items-center gap-2 transition-colors hover:-translate-x-1 transform duration-200"
@@ -548,7 +548,7 @@ function App() {
             </main>
 
             {/* Footer */}
-            <footer ref={footerRef} className="bg-gray-950 border-t border-green-900/30 py-4 px-4 relative z-10" style={{ opacity: 0 }}>
+            <footer ref={footerRef} className="bg-gray-950 border-t border-green-900/30 py-4 px-4 relative z-10">
                 <div className="max-w-7xl mx-auto text-center">
                     <p className="text-gray-600 text-sm">
                         © 2026 RoutinePro | Desarrollado por <a href="https://waveframe.com.ar/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline hover:text-green-500 transition-colors">WaveFrame Studio</a>.
