@@ -43,6 +43,10 @@ function App() {
     const [toastType, setToastType] = useState<'success' | 'delete'>('success')
 
     const headerRef = useRef<HTMLElement>(null)
+    const logoRef = useRef<HTMLDivElement>(null)
+    const titleRef = useRef<HTMLHeadingElement>(null)
+    const navRef = useRef<HTMLDivElement>(null)
+    const loginBtnRef = useRef<HTMLButtonElement>(null)
     const heroRef = useRef<HTMLDivElement>(null)
     const footerRef = useRef<HTMLElement>(null)
     const routineBarRef = useRef<HTMLDivElement>(null)
@@ -61,36 +65,54 @@ function App() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline()
-            tl.fromTo(headerRef.current,
-                { y: -80, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-            )
-            tl.fromTo('.header-logo',
-                { scale: 0, rotation: -180 },
-                { scale: 1, rotation: 0, duration: 0.6, ease: 'back.out(1.7)' },
-                '-=0.3'
-            )
-            tl.fromTo('.header-title',
-                { x: -30, opacity: 0 },
-                { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
-                '-=0.3'
-            )
-            tl.fromTo('.header-nav button',
-                { y: -20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', stagger: 0.1 },
-                '-=0.2'
-            )
-            tl.fromTo('.header-btn',
-                { scale: 0.8, opacity: 0 },
-                { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(1.7)' },
-                '-=0.2'
-            )
+            if (headerRef.current) {
+                tl.fromTo(headerRef.current,
+                    { y: -80, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+                )
+            }
+
+            if (logoRef.current) {
+                tl.fromTo(logoRef.current,
+                    { scale: 0, rotation: -180 },
+                    { scale: 1, rotation: 0, duration: 0.6, ease: 'back.out(1.7)' },
+                    '-=0.3'
+                )
+            }
+
+            if (titleRef.current) {
+                tl.fromTo(titleRef.current,
+                    { x: -30, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
+                    '-=0.3'
+                )
+            }
+
+            // Fixed selector to be more specific and check for existence
+            const navButtons = navRef.current?.querySelectorAll('button');
+            if (navButtons && navButtons.length > 0) {
+                tl.fromTo(navButtons,
+                    { y: -20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', stagger: 0.1 },
+                    '-=0.2'
+                )
+            }
+
+            if (loginBtnRef.current) {
+                tl.fromTo(loginBtnRef.current,
+                    { scale: 0.8, opacity: 0 },
+                    { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(1.7)' },
+                    '-=0.2'
+                )
+            }
 
             // Footer entrance
-            gsap.fromTo(footerRef.current,
-                { opacity: 0 },
-                { opacity: 1, duration: 1, delay: 1.2, ease: 'power2.out' }
-            )
+            if (footerRef.current) {
+                gsap.fromTo(footerRef.current,
+                    { opacity: 0 },
+                    { opacity: 1, duration: 1, delay: 1.2, ease: 'power2.out' }
+                )
+            }
         }, headerRef) // Scope to header
         return () => ctx.revert()
     }, [])
@@ -106,14 +128,17 @@ function App() {
                     { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out' }
                 )
                 if (view === 'generator') {
-                    // Floating glow pulse on the accent word
-                    gsap.to('.hero-accent', {
-                        textShadow: '0 0 20px rgba(34, 197, 94, 0.6), 0 0 40px rgba(34, 197, 94, 0.3)',
-                        duration: 2,
-                        repeat: -1,
-                        yoyo: true,
-                        ease: 'sine.inOut'
-                    })
+                    // Floating glow pulse on the accent word (Existence check)
+                    const accent = target.querySelector('.hero-accent');
+                    if (accent) {
+                        gsap.to(accent, {
+                            textShadow: '0 0 20px rgba(34, 197, 94, 0.6), 0 0 40px rgba(34, 197, 94, 0.3)',
+                            duration: 2,
+                            repeat: -1,
+                            yoyo: true,
+                            ease: 'sine.inOut'
+                        })
+                    }
                 }
             }, target)
             return () => ctx.revert()
@@ -382,15 +407,17 @@ function App() {
             <header ref={headerRef} className="bg-gray-950 border-b border-green-900/30 py-6 px-4 sticky top-0 z-50 backdrop-blur-md bg-gray-950/80" style={{ opacity: 0 }}>
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer" onClick={() => { setView('generator'); setRoutine(null); }}>
+                        <div ref={logoRef} className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer" onClick={() => { setView('generator'); setRoutine(null); }}>
                             <Dumbbell size={24} />
                         </div>
-                        <h1 className="header-title text-xl font-bold text-white tracking-tight">Routine<span className="text-green-500">Pro</span></h1>
+                        <h1 ref={titleRef} className="header-title text-xl font-bold text-white tracking-tight">Routine<span className="text-green-500">Pro</span></h1>
                     </div>
 
-                    <NavLinks view={view} setView={setView} setRoutine={setRoutine} />
+                    <div ref={navRef}>
+                        <NavLinks view={view} setView={setView} setRoutine={setRoutine} />
+                    </div>
 
-                    <button className="header-btn bg-green-600/10 text-green-500 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-green-600 hover:text-white transition-all border border-green-600/20 hover:scale-105 active:scale-95">
+                    <button ref={loginBtnRef} className="header-btn bg-green-600/10 text-green-500 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-green-600 hover:text-white transition-all border border-green-600/20 hover:scale-105 active:scale-95">
                         Iniciar Sesión
                     </button>
                 </div>
