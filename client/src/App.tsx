@@ -501,12 +501,14 @@ function App() {
                         <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
 
                         {history.length === 0 ? (
-                            <div className="bg-gray-900/50 border border-gray-800 rounded-3xl p-12 text-center">
-                                <History size={48} className="mx-auto text-gray-700 mb-4" />
-                                <p className="text-gray-500 text-lg">Aún no tienes rutinas guardadas.</p>
+                            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-16 text-center shadow-2xl shadow-black/50">
+                                <div className="bg-green-500/5 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 border border-green-500/10">
+                                    <History size={40} className="text-green-500/40" />
+                                </div>
+                                <p className="text-gray-400 text-xl font-medium mb-8">Aún no tienes rutinas guardadas.</p>
                                 <button
                                     onClick={() => setView('generator')}
-                                    className="mt-6 text-green-500 font-bold hover:underline"
+                                    className="text-green-500 font-bold hover:text-green-400 transition-all hover:scale-105 active:scale-95"
                                 >
                                     ¡Empieza a generar una ahora!
                                 </button>
