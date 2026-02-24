@@ -4,7 +4,7 @@ import FormConfig from './components/FormConfig'
 import RoutineView from './components/RoutineView'
 import { apiService } from './services/apiService'
 import { Routine, GOAL_MAP, LEVEL_MAP, TYPE_MAP, MUSCLE_GROUP_MAP } from './types/routine'
-import { Dumbbell, History, Layout, Trash2, Calendar } from 'lucide-react'
+import { Dumbbell, History, Layout, Trash2, Calendar, CheckCircle2, X } from 'lucide-react'
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 
@@ -38,6 +38,9 @@ function App() {
     const [error, setError] = useState<string | null>(null)
     const [view, setView] = useState<'generator' | 'history'>('generator')
     const [history, setHistory] = useState<SavedRoutine[]>([])
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState('')
+    const [toastType, setToastType] = useState<'success' | 'delete'>('success')
 
     const headerRef = useRef<HTMLElement>(null)
     const heroRef = useRef<HTMLDivElement>(null)
@@ -136,6 +139,30 @@ function App() {
             )
         }
     }, [routine])
+
+    // Toast animation
+    useEffect(() => {
+        if (showToast) {
+            const tl = gsap.timeline();
+            tl.fromTo('.success-toast',
+                { y: 50, opacity: 0, scale: 0.9 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }
+            );
+
+            const timeout = setTimeout(() => {
+                gsap.to('.success-toast', {
+                    y: 20,
+                    opacity: 0,
+                    scale: 0.95,
+                    duration: 0.4,
+                    ease: 'power2.in',
+                    onComplete: () => setShowToast(false)
+                });
+            }, 1500);
+
+            return () => clearTimeout(timeout);
+        }
+    }, [showToast])
 
     const handlePrintAndDownloadPDF = async () => {
         if (!routine) return;
@@ -290,11 +317,16 @@ function App() {
         setHistory(updatedHistory);
         localStorage.setItem('routine_pro_history', JSON.stringify(updatedHistory));
 
-        // Show a quick success feedback (could be a toast, but using simple visual change)
+        // Show success toast
+        setToastType('success');
+        setToastMessage(`¡Rutina "${routine.name}" guardada con éxito!`);
+        setShowToast(true);
+
+        // Visual feedback on button
         gsap.to('.save-btn', {
-            scale: 1.1,
+            scale: 1.05,
             backgroundColor: '#047857',
-            duration: 0.3,
+            duration: 0.2,
             yoyo: true,
             repeat: 1
         });
@@ -302,9 +334,15 @@ function App() {
 
     const deleteFromHistory = (id: string, e: React.MouseEvent) => {
         e.stopPropagation();
+        const routineToDelete = history.find(item => item.id === id);
         const updatedHistory = history.filter(item => item.id !== id);
         setHistory(updatedHistory);
         localStorage.setItem('routine_pro_history', JSON.stringify(updatedHistory));
+
+        // Show delete toast
+        setToastType('delete');
+        setToastMessage(`Rutina "${routineToDelete?.name || ''}" eliminada del historial`);
+        setShowToast(true);
     };
 
     const handleGenerate = async (config: any) => {
@@ -465,6 +503,37 @@ function App() {
                     </p>
                 </div>
             </footer>
+
+            {showToast && (
+                <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-md">
+                    <div className={`success-toast bg-gray-900/80 backdrop-blur-xl border ${toastType === 'success' ? 'border-green-500/30 shadow-green-500/10' : 'border-red-500/30 shadow-red-500/10'} rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4`}>
+                        <div className="flex items-center gap-3">
+                            <div className={`${toastType === 'success' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'} p-2 rounded-xl`}>
+                                {toastType === 'success' ? <CheckCircle2 size={24} /> : <Trash2 size={24} />}
+                            </div>
+                            <div>
+                                <p className="text-white font-bold text-sm">{toastType === 'success' ? 'Éxito' : 'Eliminado'}</p>
+                                <p className="text-gray-400 text-xs">{toastMessage}</p>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => {
+                                gsap.to('.success-toast', {
+                                    y: 20,
+                                    opacity: 0,
+                                    scale: 0.95,
+                                    duration: 0.3,
+                                    ease: 'power2.in',
+                                    onComplete: () => setShowToast(false)
+                                });
+                            }}
+                            className="text-gray-500 hover:text-white transition-colors"
+                        >
+                            <X size={18} />
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
