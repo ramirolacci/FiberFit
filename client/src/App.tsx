@@ -61,6 +61,11 @@ function App() {
         }
     }, [])
 
+    // Scroll to top when routine is generated or view changes
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [routine, view])
+
     // Header entrance animation
     useEffect(() => {
         const ctx = gsap.context(() => {
