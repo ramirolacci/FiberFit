@@ -230,11 +230,7 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
                 </table>
             </div>
 
-            <div className="px-4 md:px-6 py-3 md:py-4 bg-white/5 border-t border-white/10 mt-auto rounded-b-[inherit]">
-                <button className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors hover:translate-x-1 transform duration-200 inline-block">
-                    Ver guía de ejecución →
-                </button>
-            </div>
+
         </div>
     );
 };
