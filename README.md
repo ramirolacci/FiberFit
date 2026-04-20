@@ -38,8 +38,6 @@ Diseñado con un enfoque estético *premium*, **RoutinePro** incorpora interface
 
 ## 📷 Imagenes
 
-*(Aquí puedes colocar las imágenes)*
-
 <div align="center">
   <img src="./assets/home-screenshot.png" alt="Generador de Rutinas" width="800" style="border-radius: 12px; margin-bottom: 20px;" />
   <p><i>1. Vista principal y panel de configuración de parámetros.</i></p>
