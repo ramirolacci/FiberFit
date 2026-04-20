@@ -36,6 +36,27 @@ Diseñado con un enfoque estético *premium*, **RoutinePro** incorpora interface
 
 ---
 
+## 📷 Imagenes
+
+*(Aquí puedes colocar las imágenes)*
+
+<div align="center">
+  <img src="./assets/home-screenshot.png" alt="Generador de Rutinas" width="800" style="border-radius: 12px; margin-bottom: 20px;" />
+  <p><i>1. Vista principal y panel de configuración de parámetros.</i></p>
+
+  <br />
+
+  <img src="./assets/routine-screenshot.png" alt="Rutina Generada" width="800" style="border-radius: 12px; margin-bottom: 20px;" />
+  <p><i>2. Visualización de rutina generada día por día.</i></p>
+
+  <br />
+
+  <img src="./assets/history-screenshot.png" alt="Historial" width="800" style="border-radius: 12px;" />
+  <p><i>3. Historial con tarjetas de rutinas previamente guardadas.</i></p>
+</div>
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 El proyecto se divide en dos ecosistemas principales usando **TypeScript** End-To-End:
