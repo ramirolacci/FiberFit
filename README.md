@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/dumbbell.svg" alt="RoutinePro Logo" width="120" style="margin-bottom: 20px;"/>
+  <img src="./assets/banner.png" alt="RoutinePro Banner" width="100%" style="border-radius: 12px; margin-bottom: 20px;"/>
   
   <h1 style="font-size: 3rem; margin-top: 10px;">💪 Routine<span style="color: #22c55e;">Pro</span></h1>
   
@@ -62,7 +62,7 @@ Diseñado con un enfoque estético *premium*, **RoutinePro** incorpora interface
       <em>Historial — Rutinas Guardadas</em>
     </td>
     <td align="center" width="50%">
-      <img src="./assets/home-screenshot.png" alt="Panel" width="100%" />
+      <img src="./assets/routine2-screenshot.png" alt="Panel" width="100%" />
       <br/>
       <em>Panel — Estadísticas y Progreso</em>
     </td>
