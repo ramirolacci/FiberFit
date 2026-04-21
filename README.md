@@ -1,6 +1,8 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="RoutinePro Banner" width="50%" />
-
+  <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/dumbbell.svg" alt="RoutinePro Logo" width="120" style="margin-bottom: 20px;"/>
+  
+  <h1 style="font-size: 3rem; margin-top: 10px;">💪 Routine<span style="color: #22c55e;">Pro</span></h1>
+  
   <p style="font-size: 1.2rem; margin: 15px 0;">
     <strong>El Generador de Rutinas de Entrenamiento Definitivo, Basado en Ciencia y Algoritmos Inteligentes.</strong>
   </p>
