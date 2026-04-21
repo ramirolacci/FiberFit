@@ -32,7 +32,6 @@ Diseñado con un enfoque estético *premium*, **RoutinePro** incorpora interface
 
 ## ✨ Características Principales
 
-<<<<<<< HEAD
 - **🧠 Algoritmo de Generación Inteligente**: Crea rutinas de manera dinámica analizando tu nivel, el equipamiento del que dispones y tus objetivos personales.
 - **💾 Sistema de Guardado de Historial**: Almacena tus rutinas generadas de forma persistente y segura en bases de datos ágiles y modernas (Supabase).
 - **📄 Exportación a PDF**: Imprime o descarga tu rutina de la semana en formato PDF, lista para llevarla al gimnasio y lograr una desconexión digital durante tu sesión.
@@ -43,21 +42,37 @@ Diseñado con un enfoque estético *premium*, **RoutinePro** incorpora interface
 
 ## 📷 Vistas Previas del Proyecto
 
-=======
->>>>>>> 1152def6171cbcbd857b72963fd87e8ad0765b12
-<div align="center">
-  <img src="./assets/home-screenshot.png" alt="Generador de Rutinas" width="800" style="border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
-  <p><i>1. Vista principal y panel de configuración de parámetros.</i></p>
+<div style="border: 2px solid #e11d48; border-radius: 12px; padding: 24px; background-color: #0f0f0f;">
 
-  <br />
+### 📷 Vista Previa
 
-  <img src="./assets/routine-screenshot.png" alt="Rutina Generada" width="800" style="border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
-  <p><i>2. Visualización de rutina generada día por día.</i></p>
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./assets/home-screenshot.png" alt="Vista Principal" width="100%" style="border-radius: 8px;" />
+      <br/>
+      <em>Pantalla Principal — Configuración de Parámetros</em>
+    </td>
+    <td align="center" width="50%">
+      <img src="./assets/routine-screenshot.png" alt="Rutina Generada" width="100%" style="border-radius: 8px;" />
+      <br/>
+      <em>Rutina Generada — Vista Día por Día</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./assets/history-screenshot.png" alt="Historial" width="100%" style="border-radius: 8px;" />
+      <br/>
+      <em>Historial — Rutinas Guardadas</em>
+    </td>
+    <td align="center" width="50%">
+      <img src="./assets/dashboard-screenshot.png" alt="Panel" width="100%" style="border-radius: 8px;" />
+      <br/>
+      <em>Panel — Estadísticas y Progreso</em>
+    </td>
+  </tr>
+</table>
 
-  <br />
-
-  <img src="./assets/history-screenshot.png" alt="Historial" width="800" style="border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
-  <p><i>3. Historial con tarjetas de rutinas previamente guardadas.</i></p>
 </div>
 
 ---
