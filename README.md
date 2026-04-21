@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="RoutinePro Banner" width="100%" />
+  <img src="./assets/banner.png" alt="RoutinePro Banner" width="50%" />
 
   <p style="font-size: 1.2rem; margin: 15px 0;">
     <strong>El Generador de Rutinas de Entrenamiento Definitivo, Basado en Ciencia y Algoritmos Inteligentes.</strong>
