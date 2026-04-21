@@ -1,8 +1,6 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="RoutinePro Banner" width="100%" style="border-radius: 12px; margin-bottom: 20px;"/>
-  
-  <h1 style="font-size: 3rem; margin-top: 10px;">💪 Routine<span style="color: #22c55e;">Pro</span></h1>
-  
+  <img src="./assets/banner.png" alt="RoutinePro Banner" width="100%" />
+
   <p style="font-size: 1.2rem; margin: 15px 0;">
     <strong>El Generador de Rutinas de Entrenamiento Definitivo, Basado en Ciencia y Algoritmos Inteligentes.</strong>
   </p>
@@ -57,12 +55,12 @@ Diseñado con un enfoque estético *premium*, **RoutinePro** incorpora interface
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="./assets/history-screenshot.png" alt="Historial" width="100%" />
+      <img src="./assets/routine2-screenshot.png" alt="Historial" width="100%" />
       <br/>
       <em>Historial — Rutinas Guardadas</em>
     </td>
     <td align="center" width="50%">
-      <img src="./assets/routine2-screenshot.png" alt="Panel" width="100%" />
+      <img src="./assets/history-screenshot.png" alt="Panel" width="100%" />
       <br/>
       <em>Panel — Estadísticas y Progreso</em>
     </td>
