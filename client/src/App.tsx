@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import FormConfig from './components/FormConfig'
 import RoutineView from './components/RoutineView'
+import { TrainerView } from './components/TrainerView'
 import { apiService } from './services/apiService'
 import { Routine, GOAL_MAP, LEVEL_MAP, TYPE_MAP, MUSCLE_GROUP_MAP } from './types/routine'
 import { Dumbbell, History, Layout, Trash2, Calendar, CheckCircle2, X } from 'lucide-react'
@@ -15,13 +16,19 @@ interface SavedRoutine extends Routine {
     savedAt: string;
 }
 
-const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: string, setView: (v: 'generator' | 'history') => void, setRoutine: (r: any) => void, isMobile?: boolean }) => (
+const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: string, setView: (v: 'generator' | 'history' | 'trainer') => void, setRoutine: (r: any) => void, isMobile?: boolean }) => (
     <nav className={`${isMobile ? 'flex md:hidden justify-center gap-6 mt-6 pb-2' : 'header-nav hidden md:flex items-center gap-8'}`}>
         <button
             onClick={() => { setView('generator'); setRoutine(null); }}
             className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
         >
             <Layout size={18} /> Generador
+        </button>
+        <button
+            onClick={() => { setView('trainer'); setRoutine(null); }}
+            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'trainer' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+        >
+            <Dumbbell size={18} /> Trainer
         </button>
         <button
             onClick={() => { setView('history'); setRoutine(null); }}
@@ -36,7 +43,7 @@ function App() {
     const [routine, setRoutine] = useState<Routine | null>(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
-    const [view, setView] = useState<'generator' | 'history'>('generator')
+    const [view, setView] = useState<'generator' | 'history' | 'trainer'>('generator')
     const [history, setHistory] = useState<SavedRoutine[]>([])
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
@@ -492,6 +499,11 @@ function App() {
                             <RoutineView routine={routine} />
                         </div>
                     )
+                ) : view === 'trainer' ? (
+                    <div className="py-8 px-4">
+                        <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
+                        <TrainerView />
+                    </div>
                 ) : (
                     <div ref={historyRef} className="max-w-5xl mx-auto py-12 px-4">
                         <div className="flex items-center justify-between mb-8">
