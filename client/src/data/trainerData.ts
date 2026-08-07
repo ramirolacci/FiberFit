@@ -1666,11 +1666,11 @@ export const MUSCLE_GROUPS_DATA: Record<string, MuscleGroupData> = {
           }
 ]
     },
-        espalda: {
+                    espalda: {
         id: 'espalda',
         name: 'Espalda',
         subtitle: 'Dorsales y trapecios',
-        cardImageUrl: '/Entrenamientos/Espalda/espalda.png',
+        cardImageUrl: '/Entrenamientos/Espalda/espaldamini.png',
         detailImageUrl: '/Entrenamientos/Espalda/espalda.png',
         backHighlight: true,
         equipmentCategories: [
@@ -1682,82 +1682,133 @@ export const MUSCLE_GROUPS_DATA: Record<string, MuscleGroupData> = {
                                         "id": "encogimiento-de-hombro-con-barra",
                                         "name": "Encogimiento de Hombro con Barra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Ponte de pie con los pies separados a la misma distancia de los hombros, sosteniendo una barra frente a ti con un agarre ligeramente más estrecho que la anchura de los hombros. Las palmas de las manos deben mirar hacia tu cuerpo.",
+                                                  "Mantén la espalda recta, los hombros hacia atrás y el pecho hacia arriba. Esta es tu posición inicial.",
+                                                  "Eleva los hombros directamente hacia arriba en un movimiento controlado, contrayendo los músculos superiores de la espalda. Imagina que estás tratando de tocar tus hombros con tus orejas.",
+                                                  "Al llegar a la posición más alta posible, mantén la contracción en la parte superior de los hombros durante un segundo para maximizar el estímulo en esos músculos.",
+                                                  "Desciende los hombros de manera controlada de vuelta a la posición inicial, evitando movimientos bruscos o rebotes.",
+                                                  "Realiza el mismo número de repeticiones, manteniendo una forma adecuada y una ejecución suave del movimiento.",
+                                                  "Evita cargar demasiado peso para prevenir lesiones y enfócate en la calidad del movimiento.",
+                                                  "Este ejercicio es excelente para desarrollar la musculatura de la parte superior de los hombros y puede ser incorporado como parte de tu rutina de entrenamiento de la espalda y los hombros."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Encogimiento de Hombro con Barra/trapecioEspalda.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Encogimiento de Hombro con Barra/encogimientoHombroBarra.mp4"
                               },
                               {
                                         "id": "giro-oblicuo-con-barra-en-tierra",
                                         "name": "Giro Oblicuo con Barra en Tierra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Comienza colocando una barra cargada en el suelo y párate con los pies separados a la anchura de los hombros y las rodillas ligeramente flexionadas.",
+                                                  "Agarra la barra con ambas manos en pronación (las palmas hacia abajo) y mantenla pegada al cuerpo.",
+                                                  "Gira la cintura hacia un lado, manteniendo la barra pegada al cuerpo y la cabeza y la espalda rectas.",
+                                                  "Mantén la posición durante un segundo y luego gira hacia el otro lado.",
+                                                  "Continúa alternando los giros hacia la izquierda y hacia la derecha hasta completar la cantidad de repeticiones deseada.",
+                                                  "Es importante recordar mantener la cabeza y la espalda rectas en todo momento y evitar el impulso para realizar el movimiento. El giro debe provenir únicamente de la cintura y los oblicuos, no de los hombros ni la columna vertebral."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Giro Oblicuo con Barra en Tierra/giroBarra.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Giro Oblicuo con Barra en Tierra/giroOblicuioConBarraEnTierra.mp4"
                               },
                               {
                                         "id": "good-morning-con-barra",
                                         "name": "Good Morning con Barra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Colócate de pie con una pierna ligeramente adelantada y la otra hacia atrás, en una posición de zancada corta. Los pies deben estar alineados aproximadamente a la anchura de los hombros, con las rodillas ligeramente flexionadas.",
+                                                  "Sostén una barra con ambas manos, apoyándola en la parte superior de los trapecios (por detrás del cuello), utilizando un agarre prono (palmas hacia abajo) con las manos separadas a la anchura de los hombros.",
+                                                  "Mantén la espalda recta y el core activado. Mira hacia adelante y asegúrate de mantener una postura erguida con el pecho levantado.",
+                                                  "Inhala y, mientras exhalas, flexiona las caderas hacia adelante, empujando el glúteo hacia atrás y manteniendo la columna vertebral en una posición neutral. La pierna adelantada soportará la mayor parte del peso, mientras que la pierna trasera proporciona estabilidad.",
+                                                  "Baja el torso hasta que esté aproximadamente paralelo al suelo o hasta que sientas un buen estiramiento en los isquiotibiales de la pierna adelantada. Asegúrate de mantener las rodillas ligeramente flexionadas y evita cualquier arqueo excesivo de la espalda baja.",
+                                                  "Exhala y regresa a la posición inicial, contrayendo los músculos de los glúteos y los isquiotibiales para levantar el torso. Mantén el core activado durante todo el movimiento para proteger la espalda baja."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Good Morning con Barra/superman.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Good Morning con Barra/goodMorningBarra.mp4",
+                                        "note": "Completa el número deseado de repeticiones, asegurándote de mantener una buena técnica y control en cada repetición. Luego, cambia de pierna y repite el ejercicio."
                               },
                               {
                                         "id": "remo-al-menton-con-barra",
                                         "name": "Remo al Mentón con Barra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Comienza de pie con los pies separados a la misma distancia que tus hombros y sostén una barra con las palmas hacia ti y las manos separadas a la misma distancia que tus hombros.",
+                                                  "Levanta la barra hacia tu mentón, doblando los codos y manteniendo los brazos cerca del cuerpo.",
+                                                  "Mantén la posición por un segundo, luego baja la barra lentamente a la posición inicial.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Remo al Mentón con Barra/trapecioEspalda.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Remo al Mentón con Barra/elevacionLateralBarra.mp4",
+                                        "note": "Es importante mantener una buena postura y evitar balancear el cuerpo hacia adelante o hacia atrás durante el ejercicio. También debes asegurarte de mantener los codos apuntando hacia los lados y no hacia adelante para evitar poner demasiada tensión en los hombros."
                               },
                               {
                                         "id": "remo-con-barra",
                                         "name": "Remo con Barra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Colócate frente a la barra, parado con los pies separados a la misma anchura de los hombros, y agáchate para sujetar la barra con las manos. Las palmas de las manos deben estar hacia abajo y las manos deben estar un poco más separadas que la anchura de los hombros.",
+                                                  "Con la barra en las manos, estira los brazos y levántala del suelo. Mantén la espalda recta y los hombros hacia atrás y hacia abajo.",
+                                                  "Levanta la barra hacia el pecho, manteniendo los codos cerca del cuerpo. Asegúrate de mantener la espalda recta durante todo el movimiento y de no arquearla hacia adelante o hacia atrás.",
+                                                  "Cuando la barra esté cerca de tu pecho, exhala y aprieta los músculos de la espalda durante un segundo para maximizar la contracción muscular.",
+                                                  "Baja lentamente la barra de regreso al suelo, manteniendo la espalda recta y controlando el movimiento.",
+                                                  "Repite el ejercicio durante varias repeticiones, manteniendo una técnica adecuada en todo momento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Remo con Barra/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Remo con Barra/remoBarra.mp4",
+                                        "note": "Es importante recordar que el remo con barra es un ejercicio de fuerza que requiere una técnica adecuada para evitar lesiones. Asegúrate de empezar con un peso que puedas controlar y de aumentarlo gradualmente a medida que tu fuerza y técnica mejoren. Además, siempre es recomendable contar con la supervisión de un entrenador personal para asegurarte de que estás realizando el ejercicio correctamente."
                               },
                               {
                                         "id": "remo-invertido-en-smith",
                                         "name": "Remo Invertido en Smith",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Busca una barra fija horizontal a una altura que te permita colgarte de ella con los brazos extendidos mientras tus pies están apoyados en el piso. También puedes utilizar una estructura de entrenamiento que tenga una barra horizontal.",
+                                                  "Agarra la barra con las palmas de las manos hacia ti, a una distancia un poco mayor que el ancho de los hombros, y cuelga de ella con los brazos totalmente extendidos.",
+                                                  "Con los codos apuntando hacia atrás, levanta tu cuerpo hacia la barra mientras mantienes los hombros hacia abajo y hacia atrás, y los omóplatos juntos. Asegúrate de mantener los codos cerca de tu cuerpo y los brazos pegados al torso durante todo el movimiento.",
+                                                  "Cuando llegues a la parte superior del movimiento, sostén la contracción durante un segundo y luego baja lentamente tu cuerpo hacia abajo hasta que tus brazos estén totalmente extendidos nuevamente.",
+                                                  "Repite el movimiento por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Remo Invertido en Smith/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Remo Invertido en Smith/remoInvertido.mp4",
+                                        "note": "Es importante mantener una buena postura y técnica durante todo el ejercicio para evitar lesiones. También puedes variar la intensidad del ejercicio cambiando la posición de tus pies o utilizando un cinturón de lastre para agregar peso."
                               },
                               {
                                         "id": "remo-unilateral-con-barra",
                                         "name": "Remo Unilateral con Barra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Coloca una barra en un soporte a una altura que te permita alcanzarla cómodamente cuando estás de pie al lado de ella.",
+                                                  "Ponte al lado de la barra y sostenla con una mano, con la palma de tu mano mirando hacia ti.",
+                                                  "Flexiona las rodillas y baja el torso hacia adelante, manteniendo la espalda recta y los abdominales contraídos.",
+                                                  "Eleva la barra hacia tu cuerpo, manteniéndola cerca de él en todo momento, y lleva el codo hacia atrás mientras contraes los músculos de la espalda.",
+                                                  "Mantén la posición por un momento y luego baja la barra de forma controlada hasta la posición inicial.",
+                                                  "Repite el movimiento para el número deseado de repeticiones y luego cambia de lado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Remo Unilateral con Barra/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Remo Unilateral con Barra/remoUnilateralConBarraEnAngulo.mp4",
+                                        "note": "Es importante mantener la espalda recta y los abdominales contraídos durante todo el ejercicio para evitar lesiones en la espalda baja. También asegúrate de mantener los hombros hacia abajo y hacia atrás para involucrar correctamente los músculos de la espalda."
                               },
                               {
                                         "id": "remo-vertical-con-barra",
                                         "name": "Remo Vertical con Barra",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Colócate de pie con los pies a la anchura de los hombros, mirando hacia adelante. Sostén una barra con ambas manos, utilizando un agarre prono (palmas hacia abajo) con las manos separadas a una distancia ligeramente menor que la anchura de los hombros.",
+                                                  "Mantén la barra frente a los muslos con los brazos extendidos y las palmas mirando hacia el cuerpo. Esta es tu posición inicial.",
+                                                  "Inhala y, mientras exhalas, tira de la barra hacia arriba a lo largo del cuerpo, llevando los codos hacia los lados y hacia arriba. Los codos deben estar en línea con los hombros o ligeramente por encima de ellos al final del movimiento.",
+                                                  "Mantén la barra cerca del cuerpo durante todo el levantamiento y lleva la barra hasta la altura del pecho o un poco más arriba, dependiendo de tu movilidad. Asegúrate de mantener el core activado y la espalda recta durante todo el ejercicio.",
+                                                  "Pausa brevemente en la parte superior del movimiento, asegurándote de contraer los músculos de los hombros y los trapecios.",
+                                                  "Inhala y baja la barra de manera controlada de vuelta a la posición inicial, extendiendo completamente los brazos sin bloquear los codos."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Remo Vertical con Barra/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Remo Vertical con Barra/remoVerticalBarra.mp4",
+                                        "note": "Completa el número deseado de repeticiones, asegurándote de mantener una buena técnica y control en cada repetición."
                               },
                               {
                                         "id": "simulador-de-remo",
                                         "name": "Simulador de Remo",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Siéntate en el asiento de la máquina de remo, colocando los pies en los reposapiés ajustables. Asegúrate de que las correas estén ajustadas de manera segura alrededor de tus pies para evitar que se deslicen durante el ejercicio.",
+                                                  "Agarra el asa con ambas manos utilizando un agarre prono (palmas hacia abajo) o neutro (palmas enfrentadas), dependiendo del diseño de la máquina. Mantén las manos separadas a una distancia cómoda, aproximadamente a la anchura de los hombros.",
+                                                  "Comienza en la posición de \"captura\": el torso ligeramente inclinado hacia adelante con las rodillas dobladas y los brazos extendidos. La espalda debe estar recta y el core activado, con los hombros relajados y hacia abajo.",
+                                                  "Inhala y, mientras exhalas, empuja con las piernas para extender las rodillas y deslizar el asiento hacia atrás. Al mismo tiempo, comienza a inclinar el torso hacia atrás desde las caderas, manteniendo la espalda recta.",
+                                                  "Una vez que las piernas estén casi completamente extendidas, jala el asa hacia tu torso, llevando los codos hacia atrás y hacia los lados. El asa debe llegar aproximadamente al nivel del esternón o ligeramente más abajo. Mantén los hombros relajados y lejos de las orejas durante el tirón.",
+                                                  "Inhala y extiende los brazos hacia adelante mientras comienzas a inclinar el torso hacia adelante. Al mismo tiempo, dobla las rodillas para deslizar el asiento hacia adelante y regresar a la posición de captura."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Barra/Simulador de Remo/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Barra/Simulador de Remo/simuladorRemo.mp4",
+                                        "note": "Completa el número deseado de repeticiones, asegurándote de mantener una técnica fluida y controlada durante todo el movimiento. El ejercicio debe realizarse con un ritmo constante, evitando movimientos bruscos o tirones excesivos."
                               }
                     ]
           },
@@ -1769,55 +1820,87 @@ export const MUSCLE_GROUPS_DATA: Record<string, MuscleGroupData> = {
                                         "id": "remo-al-menton-con-mancuerna",
                                         "name": "Remo al Mentón con Mancuerna",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Para empezar, párate con los pies separados al ancho de los hombros y sostén una mancuerna con cada mano.",
+                                                  "Mantén los brazos extendidos frente a ti, con las palmas de las manos mirando hacia ti.",
+                                                  "A continuación, lleva las mancuernas hacia tu pecho, manteniendo los codos elevados hacia los lados y los antebrazos perpendiculares al suelo. La posición final debe ser similar a la de un curl de bíceps.",
+                                                  "Desde esta posición, lleva las mancuernas hacia arriba, levantando los codos hacia los lados de tus orejas. Mantén los codos elevados y los antebrazos apuntando hacia arriba durante todo el movimiento.",
+                                                  "Mantén la contracción durante un segundo en la parte superior del movimiento, luego baja lentamente las mancuernas de nuevo a la posición inicial.",
+                                                  "Repite el movimiento durante varias repeticiones, asegurándote de mantener una buena forma y control en todo momento.",
+                                                  "Es importante recordar que este ejercicio se enfoca en los músculos de la espalda y los hombros, por lo que debes evitar hacer trampa al balancearte hacia adelante y hacia atrás. En su lugar, mantén un buen control en todo momento y utiliza la fuerza de los músculos de la espalda y los hombros para realizar el movimiento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Mancuernas/Remo al Mentón con Mancuerna/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Mancuernas/Remo al Mentón con Mancuerna/remo.mp4"
                               },
                               {
                                         "id": "remo-con-mancuernas",
                                         "name": "Remo con Mancuernas",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Comienza apoyando una rodilla y una mano en un banco inclinado y toma una mancuerna en la otra mano con la palma hacia abajo.",
+                                                  "Mantén la espalda recta y los abdominales contraídos para asegurarte de tener una buena postura.",
+                                                  "Levanta la mancuerna hacia tu torso manteniendo el codo cerca de tu cuerpo.",
+                                                  "Haz una pausa en la parte superior del movimiento y luego baja lentamente la mancuerna hacia la posición inicial.",
+                                                  "Repite para completar el número deseado de repeticiones y luego cambia de lado.",
+                                                  "Recuerda hacer el ejercicio de forma controlada y sin balancear el cuerpo para evitar lesiones y asegurar una buena ejecución del ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Mancuernas/Remo con Mancuernas/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Mancuernas/Remo con Mancuernas/remoMancuerna.mp4"
                               },
                               {
                                         "id": "remo-gorilla",
                                         "name": "Remo Gorilla",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Comienza de pie, con los pies separados al ancho de los hombros, y sostén una pesa rusa en cada mano. Inclínate hacia adelante, manteniendo la espalda recta y el peso ligeramente por encima del suelo.",
+                                                  "Apoya las pesas en el suelo para mantener el equilibrio.",
+                                                  "Desde esta posición inicial, levanta la pesa rusa hacia tu cintura, manteniendo el codo cerca del cuerpo y apretando los omóplatos juntos.",
+                                                  "Baja la pesa rusa lentamente hacia la posición inicial.",
+                                                  "Luego cambia de mano y repite el ejercicio en el otro lado.",
+                                                  "Es importante mantener la espalda recta durante todo el ejercicio para evitar lesiones y concentrarse en la contracción de los músculos de la espalda al levantar la pesa rusa hacia tu cintura."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Gorilla/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Gorilla/remoGorila.mp4"
                               },
                               {
                                         "id": "remo-prono-con-mancuerna-en-banco-inclinado",
                                         "name": "Remo Prono con Mancuerna en Banco Inclinado",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Coloca un banco inclinado a una altura de aproximadamente 45 grados y acuéstate boca abajo con los pies firmemente apoyados en el suelo.",
+                                                  "Toma una mancuerna en cada mano y extiende los brazos hacia el suelo, manteniendo los codos ligeramente flexionados.",
+                                                  "Contrae los músculos de la espalda para levantar las mancuernas hacia los lados del cuerpo, manteniendo los codos cerca del torso y los omóplatos juntos.",
+                                                  "Mantén la posición de contracción durante unos segundos antes de bajar lentamente las mancuernas hacia la posición inicial.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Prono con Mancuerna en Banco Inclinado/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Prono con Mancuerna en Banco Inclinado/remoPronoConMancuernas.mp4",
+                                        "note": "Es importante mantener una buena postura y controlar el movimiento durante todo el ejercicio. También es recomendable empezar con un peso ligero e ir aumentando progresivamente a medida que se adquiere más fuerza y estabilidad en la zona lumbar."
                               },
                               {
                                         "id": "remo-prono-con-mancuerna-en-banco-plano",
                                         "name": "Remo Prono con Mancuerna en Banco Plano",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Comienza acostado boca abajo en el banco, con las piernas ligeramente separadas y los pies firmemente apoyados en el suelo.",
+                                                  "Toma una mancuerna en cada mano, con las palmas hacia abajo.",
+                                                  "Mantén los codos cerca de los lados del cuerpo y levanta las mancuernas hacia los costados, manteniendo los brazos en línea con los hombros. Mantén los codos ligeramente flexionados durante todo el ejercicio.",
+                                                  "Mantén la posición durante un segundo y luego baja lentamente las mancuernas de vuelta a la posición inicial.",
+                                                  "Repite el movimiento durante varias repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Prono con Mancuerna en Banco Plano/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Prono con Mancuerna en Banco Plano/remoPronoConMancuernasRecto.mp4",
+                                        "note": "Recuerda mantener una buena postura durante todo el ejercicio, evitando arquear la espalda o encorvar los hombros. También es importante utilizar un peso que sea adecuado para tus capacidades y realizar el movimiento de forma controlada y suave en todo momento."
                               },
                               {
                                         "id": "remo-renegado-con-flexion",
                                         "name": "Remo Renegado con Flexión",
                                         "steps": [
-                                                  "Mantén la espalda recta y retraé las escápulas.",
-                                                  "Jala la resistencia hacia el torso o cintura de forma controlada.",
-                                                  "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
-                                        ]
+                                                  "Comienza en una posición de plancha alta, con las manos sosteniendo dos mancuernas en el suelo, separadas a la anchura de los hombros. Asegúrate de que las muñecas estén rectas y que los dedos estén apuntando hacia adelante.",
+                                                  "Desde esta posición, lleva una mancuerna hacia arriba y hacia el costado del cuerpo, manteniendo el codo pegado al costado y sin rotar el torso. La mancuerna debe estar cerca del pecho.",
+                                                  "Baja la mancuerna lentamente y vuelve a la posición de plancha alta.",
+                                                  "Baja al suelo haciendo una flexión y vuelve a la posición de la plancha alta.",
+                                                  "Repite el mismo movimiento con la otra mancuerna.",
+                                                  "Continúa alternando los lados, manteniendo la posición de plancha alta durante todo el ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Renegado con Flexión/remoFlexion.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Mancuernas/Remo Renegado con Flexión/remoRenegado.mp4",
+                                        "note": "Recuerda mantener una buena postura y no arquear la espalda durante el movimiento. El Remo Renegado es un ejercicio desafiante, por lo que es importante comenzar con un peso ligero y aumentarlo gradualmente a medida que ganas fuerza y estabilidad en el core."
                               }
                     ]
           },
@@ -1829,18 +1912,1671 @@ export const MUSCLE_GROUPS_DATA: Record<string, MuscleGroupData> = {
                                         "id": "postura-de-superman-sostenido",
                                         "name": "Postura de Superman Sostenido",
                                         "steps": [
+                                                  "Acuéstate boca abajo en una colchoneta con los brazos y las piernas extendidos.",
+                                                  "Levanta los brazos, las piernas y el pecho del suelo al mismo tiempo, manteniendo los músculos del núcleo contraídos para mantener la estabilidad.",
+                                                  "Sostén la posición durante unos segundos (de 5 a 10 segundos) y luego regresa lentamente a la posición inicial.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones.",
+                                                  "Asegúrate de mantener una buena postura durante todo el ejercicio y no arquear la espalda demasiado. Si sientes dolor o molestias en la espalda, reduce la amplitud del movimiento o elige una variante más suave del ejercicio.",
+                                                  "También puedes agregar resistencia a este ejercicio sosteniendo una mancuerna en cada mano mientras levantas los brazos y las piernas del suelo."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Peso Corporal/Postura de Superman Sostenido/superman.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Peso Corporal/Postura de Superman Sostenido/supermanSostenido.mp4"
+                              },
+                              {
+                                        "id": "remo-con-banda",
+                                        "name": "Remo con Banda",
+                                        "steps": [
+                                                  "Coloca una banda elástica alrededor de un caño o un objeto fijo y asegúrate de que esté bien sujeta a una altura baja.",
+                                                  "Siéntate en el piso con las piernas extendidas hacia adelante y los pies separados a la altura de las caderas. Asegúrate de que haya tensión en la banda incluso cuando estés en la posición inicial.",
+                                                  "Sostén la banda con ambas manos, manteniendo los brazos extendidos hacia adelante y las palmas hacia adentro.",
+                                                  "Mantén la espalda recta y el core contraído mientras inicias el movimiento.",
+                                                  "Tira de la banda hacia tu torso, doblando los codos y manteniéndolos cerca del cuerpo. Lleva las manos hacia el abdomen o la parte baja del pecho.",
+                                                  "Aprieta los omóplatos juntos al final del movimiento y mantén la contracción durante un breve momento.",
+                                                  "Vuelve lentamente a la posición inicial, extendiendo los brazos hacia adelante y manteniendo el control sobre la banda."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Peso Corporal/Remo con Banda/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Peso Corporal/Remo con Banda/remoBanda.mp4",
+                                        "note": "Completa el número deseado de repeticiones, manteniendo una buena técnica y control en cada repetición."
+                              }
+                    ]
+          },
+          {
+                    "id": "poleas-maquinas",
+                    "name": "Poleas y Máquinas",
+                    "exercises": [
+                              {
+                                        "id": "banco-de-espinales",
+                                        "name": "Banco de Espinales",
+                                        "steps": [
+                                                  "Acuéstate boca abajo sobre la banca de lumbares, asegurándote de que tus caderas queden al borde de la misma y que tus pies estén bien apoyados en el cojín.",
+                                                  "Cruza tus brazos en el pecho o ponlos detrás de tu cabeza (no los bloques detrás de tu nuca).",
+                                                  "Asegúrate de que tus músculos abdominales estén contraídos y que tu columna vertebral esté en una posición neutral.",
+                                                  "Levanta lentamente tu torso hacia arriba, asegurándote de que estás usando tus músculos de la espalda baja para levantarte y no impulsándote con tus piernas.",
+                                                  "Una vez que estés en la posición más alta que puedas sin sentir dolor, mantén la posición durante unos segundos.",
+                                                  "Baja lentamente tu torso hasta la posición inicial.",
+                                                  "Repite el movimiento por el número deseado de repeticiones.",
+                                                  "Recuerda que es importante no hacer movimientos bruscos y mantener siempre la posición correcta de la columna vertebral. Si sientes dolor en cualquier momento del ejercicio, detente inmediatamente y consulta con un entrenador personal o un profesional de la salud."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Banco de Espinales/lumbares.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Banco de Espinales/vela.mp4"
+                              },
+                              {
+                                        "id": "dominadas-abiertas",
+                                        "name": "Dominadas Abiertas",
+                                        "steps": [
+                                                  "Párate en la plataforma de la máquina y agarra las asas de las empuñaduras superiores. Coloca tus rodillas o pies en la plataforma inferior según el diseño de la máquina.",
+                                                  "Con las manos separadas a la misma distancia que tus hombros y las palmas mirando hacia adelante, levanta el cuerpo y mantén los codos hacia abajo y cerca del cuerpo. Sube hasta que tu barbilla esté sobre la barra y mantén la posición durante un momento.",
+                                                  "Baja tu cuerpo lentamente hasta que tus brazos estén completamente extendidos y sintiendo la contracción en los músculos de la espalda. Esta fase del ejercicio es conocida como \"negativa\".",
+                                                  "Repite el movimiento por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dominadas Abiertas/dominadas.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dominadas Abiertas/dominadasAbiertas.mp4",
+                                        "note": "Recuerda que el uso correcto de la máquina de dominadas es importante para prevenir lesiones. Asegúrate de mantener una postura adecuada durante todo el ejercicio y trabajar con un peso que te permita realizar el movimiento de manera controlada."
+                              },
+                              {
+                                        "id": "dominadas-asistidas",
+                                        "name": "Dominadas Asistidas",
+                                        "steps": [
+                                                  "Primero, asegúrate de que la máquina esté ajustada al peso adecuado para ti. Para esto, selecciona el peso que te permita hacer entre 8 y 12 repeticiones completas de dominadas asistidas.",
+                                                  "Párate en la plataforma de la máquina y agarra las asas de las empuñaduras superiores. Coloca tus rodillas o pies en la plataforma inferior según el diseño de la máquina.",
+                                                  "Con las manos separadas a la misma distancia que tus hombros y las palmas mirando hacia adelante, levanta el cuerpo con la ayuda de la máquina y mantén los codos hacia abajo y cerca del cuerpo. Sube hasta que tu barbilla esté sobre la barra y mantén la posición durante un momento.",
+                                                  "Baja tu cuerpo lentamente hasta que tus brazos estén completamente extendidos y sintiendo la contracción en los músculos de la espalda. Esta fase del ejercicio es conocida como \"negativa\".",
+                                                  "Repite el movimiento por el número deseado de repeticiones.",
+                                                  "Recuerda que el uso correcto de la máquina de dominadas asistidas es importante para prevenir lesiones. Asegúrate de mantener una postura adecuada durante todo el ejercicio y trabajar con un peso que te permita realizar el movimiento de manera controlada.",
+                                                  "Aclaración: El modelo de la máquina puede variar según el fabricante. El concepto es el mismo para cualquier máquina."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dominadas Asistidas/dominadas.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dominadas Asistidas/dominadasAsistidas.mp4"
+                              },
+                              {
+                                        "id": "dominadas-cerradas",
+                                        "name": "Dominadas Cerradas",
+                                        "steps": [
+                                                  "Párate en la plataforma de la máquina y agarra las asas de las empuñaduras superiores. Coloca tus rodillas o pies en la plataforma inferior según el diseño de la máquina.",
+                                                  "Con las manos juntas a la misma distancia que tu pecho y las palmas mirando hacia adelante, levanta el cuerpo y mantén los codos hacia abajo y cerca del cuerpo. Sube hasta que tu barbilla esté sobre la barra y mantén la posición durante un momento.",
+                                                  "Baja tu cuerpo lentamente hasta que tus brazos estén completamente extendidos y sintiendo la contracción en los músculos de la espalda. Esta fase del ejercicio es conocida como \"negativa\".",
+                                                  "Repite el movimiento por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dominadas Cerradas/dominadas.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dominadas Cerradas/dominadasCerradas.mp4",
+                                        "note": "Recuerda que el uso correcto de la máquina de dominadas es importante para prevenir lesiones. Asegúrate de mantener una postura adecuada durante todo el ejercicio y trabajar con un peso que te permita realizar el movimiento de manera controlada."
+                              },
+                              {
+                                        "id": "dorsalera-fija",
+                                        "name": "Dorsalera Fija",
+                                        "steps": [
+                                                  "Ajusta la altura del asiento de la máquina para que quede a la altura adecuada. Debes sentarte con los pies apoyados en el suelo y los muslos firmemente sujetos debajo de los rodillos de la máquina.",
+                                                  "Ajusta la altura de la barra de agarre para que esté a la altura adecuada. La barra debe estar en la parte superior de tu pecho, justo por encima de los hombros.",
+                                                  "Agarra la barra con las manos en pronación (palmas hacia abajo) y con una anchura de agarre ligeramente mayor que la anchura de tus hombros.",
+                                                  "Mantén una postura erguida y mira hacia adelante. Mantén los codos cerca de tu cuerpo.",
+                                                  "Tira de la barra hacia abajo lentamente y de manera controlada hacia tu pecho, manteniendo los codos cerca de tu cuerpo y manteniendo los hombros hacia abajo y hacia atrás.",
+                                                  "Mantén la contracción en los músculos de la espalda baja mientras bajas la barra, asegurándote de exhalar al final del movimiento.",
+                                                  "Lentamente regresa a la posición inicial, manteniendo una ligera tensión en tus músculos de la espalda baja.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Fija/pullOver.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Fija/poleaDorsal.mp4",
+                                        "note": "Es importante recordar que la máquina de pull down se utiliza para trabajar principalmente la parte superior de la espalda y los músculos de los hombros. Para obtener los mejores resultados, debes ajustar la resistencia de la máquina de acuerdo con tu nivel de fuerza y realizar el ejercicio con buena forma y técnica."
+                              },
+                              {
+                                        "id": "dorsalera-fija-traccion-vertical",
+                                        "name": "Dorsalera Fija Tracción Vertical",
+                                        "steps": [
+                                                  "Ajusta la altura del asiento de la máquina para que quede a la altura adecuada. Debes sentarte con los pies apoyados en el suelo y los muslos firmemente sujetos debajo de los rodillos de la máquina.",
+                                                  "Apoyá la Espalda en el respaldo.",
+                                                  "Agarra las manijas con las manos en pronación (palmas hacia abajo).",
+                                                  "Mantén una postura erguida y mira hacia adelante. Mantén los codos cerca de tu cuerpo.",
+                                                  "Tira de las manijas hacia abajo lentamente y de manera controlada hacia tu pecho, manteniendo los codos cerca de tu cuerpo y manteniendo los hombros hacia abajo y hacia atrás.",
+                                                  "Mantén la contracción en los músculos de la espalda baja mientras bajas la barra, asegurándote de exhalar al final del movimiento.",
+                                                  "Lentamente regresa a la posición inicial, manteniendo una ligera tensión en tus músculos de la espalda baja.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Fija Tracción Vertical/pullOver.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Fija Tracción Vertical/verticalTractionMachine.mp4",
+                                        "note": "Es importante recordar que la máquina de pull down se utiliza para trabajar principalmente la parte superior de la espalda y los músculos de los hombros. Para obtener los mejores resultados, debes ajustar la resistencia de la máquina de acuerdo con tu nivel de fuerza y realizar el ejercicio con buena forma y técnica."
+                              },
+                              {
+                                        "id": "dorsalera-fija-unilateral",
+                                        "name": "Dorsalera Fija Unilateral",
+                                        "steps": [
+                                                  "Ajusta la altura del asiento de la máquina para que quede a la altura adecuada. Debes sentarte con los pies apoyados en el suelo y los muslos firmemente sujetos debajo de los rodillos de la máquina.",
+                                                  "Agarra las manijas con las manos en pronación (palmas hacia abajo).",
+                                                  "Mantén una postura erguida y mira hacia adelante. Mantén los codos cerca de tu cuerpo.",
+                                                  "Tira de las manijas hacia abajo lentamente y de manera controlada hacia tu pecho, manteniendo los codos cerca de tu cuerpo y manteniendo los hombros hacia abajo y hacia atrás.",
+                                                  "Mantén la contracción en los músculos de la espalda baja mientras bajas la barra, asegurándote de exhalar al final del movimiento.",
+                                                  "Lentamente regresa a la posición inicial, manteniendo una ligera tensión en tus músculos de la espalda baja.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Fija Unilateral/pullOver.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Fija Unilateral/pullDown.mp4",
+                                        "note": "Es importante recordar que la máquina de pull down se utiliza para trabajar principalmente la parte superior de la espalda y los músculos de los hombros. Para obtener los mejores resultados, debes ajustar la resistencia de la máquina de acuerdo con tu nivel de fuerza y realizar el ejercicio con buena forma y técnica."
+                              },
+                              {
+                                        "id": "dorsalera-frontal",
+                                        "name": "Dorsalera Frontal",
+                                        "steps": [
+                                                  "Ajusta el peso de la máquina de acuerdo a tu nivel de condición física y experiencia.",
+                                                  "Siéntate en la dorsalera y asegúrate de que tus piernas estén bien sujetas en el soporte de la máquina.",
+                                                  "Agarra las manijas con un agarre supino, las palmas hacia ti y las manos a una distancia más estrecha que la anchura de los hombros.",
+                                                  "Mantén una buena postura con la espalda recta, los hombros hacia atrás y el pecho levantado.",
+                                                  "Tirando de los codos hacia atrás, lleva la manijas hacia el pecho, contrayendo los músculos de la espalda para realizar el movimiento.",
+                                                  "Al llegar a la parte superior del movimiento, contrae los músculos de la espalda y mantén esa contracción durante unos segundos.",
+                                                  "Extiende lentamente los brazos y baja la barra de vuelta a la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Frontal/dorsalera.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsalera Frontal/dorsaleraFrontal.mp4"
+                              },
+                              {
+                                        "id": "dorsales-trasnuca",
+                                        "name": "Dorsales Trasnuca",
+                                        "steps": [
+                                                  "Ajusta el peso de la máquina de acuerdo a tu nivel de condición física y experiencia.",
+                                                  "Siéntate en la dorsalera y asegúrate de que tus piernas estén bien sujetas en el soporte de la máquina.",
+                                                  "Agarra la barra T con un agarre cerrado, las palmas hacia ti y las manos a una distancia más estrecha que la anchura de los hombros.",
+                                                  "Mantén una buena postura con la espalda recta, los hombros hacia atrás y el pecho levantado.",
+                                                  "Tirando de los codos hacia atrás, lleva la barra hacia tu nuca, contrayendo los músculos de la espalda para realizar el movimiento.",
+                                                  "Al llegar a la parte superior del movimiento, contrae los músculos de la espalda y mantén esa contracción durante unos segundos.",
+                                                  "Extiende lentamente los brazos y baja la barra de vuelta a la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsales Trasnuca/dorsalera.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Dorsales Trasnuca/dorsaleraTrasnuca.mp4"
+                              },
+                              {
+                                        "id": "encogimiento-de-hombro-en-shrug",
+                                        "name": "Encogimiento de Hombro en Shrug",
+                                        "steps": [
+                                                  "Ponte de pie con los pies separados a la misma distancia de los hombros.",
+                                                  "De frente a la máquina, sujeta las manijas de la máquina.",
+                                                  "Mantén la espalda recta, los hombros hacia atrás y el pecho hacia arriba. Esta es tu posición inicial.",
+                                                  "Eleva los hombros directamente hacia arriba en un movimiento controlado, contrayendo los músculos superiores de la espalda. Imagina que estás tratando de tocar tus hombros con tus orejas.",
+                                                  "Al llegar a la posición más alta posible, mantén la contracción en la parte superior de los hombros durante un segundo para maximizar el estímulo en esos músculos.",
+                                                  "Desciende los hombros de manera controlada de vuelta a la posición inicial, evitando movimientos bruscos o rebotes.",
+                                                  "Realiza el mismo número de repeticiones, manteniendo una forma adecuada y una ejecución suave del movimiento.",
+                                                  "Evita cargar demasiado peso para prevenir lesiones y enfócate en la calidad del movimiento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Encogimiento de Hombro en Shrug/trapecioEspalda.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Encogimiento de Hombro en Shrug/encogimientoHombreShrug.mp4"
+                              },
+                              {
+                                        "id": "jalon-a-la-cara-dorsalera",
+                                        "name": "Jalón a la Cara (Dorsalera)",
+                                        "steps": [
+                                                  "Ajusta el peso de la máquina de acuerdo a tu nivel de condición física y experiencia.",
+                                                  "Siéntate en la dorsalera y asegúrate de que tus piernas estén bien sujetas en el soporte de la máquina.",
+                                                  "Agarra la barra T con un agarre cerrado, las palmas hacia ti y las manos a una distancia más estrecha que la anchura de los hombros.",
+                                                  "Mantén una buena postura con la espalda recta, los hombros hacia atrás y el pecho levantado.",
+                                                  "Tirando de los codos hacia atrás, lleva la barra hacia el pecho, contrayendo los músculos de la espalda para realizar el movimiento.",
+                                                  "Al llegar a la parte superior del movimiento, contrae los músculos de la espalda y mantén esa contracción durante unos segundos.",
+                                                  "Extiende lentamente los brazos y baja la barra de vuelta a la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón a la Cara (Dorsalera)/dorsalera.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón a la Cara (Dorsalera)/dorsalera.mp4"
+                              },
+                              {
+                                        "id": "jalon-a-la-cara-supino-dorsalera",
+                                        "name": "Jalón a la Cara Supino (Dorsalera)",
+                                        "steps": [
                                                   "Mantén la espalda recta y retraé las escápulas.",
                                                   "Jala la resistencia hacia el torso o cintura de forma controlada.",
                                                   "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
                                         ]
                               },
                               {
-                                        "id": "remo-con-banda",
-                                        "name": "Remo con Banda",
+                                        "id": "jalon-abierto-en-polea",
+                                        "name": "Jalón Abierto en Polea",
+                                        "steps": [
+                                                  "Ajusta las poleas de la máquina en la posición más alta y asegúrate de tener una manija en cada una de ellas.",
+                                                  "Arrodíllate en el centro de la máquina, mirando hacia las poleas y toma cada manija con tus manos, asegurándote de que tus brazos estén completamente extendidos.",
+                                                  "Contrae los músculos de la espalda y lleva los codos hacia atrás y hacia abajo, manteniendo los brazos doblados en un ángulo de 90 grados.",
+                                                  "Mantén la contracción durante unos segundos y luego estira los brazos nuevamente para volver a la posición inicial.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón Abierto en Polea/jalon.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón Abierto en Polea/jalonAbiertoIndividual.mp4",
+                                        "note": "Es importante mantener una postura adecuada durante todo el ejercicio, evitando inclinar el cuerpo hacia adelante o hacia atrás. También debes asegurarte de utilizar una carga adecuada que te permita realizar el movimiento con control y sin forzar la espalda baja."
+                              },
+                              {
+                                        "id": "jalon-dorsal-en-polea",
+                                        "name": "Jalón Dorsal en Polea",
+                                        "steps": [
+                                                  "Ajusta la polea en la posición del medio y selecciona la carga adecuada.",
+                                                  "Colócate de pie frente a la polea y da un paso hacia atrás para que tus brazos estén estirados.",
+                                                  "Sujeta en cada mano una manija de la polea.",
+                                                  "Inhala y jala hacia tu pecho, manteniendo los codos cerca del cuerpo y los hombros hacia abajo y hacia atrás. Exhala al completar el movimiento.",
+                                                  "Mantén la contracción en la parte inferior del movimiento durante un segundo antes de volver a la posición inicial con los brazos estirados.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón Dorsal en Polea/jalon.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón Dorsal en Polea/remoPoleaPie.mp4",
+                                        "note": "Es importante mantener una buena postura y controlar el movimiento en todo momento. También es recomendable ajustar la carga adecuada para evitar lesiones y maximizar los resultados."
+                              },
+                              {
+                                        "id": "jalon-frontal",
+                                        "name": "Jalón Frontal",
+                                        "steps": [
+                                                  "Ajusta la polea y sujeta la barra con un agarre amplio (unos 10 cm más que el ancho de los hombros), con las palmas de las manos mirando hacia abajo.",
+                                                  "De pie frente a la máquina, asegúrate de tener una buena postura, con la espalda recta y los pies firmemente plantados en el suelo a la altura de los hombros.",
+                                                  "Con los brazos completamente extendidos, tira de la barra hacia arriba y hacia el frente, llevándola hacia la parte superior del pecho. Mantén los codos hacia fuera, sin dejarlos caer hacia los lados del cuerpo.",
+                                                  "Al acercar la barra al pecho, contrae los músculos de la espalda y los hombros, manteniendo la posición durante un segundo antes de volver a la posición inicial con los brazos completamente extendidos.",
+                                                  "Mantén una respiración constante y no permitas que la barra se desplace hacia arriba o abajo demasiado rápido.",
+                                                  "Repite el ejercicio durante el número deseado de repeticiones, asegurándote de mantener una buena técnica en todo momento.",
+                                                  "Recuerda que es importante ajustar el peso adecuado para tu nivel de fuerza y capacidad, y siempre calentar adecuadamente antes de realizar cualquier ejercicio de levantamiento de peso."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón Frontal/jalon.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Jalón Frontal/jalonCara.mp4"
+                              },
+                              {
+                                        "id": "maquina-de-pullover",
+                                        "name": "Máquina de Pullover",
+                                        "steps": [
+                                                  "Ajusta el asiento y el respaldo de la máquina según tu altura y preferencia. La posición del asiento puede variar dependiendo del diseño específico de la máquina, pero generalmente debes sentarte con la espalda bien apoyada en el respaldo y los pies firmemente plantados en el suelo.",
+                                                  "Agarra las asas o agarres de la máquina con ambas manos, manteniendo los brazos ligeramente flexionados.",
+                                                  "Inspira y lleva las manos hacia arriba y hacia atrás, manteniendo los codos ligeramente flexionados y las manos alineadas con los hombros o ligeramente más arriba.",
+                                                  "Siente cómo los músculos del pecho y de la espalda se contraen mientras llevas las manos hacia atrás.",
+                                                  "Mantén la posición final durante un segundo para maximizar la contracción muscular.",
+                                                  "Exhala y vuelve lentamente a la posición inicial, llevando las manos hacia adelante y hacia abajo, controlando el movimiento en todo momento.",
+                                                  "Evita el rebote en la parte inferior del movimiento y mantén el control en todo momento para maximizar la efectividad del ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Máquina de Pullover/pullOver.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Máquina de Pullover/maquinaPullover.mp4",
+                                        "note": "Repite el movimiento durante el número deseado de repeticiones, manteniendo una técnica adecuada y una respiración controlada en todo momento."
+                              },
+                              {
+                                        "id": "maquina-lumbar",
+                                        "name": "Máquina Lumbar",
+                                        "steps": [
+                                                  "Siéntate en la máquina de lumbar con la espalda apoyada contra el cojín lumbar.",
+                                                  "Ajusta la altura del asiento para que el cojín esté alineado con la zona lumbar de tu espalda.",
+                                                  "Coloca los pies firmemente en el suelo o en los soportes de la máquina.",
+                                                  "Agarra las empuñaduras laterales, según la configuración de la máquina.",
+                                                  "Inhala profundamente mientras te preparas para el movimiento.",
+                                                  "Exhala mientras empujas hacia atrás con la zona lumbar, extendiendo la espalda contra la resistencia de la máquina.",
+                                                  "Mantén el movimiento controlado y evita arquear demasiado la espalda al final del recorrido.",
+                                                  "Inhala mientras regresas lentamente a la posición inicial, manteniendo la tensión en los músculos lumbares.",
+                                                  "Realiza el número deseado de series y repeticiones según tu programa de entrenamiento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Máquina Lumbar/lumbares.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Máquina Lumbar/maquinaLumbar.mp4",
+                                        "note": "Asegúrate de mantener una buena forma durante todo el ejercicio para maximizar la activación de los músculos lumbares y evitar lesiones."
+                              },
+                              {
+                                        "id": "maquina-remo-circular",
+                                        "name": "Máquina Remo Circular",
+                                        "steps": [
+                                                  "Ajusta el asiento de la máquina de remo circular para que las asas estén a la altura de tu pecho cuando te sientes y alcances cómodamente los agarres.",
+                                                  "Si la máquina tiene soporte para los pies, coloca los pies firmemente sobre las plataformas, asegurando que la espalda quede recta.",
+                                                  "Agarra las asas de la máquina con las palmas hacia adentro o hacia abajo, dependiendo del diseño del equipo y de la variación que prefieras.",
+                                                  "Mantén la espalda recta y el pecho elevado, asegurándote de que los hombros estén relajados y hacia atrás antes de comenzar el movimiento.",
+                                                  "Inicia el movimiento tirando de las asas hacia ti, llevando los codos hacia atrás en un movimiento circular. Concéntrate en apretar los omóplatos al final de cada repetición para maximizar la contracción en la espalda.",
+                                                  "Evita inclinarte hacia adelante o hacia atrás; mantén el torso estable para concentrar el esfuerzo en los músculos de la espalda.",
+                                                  "Una vez que los agarres estén cerca de tu torso y hayas completado la contracción, lentamente regresa las asas a la posición inicial mientras mantienes el control del peso.",
+                                                  "Repite el movimiento de forma controlada y con la técnica adecuada para el número de repeticiones deseado.",
+                                                  "Recuerda respirar adecuadamente durante el ejercicio, exhalando al jalar las asas y manteniendo un ritmo constante. Si eres principiante, enfócate en la forma antes de aumentar el peso para evitar tensión en la zona lumbar."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Máquina Remo Circular/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Máquina Remo Circular/maquinaRemoCircular.mp4"
+                              },
+                              {
+                                        "id": "pull-over-en-polea-alta",
+                                        "name": "Pull Over en Polea Alta",
+                                        "steps": [
+                                                  "Coloca una polea alta en la máquina de poleas y ajusta el peso que deseas levantar.",
+                                                  "Toma la cuerda o barra de la polea con ambas manos, con un agarre en pronación (palmas hacia abajo).",
+                                                  "Separa los pies al ancho de los hombros, flexiona ligeramente las rodillas y lleva los brazos hacia atrás sobre tu cabeza, manteniéndolos rectos y estirados.",
+                                                  "Desde esta posición inicial, baja lentamente los brazos hacia atrás, tratando de mantener los codos extendidos, hasta que sientas un estiramiento en los músculos de la espalda, los hombros y los brazos.",
+                                                  "Vuelve a subir los brazos a la posición inicial, realizando una contracción de los músculos de la espalda y los brazos mientras subes.",
+                                                  "Repite el movimiento para completar el número de repeticiones deseadas.",
+                                                  "Recuerda que es importante mantener la espalda recta y evitar la inclinación hacia delante o hacia atrás durante todo el ejercicio. También puedes variar el agarre de la cuerda o barra para cambiar el énfasis en los músculos trabajados."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Pull Over en Polea Alta/pullOver.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Pull Over en Polea Alta/espaldaPolea.mp4"
+                              },
+                              {
+                                        "id": "remo-a-caballo-con-barra",
+                                        "name": "Remo a Caballo con Barra",
+                                        "steps": [
+                                                  "Comienza de pie con los pies separados a la anchura de los hombros y con las rodillas ligeramente flexionadas. Agarra la barra con las manos separadas a la distancia de los hombros y con las palmas de las manos mirando hacia abajo.",
+                                                  "Inclínate hacia adelante desde las caderas, manteniendo la espalda recta y el pecho hacia arriba. La barra debe estar justo debajo de las rodillas.",
+                                                  "Tira de la barra hacia arriba, llevándola hacia la parte inferior de tu pecho. A medida que levantas la barra, mantén los codos cerca de tu cuerpo y los hombros hacia abajo y hacia atrás.",
+                                                  "Mantén la posición durante un segundo y luego baja lentamente la barra hacia abajo hasta que esté debajo de las rodillas.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones.",
+                                                  "Es importante mantener una buena forma durante todo el ejercicio y no balancear el cuerpo para ayudar a levantar la barra. Si encuentras que estás haciendo trampa, reduce el peso que estás levantando hasta que puedas hacer el ejercicio correctamente."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo a Caballo con Barra/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo a Caballo con Barra/remoConBarraEnT.mp4"
+                              },
+                              {
+                                        "id": "remo-a-una-mano-en-landmine",
+                                        "name": "Remo a una Mano en Landmine",
+                                        "steps": [
+                                                  "Colócate de lado a la máquina Landmine, con una pierna adelantada y la otra ligeramente retrasada para mantener el equilibrio. Sujeta la punta de la barra con una mano, manteniendo el torso recto y el core activado.",
+                                                  "Inclina el torso hacia adelante desde la cintura, manteniendo la espalda recta y el pecho hacia abajo. La mano que no sostiene la barra debe descansar sobre la pierna adelantada o en una posición estable para apoyo.",
+                                                  "Con la mano que sujeta la barra, tira de ella hacia tu cadera, manteniendo el codo cerca del torso. Contrae los músculos de la espalda y el bíceps al llegar a la parte superior del movimiento.",
+                                                  "Baja la barra lentamente de vuelta a la posición inicial, controlando el movimiento y manteniendo la tensión en los músculos de la espalda durante todo el ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo a una Mano en Landmine/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo a una Mano en Landmine/remoLandmine.mp4",
+                                        "note": "Completa el número deseado de repeticiones y luego cambia de lado, asegurándote de mantener una buena técnica en cada repetición."
+                              },
+                              {
+                                        "id": "remo-al-menton-con-polea",
+                                        "name": "Remo al Mentón con Polea",
+                                        "steps": [
+                                                  "Comienza de pie con los pies separados a la misma distancia que tus hombros y sostén una barra con las palmas hacia ti y las manos separadas a la misma distancia que tus hombros.",
+                                                  "Levanta la barra hacia tu mentón, doblando los codos y manteniendo los brazos cerca del cuerpo.",
+                                                  "Mantén la posición por un segundo, luego baja la barra lentamente a la posición inicial.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo al Mentón con Polea/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo al Mentón con Polea/remoMenton.mp4",
+                                        "note": "Es importante mantener una buena postura y evitar balancear el cuerpo hacia adelante o hacia atrás durante el ejercicio. También debes asegurarte de mantener los codos apuntando hacia los lados y no hacia adelante para evitar poner demasiada tensión en los hombros."
+                              },
+                              {
+                                        "id": "remo-al-menton-en-smith",
+                                        "name": "Remo al Mentón en Smith",
+                                        "steps": [
+                                                  "Comienza de pie con los pies separados a la misma distancia que tus hombros y sostén una barra con las palmas hacia ti y las manos separadas a la misma distancia que tus hombros.",
+                                                  "Levanta la barra hacia tu mentón, doblando los codos y manteniendo los brazos cerca del cuerpo.",
+                                                  "Mantén la posición por un segundo, luego baja la barra lentamente a la posición inicial.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo al Mentón en Smith/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo al Mentón en Smith/remoMentonSmith.mp4",
+                                        "note": "Es importante mantener una buena postura y evitar balancear el cuerpo hacia adelante o hacia atrás durante el ejercicio. También debes asegurarte de mantener los codos apuntando hacia los lados y no hacia adelante para evitar poner demasiada tensión en los hombros."
+                              },
+                              {
+                                        "id": "remo-bajo",
+                                        "name": "Remo Bajo",
+                                        "steps": [
+                                                  "Ajusta el nivel de resistencia de la máquina de remo de acuerdo a tu nivel de condición física y experiencia.",
+                                                  "Siéntate en el asiento y agarra el mango de la máquina de remo con las dos manos, los brazos extendidos, los hombros hacia atrás y la espalda recta.",
+                                                  "Empieza el movimiento flexionando las piernas para empujar la plataforma de los pies y desplazarte hacia atrás.",
+                                                  "Una vez que estás en una posición inclinada hacia atrás, tira del mango hacia tu pecho, manteniendo los codos cerca del cuerpo y los hombros hacia atrás.",
+                                                  "Al llegar al punto máximo del movimiento, contrae los músculos de la espalda para realizar la extensión de los brazos y tirar hacia atrás con los omóplatos.",
+                                                  "Para completar el movimiento, extiende las piernas y desplázate hacia adelante, llevando el mango hacia adelante con los brazos extendidos.",
+                                                  "Repite el movimiento de forma continua y fluida durante el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Bajo/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Bajo/remo.mp4"
+                              },
+                              {
+                                        "id": "remo-caballo",
+                                        "name": "Remo Caballo",
+                                        "steps": [
+                                                  "Colócate de pie frente a la barra y toma la barra con las manos en pronación (palmas hacia abajo) y separadas a una distancia un poco mayor que el ancho de los hombros.",
+                                                  "Mantén las piernas ligeramente flexionadas y la espalda recta. Este será tu punto de partida.",
+                                                  "Tira de la barra hacia tu pecho, manteniendo los codos pegados al cuerpo y llevando los hombros hacia atrás.",
+                                                  "Mantén la posición de contracción durante un segundo y luego baja lentamente la barra a la posición inicial.",
+                                                  "Repite el movimiento para completar tu serie."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Caballo/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Caballo/barraDorsal.mp4",
+                                        "note": "Es importante tener en cuenta que la forma correcta es fundamental en este ejercicio para evitar lesiones y maximizar los resultados. Mantén una postura correcta y utiliza un peso adecuado a tu nivel de fuerza para asegurarte de hacer el ejercicio de manera segura y efectiva."
+                              },
+                              {
+                                        "id": "remo-de-pie-con-polea-unilateral",
+                                        "name": "Remo de Pie con Polea Unilateral",
+                                        "steps": [
+                                                  "Parado frente a una polea, agarra la manija de la polea con una mano y da un paso hacia atrás, manteniendo los brazos extendidos y las piernas separadas al ancho de los hombros.",
+                                                  "Con la mano libre, sujetate de la máquina para mantener la estabilidad.",
+                                                  "Contrae los músculos de la espalda y tira de la manija hacia tu torso, manteniendo el codo pegado al costado del cuerpo y la muñeca recta.",
+                                                  "Sostén la contracción por un momento y luego regresa lentamente la manija a la posición inicial.",
+                                                  "Completa el número deseado de repeticiones y luego cambia de lado para trabajar el otro brazo."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo de Pie con Polea Unilateral/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo de Pie con Polea Unilateral/remoPieUnaMano.mp4",
+                                        "note": "Es importante mantener una postura adecuada durante todo el ejercicio, evitando la inclinación excesiva del cuerpo y manteniendo la espalda recta. También asegúrate de realizar el ejercicio de manera controlada y evitar el balanceo del cuerpo para obtener el máximo beneficio."
+                              },
+                              {
+                                        "id": "remo-en-landmine-agarre-cerrado",
+                                        "name": "Remo en Landmine Agarre Cerrado",
+                                        "steps": [
+                                                  "Colócate encima de la barra, con un pie a cada lado.",
+                                                  "Agarra la barra con las manos y entrelaza los dedos, es decir, las palmas de las manos juntas.",
+                                                  "Mantén los brazos extendidos y la espalda recta.",
+                                                  "Tira de la barra hacia tu cuerpo, llevando los codos hacia atrás y manteniendo los brazos pegados al cuerpo.",
+                                                  "Mantén la contracción durante un segundo y luego baja la barra de manera controlada hasta la posición inicial.",
+                                                  "Realiza varias repeticiones, manteniendo la técnica correcta y controlando la respiración."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en Landmine Agarre Cerrado/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en Landmine Agarre Cerrado/remoCaballoLandmine.mp4",
+                                        "note": "Es importante que mantengas una postura correcta durante todo el ejercicio y que no arquees la espalda en ningún momento. También es recomendable empezar con un peso ligero e ir aumentando gradualmente a medida que te sientas más cómodo y seguro con el movimiento."
+                              },
+                              {
+                                        "id": "remo-en-shrug",
+                                        "name": "Remo en Shrug",
+                                        "steps": [
+                                                  "Comienza apoyando una rodilla y una mano en un banco o la misma máquina si lo permite y sujeta la manija con la otra mano.",
+                                                  "Mantén la espalda recta y los abdominales contraídos para asegurarte de tener una buena postura.",
+                                                  "Levanta la manija hacia tu torso manteniendo el codo cerca de tu cuerpo.",
+                                                  "Haz una pausa en la parte superior del movimiento y luego baja lentamente la mancuerna hacia la posición inicial.",
+                                                  "Repite para completar el número deseado de repeticiones y luego cambia de lado.",
+                                                  "Recuerda hacer el ejercicio de forma controlada y sin balancear el cuerpo para evitar lesiones y asegurar una buena ejecución del ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en Shrug/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en Shrug/remoShrug.mp4"
+                              },
+                              {
+                                        "id": "remo-en-t-agarre-cerrado",
+                                        "name": "Remo en T Agarre Cerrado",
+                                        "steps": [
+                                                  "Acuéstate boca abajo sobre el banco de la máquina de remo. Tus pies deben estar apoyados en el suelo y las piernas estiradas.",
+                                                  "Agarra la barra con las manos en pronación, es decir, las palmas de las manos mirando hacia abajo.",
+                                                  "Mantén los brazos extendidos y la espalda recta.",
+                                                  "Tira de la barra hacia tu cuerpo, llevando los codos hacia atrás y manteniendo los brazos pegados al cuerpo.",
+                                                  "Mantén la contracción durante un segundo y luego baja la barra de manera controlada hasta la posición inicial.",
+                                                  "Realiza varias repeticiones, manteniendo la técnica correcta y controlando la respiración."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en T Agarre Cerrado/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en T Agarre Cerrado/remoTSupino.mp4",
+                                        "note": "Es importante que mantengas una postura correcta durante todo el ejercicio y que no arquees la espalda en ningún momento. También es recomendable empezar con un peso ligero e ir aumentando gradualmente a medida que te sientas más cómodo y seguro con el movimiento."
+                              },
+                              {
+                                        "id": "remo-en-t-unilateral",
+                                        "name": "Remo en T Unilateral",
+                                        "steps": [
+                                                  "Acuéstate boca abajo sobre el banco de la máquina de remo. Tus pies deben estar apoyados en el suelo y las piernas estiradas.",
+                                                  "Agarra la barra con las manos en pronación, es decir, las palmas de las manos mirando hacia abajo.",
+                                                  "Mantén los brazos extendidos y la espalda recta.",
+                                                  "Tira de la barra hacia tu cuerpo, llevando los codos hacia atrás y manteniendo los brazos pegados al cuerpo.",
+                                                  "Mantén la contracción durante un segundo y luego baja la barra de manera controlada hasta la posición inicial.",
+                                                  "Realiza varias repeticiones, manteniendo la técnica correcta y controlando la respiración."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en T Unilateral/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo en T Unilateral/remoSentado.mp4",
+                                        "note": "Es importante que mantengas una postura correcta durante todo el ejercicio y que no arquees la espalda en ningún momento. También es recomendable empezar con un peso ligero e ir aumentando gradualmente a medida que te sientas más cómodo y seguro con el movimiento."
+                              },
+                              {
+                                        "id": "remo-hammer",
+                                        "name": "Remo Hammer",
+                                        "steps": [
+                                                  "Asegúrate de ajustar la resistencia de acuerdo a tu nivel de condición física. Comienza con una resistencia moderada y ve aumentando gradualmente a medida que te sientas más cómodo y ganas fuerza.",
+                                                  "Siéntate en el asiento de la máquina con los pies colocados en los reposapiés. Asegúrate de que tus rodillas estén ligeramente flexionadas y las piernas extendidas.",
+                                                  "Sujeta la barra de remo con ambas manos, manteniendo las muñecas en línea recta. El agarre debe ser firme pero no excesivamente tenso.",
+                                                  "Empieza el movimiento tirando de la barra hacia tu cuerpo, manteniendo los brazos extendidos. A medida que tires de la barra, flexiona las rodillas y lleva los talones hacia tu cuerpo.",
+                                                  "Mantén una postura erguida, con el torso ligeramente inclinado hacia adelante y el abdomen contraído. Evita encorvar la espalda o arquear los hombros.",
+                                                  "Continúa tirando de la barra hacia tu cuerpo, llevando los codos hacia atrás y manteniendo los hombros relajados. Hazlo de manera fluida y controlada.",
+                                                  "Una vez que hayas tirado de la barra hacia tu cuerpo, extiende los brazos gradualmente mientras empujas con las piernas para volver a la posición inicial. Mantén el control durante todo el movimiento.",
+                                                  "Mantén un ritmo constante y controlado mientras realizas el ejercicio. Exhala cuando tires de la barra hacia ti y inhala al volver a la posición inicial.",
+                                                  "Comienza con un tiempo o número de repeticiones adecuado para tu nivel de condición física. A medida que vayas progresando, puedes aumentar la duración o el número de repeticiones gradualmente."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Hammer/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Hammer/remoHammer.mp4"
+                              },
+                              {
+                                        "id": "remo-hammer-bajo",
+                                        "name": "Remo Hammer Bajo",
+                                        "steps": [
+                                                  "Ajusta la máquina de remo hammer para que el asiento y el pecho de la máquina estén en una posición cómoda para tu altura.",
+                                                  "Siéntate en la máquina con el pecho bien apoyado en el respaldo y los pies firmemente colocados en el suelo.",
+                                                  "Agarra las asas de la máquina con un agarre neutro (las palmas mirándose entre sí) y extiende los brazos completamente.",
+                                                  "Inclínate ligeramente hacia adelante desde la cadera manteniendo la espalda recta y los hombros hacia atrás.",
+                                                  "Contrae los músculos de la espalda y los hombros mientras flexionas los codos y tiras de las asas hacia tu torso.",
+                                                  "Lleva los codos hacia atrás y hacia abajo, manteniendo la contracción en los músculos de la espalda.",
+                                                  "Lleva las asas hacia la parte baja del abdomen, sintiendo la contracción en los músculos de la espalda baja.",
+                                                  "Extiende los codos de manera controlada para volver a la posición inicial, manteniendo la tensión en los músculos de la espalda durante todo el movimiento.",
+                                                  "Realiza el mismo número de repeticiones, asegurándote de mantener una buena forma y control en todo momento.",
+                                                  "Ajusta la carga de la máquina según tu nivel de fuerza y comodidad, comenzando con un peso adecuado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Hammer Bajo/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Hammer Bajo/remoHammerBajo.mp4"
+                              },
+                              {
+                                        "id": "remo-sentado-agarre-abierto",
+                                        "name": "Remo Sentado Agarre Abierto",
                                         "steps": [
                                                   "Mantén la espalda recta y retraé las escápulas.",
                                                   "Jala la resistencia hacia el torso o cintura de forma controlada.",
                                                   "Pausa brevemente sintiendo la contracción dorsal y regresa despacio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Sentado Agarre Abierto/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Sentado Agarre Abierto/remoSentadoAbierto.mp4"
+                              },
+                              {
+                                        "id": "remo-sentado-agarre-cerrado",
+                                        "name": "Remo Sentado Agarre Cerrado",
+                                        "steps": [
+                                                  "Ajusta el nivel de resistencia de la máquina de remo de acuerdo a tu nivel de condición física y experiencia.",
+                                                  "Siéntate en el asiento y agarra el mango de la máquina de remo con las dos manos, los brazos extendidos, los hombros hacia atrás y la espalda recta.",
+                                                  "Empieza el movimiento flexionando las piernas para empujar la plataforma de los pies y desplazarte hacia atrás.",
+                                                  "Una vez que estás en una posición inclinada hacia atrás, tira del mango hacia tu pecho, manteniendo los codos cerca del cuerpo y los hombros hacia atrás.",
+                                                  "Al llegar al punto máximo del movimiento, contrae los músculos de la espalda para realizar la extensión de los brazos y tirar hacia atrás con los omóplatos.",
+                                                  "Para completar el movimiento, extiende las piernas y desplázate hacia adelante, llevando el mango hacia adelante con los brazos extendidos.",
+                                                  "Repite el movimiento de forma continua y fluida durante el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Sentado Agarre Cerrado/remo.png",
+                                        "videoUrl": "/Entrenamientos/Espalda/Poleas y maquinas/Remo Sentado Agarre Cerrado/remoSentadoCerrado.mp4"
+                              }
+                    ]
+          }
+]
+    },
+            femorales: {
+        id: 'femorales',
+        name: 'Femorales',
+        subtitle: 'Isquiosurales',
+        cardImageUrl: '/Entrenamientos/Femorales/femoralesmini.png',
+        detailImageUrl: '/Entrenamientos/Femorales/femorales.png',
+        backHighlight: true,
+        equipmentCategories: [
+          {
+                    "id": "poleas-maquinas",
+                    "name": "Poleas y Máquinas",
+                    "exercises": [
+                              {
+                                        "id": "camilla-de-femorales",
+                                        "name": "Camilla de Femorales",
+                                        "steps": [
+                                                  "Antes de comenzar, ajusta la máquina para que se adapte a tu altura. Asegúrate de que los rodillos acolchados estén en línea con tus tobillo.",
+                                                  "Selecciona un peso que te permita realizar de 10 a 12 repeticiones con buena forma. Si es la primera vez que usas esta máquina, comienza con un peso ligero y ve aumentando gradualmente.",
+                                                  "Acuéstate boca abajo, sujeta las manijas que tienes en frente y coloca los pies apoyados en los rodillos acolchados. Asegúrate de que las rodillas estén alineadas con los ejes de la máquina.",
+                                                  "Levanta los pies y flexiona las piernas hacia los glúteos, manteniendo las rodillas en su lugar. Asegúrate de exhalar durante la fase de esfuerzo.",
+                                                  "Extiende lentamente las piernas hacia abajo, manteniendo el control y evitando que los rodillos acolchados toquen el suelo. Inhala durante la fase de relajación.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Camilla de Femorales/camillaFemoral.png",
+                                        "videoUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Camilla de Femorales/isquiotibiales.mp4"
+                              },
+                              {
+                                        "id": "camilla-de-femorales-unilateral",
+                                        "name": "Camilla de Femorales Unilateral",
+                                        "steps": [
+                                                  "Antes de comenzar, ajusta la máquina para que se adapte a tu altura. Asegúrate de que los rodillos acolchados estén en línea con tus tobillo.",
+                                                  "Selecciona un peso que te permita realizar de 10 a 12 repeticiones con buena forma. Si es la primera vez que usas esta máquina, comienza con un peso ligero y ve aumentando gradualmente.",
+                                                  "Acuéstate en el asiento con la espalda apoyada en el respaldo y los pies apoyados en los rodillos acolchados. Asegúrate de que las rodillas estén alineadas con los ejes de la máquina.",
+                                                  "Levanta un solo pie y flexiona la pierna hacia los glúteos, manteniendo las rodillas en su lugar. Asegúrate de exhalar durante la fase de esfuerzo.",
+                                                  "Extiende lentamente la pierna hacia abajo, manteniendo el control y evitando que los rodillos acolchados toquen el suelo. Inhala durante la fase de relajación.",
+                                                  "Cambia de pierna y repite el movimiento"
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Camilla de Femorales Unilateral/camillaFemoral.png",
+                                        "videoUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Camilla de Femorales Unilateral/camillaFemoralUnilateral.mp4"
+                              },
+                              {
+                                        "id": "curl-femoral-en-polea",
+                                        "name": "Curl Femoral en Polea",
+                                        "steps": [
+                                                  "Coloca un sistema de polea baja con el accesorio adecuado (generalmente un tobillo o una correa) alrededor de uno de tus tobillos. Ajusta el peso adecuado en la máquina.",
+                                                  "Párate frente a la máquina con el tobillo asegurado en el accesorio y mirando hacia adelante.",
+                                                  "Sujeta las asas de la máquina para mantener el equilibrio si es necesario.",
+                                                  "Inicia el movimiento flexionando la pierna en la que está colocado el accesorio, llevando el talón hacia los glúteos.",
+                                                  "Mantén el torso erguido y evita balancear el cuerpo hacia adelante o hacia atrás.",
+                                                  "Contrae los músculos del tendón de la corva (parte posterior del muslo) mientras llevas el talón hacia los glúteos.",
+                                                  "Mantén una breve pausa en la posición contraída y luego baja la pierna de manera controlada hasta volver a la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Curl Femoral en Polea/camillaFemoral.png",
+                                        "videoUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Curl Femoral en Polea/curlFemoralPolea.mp4"
+                              },
+                              {
+                                        "id": "femorales-de-pie",
+                                        "name": "Femorales de Pie",
+                                        "steps": [
+                                                  "Ajuste el asiento de la máquina para que la parte superior de las almohadillas quede justo por encima de sus tobillos.",
+                                                  "Colóquese frente a la máquina y agarre las manijas laterales para mantener el equilibrio.",
+                                                  "Coloque la parte posterior de una de las piernas en la almohadilla y asegúrese de que su rodilla quede justo en el borde de la misma.",
+                                                  "La pierna que no está en la almohadilla debe estar ligeramente flexionada en la rodilla y sosteniendo el peso del cuerpo.",
+                                                  "Asegúrese de que sus rodillas estén alineadas con los ejes de la máquina y que las almohadillas estén ajustadas contra la pierna que se está ejercitando.",
+                                                  "Contraiga los músculos de la parte posterior del muslo y empuje la almohadilla hacia atrás, doblando la pierna en la rodilla. Asegúrese de que la pierna no se mueva hacia afuera durante el movimiento.",
+                                                  "Mantenga la posición por un segundo y luego baje lentamente la almohadilla a la posición inicial, controlando el movimiento.",
+                                                  "Repita el movimiento para el número deseado de repeticiones y luego cambie de pierna."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Femorales de Pie/camillaFemoral.png",
+                                        "videoUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Femorales de Pie/femorales.mp4",
+                                        "note": "Al realizar este ejercicio, es importante que mantenga una buena postura y que evite el balanceo del cuerpo. Si se siente incómodo o experimenta algún dolor, reduzca la carga o detenga el ejercicio por completo"
+                              },
+                              {
+                                        "id": "maquina-curl-femoral-unilateral",
+                                        "name": "Máquina Curl Femoral Unilateral",
+                                        "steps": [
+                                                  "Colóquese frente a la máquina y agarre las manijas laterales para mantener el equilibrio.",
+                                                  "Coloque la parte posterior de una de las piernas en la almohadilla y asegúrese de que su rodilla quede justo en el borde de la misma.",
+                                                  "La pierna que no está en la almohadilla debe estar ligeramente flexionada en la rodilla y sosteniendo el peso del cuerpo.",
+                                                  "Asegúrese de que sus rodillas estén alineadas con los ejes de la máquina y que las almohadillas estén ajustadas contra la pierna que se está ejercitando.",
+                                                  "Contraiga los músculos de la parte posterior del muslo y empuje la almohadilla hacia atrás, doblando la pierna en la rodilla. Asegúrese de que la pierna no se mueva hacia afuera durante el movimiento.",
+                                                  "Mantenga la posición por un segundo y luego baje lentamente la almohadilla a la posición inicial, controlando el movimiento.",
+                                                  "Repita el movimiento para el número deseado de repeticiones y luego cambie de pierna."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Máquina Curl Femoral Unilateral/camillaFemoral.png",
+                                        "videoUrl": "/Entrenamientos/Femorales/Poleas y maquinas/Máquina Curl Femoral Unilateral/curlFemoralUnilateral.mp4",
+                                        "note": "Al realizar este ejercicio, es importante que mantenga una buena postura y que evite el balanceo del cuerpo. Si se siente incómodo o experimenta algún dolor, reduzca la carga o detenga el ejercicio por completo"
+                              }
+                    ]
+          }
+]
+    },
+                gluteos: {
+        id: 'gluteos',
+        name: 'Glúteos',
+        subtitle: 'Glúteo mayor y medio',
+        cardImageUrl: '/Entrenamientos/Gluteos/gluteosmini.png',
+        detailImageUrl: '/Entrenamientos/Gluteos/gluteos.png',
+        backHighlight: true,
+        equipmentCategories: [
+          {
+                    "id": "barra",
+                    "name": "Barra",
+                    "exercises": [
+                              {
+                                        "id": "banco-hip-thrust",
+                                        "name": "Banco Hip Thrust",
+                                        "steps": [
+                                                  "Acuéstate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una barra y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto y los hombros en el suelo. Mantén la barra en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante 12-15 repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Banco Hip Thrust/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Banco Hip Thrust/bancoHipTruck.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              },
+                              {
+                                        "id": "hip-thrust",
+                                        "name": "Hip Thrust",
+                                        "steps": [
+                                                  "Acuéstate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una barra y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto y los hombros en el suelo. Mantén la barra en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante 12-15 repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Hip Thrust/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Hip Thrust/empujeCaderaBarra.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              },
+                              {
+                                        "id": "maquina-hip-thrust-parado",
+                                        "name": "Máquina Hip Thrust Parado",
+                                        "steps": [
+                                                  "Acuéstate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una barra y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto y los hombros en el suelo. Mantén la barra en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante 12-15 repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Máquina Hip Thrust Parado/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Máquina Hip Thrust Parado/maquinaHipThrustParado.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              },
+                              {
+                                        "id": "peso-muerto-rumano",
+                                        "name": "Peso Muerto Rumano",
+                                        "steps": [
+                                                  "Coloca una barra en el suelo frente a ti y pisa debajo de ella con los pies separados a la altura de los hombros.",
+                                                  "Agarra la barra con un agarre pronunciado (palmas hacia abajo) y las manos separadas a una distancia mayor que el ancho de tus hombros.",
+                                                  "Mantén las piernas ligeramente flexionadas y la espalda recta.",
+                                                  "Levanta la barra del suelo, llevando la cadera hacia atrás y manteniendo la espalda recta.",
+                                                  "Una vez que la barra esté a la altura de tus rodillas, comienza a bajarla lentamente mientras llevas la cadera hacia adelante y mantienes la espalda recta.",
+                                                  "Baja la barra hasta que llegue a la altura de tus tobillos o hasta que sientas un estiramiento en los isquiotibiales.",
+                                                  "Mantén la posición durante unos segundos y luego levanta la barra llevando la cadera hacia atrás y manteniendo la espalda recta.",
+                                                  "Realiza varias repeticiones de este movimiento, asegurándote de mantener la técnica adecuada y evitando cualquier tipo de balanceo o rebote."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Peso Muerto Rumano/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Peso Muerto Rumano/pesoMuerto.mp4",
+                                        "note": "Es importante recordar que el peso muerto rumano es un ejercicio avanzado que requiere de una buena técnica y fuerza en la cadena posterior. Si eres principiante, es recomendable que comiences con una carga más ligera y te enfoques en dominar la técnica antes de incrementar la carga."
+                              },
+                              {
+                                        "id": "peso-muerto-rumano-a-una-pierna-con-barra",
+                                        "name": "Peso Muerto Rumano a una Pierna con Barra",
+                                        "steps": [
+                                                  "Comienza de pie, sosteniendo la barra en la mano derecha a la altura del muslo.",
+                                                  "Levanta el pie izquierdo del suelo y mantén el equilibrio sobre el pie derecho.",
+                                                  "Mientras mantienes la pierna izquierda extendida y el pie levantado, inclina el torso hacia adelante, manteniendo la espalda recta.",
+                                                  "Continúa inclinando el torso hacia adelante hasta que sientas un estiramiento en la parte posterior de la pierna derecha.",
+                                                  "Mantén la barra cerca de la pierna derecha mientras te inclinas hacia adelante.",
+                                                  "Luego, regresa a la posición inicial y repite el movimiento para completar una serie de repeticiones.",
+                                                  "Luego, cambia de pierna y realiza el ejercicio con la pierna izquierda mientras sostienes la barra en la mano izquierda."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Peso Muerto Rumano a una Pierna con Barra/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Peso Muerto Rumano a una Pierna con Barra/pesoMuertoRumanoAUnaPiernaEnDeficitConBarra.mp4",
+                                        "note": "Es importante mantener una buena postura durante todo el ejercicio, con la espalda recta y los hombros hacia atrás. Además, es importante mantener el equilibrio mientras estás en una sola pierna. Si eres nuevo en este ejercicio, comienza con la barra sin peso y agrega discos gradualmente a medida que te sientas más cómodo/cómoda con el movimiento"
+                              },
+                              {
+                                        "id": "peso-muerto-sumo-con-barra",
+                                        "name": "Peso Muerto Sumo con Barra",
+                                        "steps": [
+                                                  "Coloca una barra en el suelo y párate frente a ella con los pies más anchos que el ancho de los hombros y los dedos de los pies apuntando hacia afuera en un ángulo de aproximadamente 45 grados.",
+                                                  "Agarra la barra con ambas manos en un agarre pronado (palmas hacia abajo), con las manos colocadas más anchas que el ancho de los hombros.",
+                                                  "Baja tu cuerpo hacia abajo doblando las rodillas y las caderas, manteniendo la espalda recta y el pecho levantado. Tu espalda baja debe estar en una posición neutra y tus hombros deben estar por encima o ligeramente delante de la barra.",
+                                                  "Desde esta posición, empuja con las piernas y levanta la barra del suelo extendiendo las caderas y las rodillas simultáneamente. Mantén la barra cerca de tu cuerpo mientras te levantas.",
+                                                  "Una vez que estés de pie completamente recto, contrae los glúteos en la parte superior del movimiento y lleva los hombros hacia atrás para completar la extensión completa.",
+                                                  "Baja la barra de vuelta al suelo siguiendo el mismo camino que tomaste para levantarla, doblando las rodillas y las caderas mientras mantienes la espalda recta y el pecho levantado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Peso Muerto Sumo con Barra/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Peso Muerto Sumo con Barra/sumoMuertoBarra.mp4"
+                              },
+                              {
+                                        "id": "puente-de-gluteos-con-barra",
+                                        "name": "Puente de Glúteos con Barra",
+                                        "steps": [
+                                                  "Acuéstate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una barra y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto y los hombros en el suelo. Mantén la barra en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante 12-15 repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Barra/Puente de Glúteos con Barra/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Barra/Puente de Glúteos con Barra/puenteGluteosBarra.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              }
+                    ]
+          },
+          {
+                    "id": "mancuernas",
+                    "name": "Mancuernas",
+                    "exercises": [
+                              {
+                                        "id": "caminata-de-peso-muerto",
+                                        "name": "Caminata de Peso muerto",
+                                        "steps": [
+                                                  "Empieza de pie con una mancuerna en cada mano, con los pies separados a la altura de los hombros y los dedos de los pies apuntando hacia adelante.",
+                                                  "Contrae los músculos abdominales y mantén la espalda recta mientras bajas los brazos y las mancuernas hacia el suelo. Mantén las piernas ligeramente flexionadas.",
+                                                  "Una vez que las mancuernas toquen el suelo, endereza las piernas y los brazos para levantarte.",
+                                                  "Da un paso hacia adelante con el pie derecho mientras bajas las mancuernas hacia el suelo, manteniendo la espalda recta y las piernas ligeramente flexionadas.",
+                                                  "Levántate y da un paso hacia adelante con el pie izquierdo mientras bajas las mancuernas hacia el suelo.",
+                                                  "Continúa alternando los pasos y las flexiones de cadera mientras mantienes la postura adecuada.",
+                                                  "Es importante que te asegures de mantener la espalda recta durante todo el ejercicio y que no levantes las mancuernas con la fuerza de la espalda, sino con la de las piernas y los glúteos. Además, es importante que empieces con un peso adecuado para ti y que no te excedas en peso para evitar lesiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Caminata de Peso muerto/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Caminata de Peso muerto/marchaDeIsquiotibiales.mp4"
+                              },
+                              {
+                                        "id": "empuje-de-caderas-con-mancuerna",
+                                        "name": "Empuje de Caderas con Mancuerna",
+                                        "steps": [
+                                                  "Acuéstate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una mancuerna y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto y los hombros en el suelo. Mantén la mancuerna en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante 12-15 repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Empuje de Caderas con Mancuerna/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Empuje de Caderas con Mancuerna/empujeDeCaderasConMancuernas.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              },
+                              {
+                                        "id": "peso-muerto-con-mancuerna",
+                                        "name": "Peso Muerto con Mancuerna",
+                                        "steps": [
+                                                  "Colócate de pie con los pies separados a la anchura de los hombros, con una mancuerna en cada mano a los lados del cuerpo.",
+                                                  "Mantén una ligera flexión en las rodillas y la espalda recta, mirando hacia adelante.",
+                                                  "Inclínate hacia adelante desde las caderas, llevando el torso hacia el suelo mientras mantienes las mancuernas cerca de las piernas.",
+                                                  "Baja las mancuernas hacia el suelo, manteniendo los brazos extendidos y la espalda plana.",
+                                                  "Continúa bajando hasta sentir un estiramiento en los músculos posteriores de las piernas y en la parte baja de la espalda.",
+                                                  "Asegúrate de mantener una buena forma y no redondear la espalda.",
+                                                  "Al llegar al punto más bajo, revierte el movimiento llevando el torso hacia arriba y volviendo a la posición inicial.",
+                                                  "Puedes ajustar el peso de las mancuernas según tu nivel de fuerza y comodidad."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto con Mancuerna/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto con Mancuerna/pesoMuertoMancuerna.mp4"
+                              },
+                              {
+                                        "id": "peso-muerto-rumano-a-una-pierna-con-mancuerna",
+                                        "name": "Peso Muerto Rumano a una Pierna con Mancuerna",
+                                        "steps": [
+                                                  "Toma una mancuerna en cada mano y coloca los pies separados a la anchura de los hombros.",
+                                                  "Levanta uno de los pies del suelo, doblando la rodilla y manteniendo el otro pie firme en el suelo.",
+                                                  "Inclina tu torso hacia adelante y lleva las mancuernas hacia abajo, manteniendo las piernas y la espalda rectas.",
+                                                  "Continúa inclinándote hacia adelante mientras levantas la pierna que tienes en el aire, manteniendo la pierna que está en el suelo ligeramente flexionada.",
+                                                  "Baja las mancuernas lentamente hacia el suelo mientras te mantienes equilibrado en una pierna.",
+                                                  "Luego, regresa a la posición inicial llevando las mancuernas hacia arriba mientras bajas la pierna que tienes en el aire hacia el suelo.",
+                                                  "Repite el ejercicio con la otra pierna.",
+                                                  "Es importante recordar mantener la espalda recta y las piernas ligeramente flexionadas durante todo el movimiento para evitar lesiones. Además, se recomienda comenzar con un peso ligero y aumentarlo gradualmente a medida que te sientas más cómodo/cómoda con el ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto Rumano a una Pierna con Mancuerna/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto Rumano a una Pierna con Mancuerna/pesoMuertoRumanoConMancuernaAUnaPierna.mp4"
+                              },
+                              {
+                                        "id": "peso-muerto-rumano-a-una-pierna-con-mancuerna-unilateral",
+                                        "name": "Peso Muerto Rumano a una Pierna con Mancuerna Unilateral",
+                                        "steps": [
+                                                  "Comienza de pie, sosteniendo una mancuerna en la mano derecha a la altura del muslo.",
+                                                  "Levanta el pie izquierdo del suelo y mantén el equilibrio sobre el pie derecho.",
+                                                  "Mientras mantienes la pierna izquierda extendida y el pie levantado, inclina el torso hacia adelante, manteniendo la espalda recta.",
+                                                  "Continúa inclinando el torso hacia adelante hasta que sientas un estiramiento en la parte posterior de la pierna derecha.",
+                                                  "Mantén la mancuerna cerca de la pierna derecha mientras te inclinas hacia adelante.",
+                                                  "Luego, regresa a la posición inicial y repite el movimiento para completar una serie de repeticiones.",
+                                                  "Luego, cambia de pierna y realiza el ejercicio con la pierna izquierda mientras sostienes la mancuerna en la mano izquierda."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto Rumano a una Pierna con Mancuerna Unilateral/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto Rumano a una Pierna con Mancuerna Unilateral/pesoMuertoRumanoConMancuernaCruzadoAUnaPierna.mp4",
+                                        "note": "Es importante mantener una buena postura durante todo el ejercicio, con la espalda recta y los hombros hacia atrás. Además, es importante mantener el equilibrio mientras estás en una sola pierna. Si eres nuevo/nueva en este ejercicio, comienza con una mancuerna ligera y aumenta el peso gradualmente a medida que te sientas más cómodo/cómda con el movimiento."
+                              },
+                              {
+                                        "id": "peso-muerto-rumano-con-mancuerna",
+                                        "name": "Peso Muerto Rumano con Mancuerna",
+                                        "steps": [
+                                                  "Colócate de pie detrás de la pesa con los pies ligeramente separados a la altura de los hombros y los dedos de los pies apuntando hacia afuera.",
+                                                  "Agáchate y agarra la pesa con ambas manos, con las palmas hacia abajo y los dedos envolviendola.",
+                                                  "Mantén los brazos rectos y los hombros hacia atrás y abajo, apretando los omóplatos.",
+                                                  "Toma aire y aprieta el abdomen y los glúteos, y comienza a levantar la pesa con un movimiento controlado.",
+                                                  "Mantén la espalda recta y los brazos extendidos mientras levantas la pesa.",
+                                                  "A medida que te levantas, empuja las caderas hacia adelante y levanta la pesa hasta que estés completamente erguido.",
+                                                  "Mantén la pesa cerca de tu cuerpo durante todo el movimiento y evita inclinarte hacia adelante.",
+                                                  "Mantén la posición de la pesa en la parte superior del movimiento durante un segundo, luego exhala y baja lentamente la barra hacia el suelo, manteniendo la espalda recta.",
+                                                  "Repite el movimiento para completar la serie."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto Rumano con Mancuerna/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Peso Muerto Rumano con Mancuerna/pesoMuertoRumanoMancuerna.mp4",
+                                        "note": "Es importante asegurarse de mantener una buena postura y técnica durante todo el ejercicio para evitar lesiones. También es recomendable empezar con poco peso e ir aumentando gradualmente a medida que se gana fuerza y confianza."
+                              },
+                              {
+                                        "id": "puente-de-gluteos-con-mancuerna",
+                                        "name": "Puente de Glúteos con Mancuerna",
+                                        "steps": [
+                                                  "Acuéstate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una mancuerna y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto y los hombros en el suelo. Mantén la mancuerna en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante 12-15 repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Mancuernas/Puente de Glúteos con Mancuerna/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Mancuernas/Puente de Glúteos con Mancuerna/puenteDeGluteosConMancuerna.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              }
+                    ]
+          },
+          {
+                    "id": "poleas-maquinas",
+                    "name": "Poleas y Máquinas",
+                    "exercises": [
+                              {
+                                        "id": "extension-de-tronco",
+                                        "name": "Extensión de Tronco",
+                                        "steps": [
+                                                  "Colócate en la máquina con los pies asegurados bajo los cojines para los pies y las caderas apoyadas contra el cojín para el muslo. Cruza los brazos sobre el pecho o colócalos detrás de la cabeza.",
+                                                  "Mantén el torso recto y el core contraído mientras bajas lentamente el tronco hacia adelante, flexionando las caderas. Baja hasta que sientas un ligero estiramiento en los isquiotibiales y la espalda baja.",
+                                                  "Desde la posición inferior, utiliza los músculos de la parte baja de la espalda y los glúteos para levantar el tronco de nuevo a la posición inicial, extendiendo completamente las caderas.",
+                                                  "Mantén una breve pausa en la posición superior, asegurándote de no arquear excesivamente la espalda baja para evitar tensión innecesaria en la columna.",
+                                                  "Baja lentamente el tronco de vuelta a la posición inicial, controlando el movimiento y manteniendo la tensión en los músculos de la espalda."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Extensión de Tronco/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Extensión de Tronco/hiperextenciones.mp4",
+                                        "note": "Completa el número deseado de repeticiones, manteniendo una buena técnica y control en cada repetición."
+                              },
+                              {
+                                        "id": "hip-thrust-en-maquina",
+                                        "name": "Hip Thrust en Máquina",
+                                        "steps": [
+                                                  "Carga el peso necesario en la máquina",
+                                                  "Acostate sobre tu espalda con las piernas dobladas y los pies apoyados en el suelo. Toma una manija y sosténla en tu regazo, justo debajo de tus caderas.",
+                                                  "Asegúrate de que tus pies estén separados al ancho de tus caderas y que tus rodillas estén alineadas con tus tobillos.",
+                                                  "Empuja tus caderas hacia arriba mientras aprietas tus glúteos y mantén tu torso recto. Mantén la barra en su lugar debajo de tus caderas.",
+                                                  "Mantén la posición por 1-2 segundos y luego baja lentamente las caderas hacia el suelo.",
+                                                  "Repite el movimiento durante las repeticiones indicadas."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Hip Thrust en Máquina/empujeCadera.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Hip Thrust en Máquina/elevacionCaderaMaquina.mp4",
+                                        "note": "Recuerda que para evitar lesiones es importante mantener una buena técnica y controlar el peso que estás levantando. Si eres principiante, te recomiendo comenzar con un peso más ligero y aumentar gradualmente a medida que ganas fuerza y confianza en el ejercicio."
+                              },
+                              {
+                                        "id": "multicadera-para-gluteos",
+                                        "name": "Multicadera para Glúteos",
+                                        "steps": [
+                                                  "Selecciona el peso adecuado para ti ajustando el pin de la pila de pesas en la máquina. Comienza con un peso ligero y ve aumentando a medida que te sientas más cómodo/cómoda.",
+                                                  "Colócate de pie con la pierna más cercana a la máquina cerca del soporte.",
+                                                  "Mantén una buena postura con la espalda recta, el pecho levantado y los hombros hacia atrás.",
+                                                  "Agarra el soporte de la máquina con una mano para mantener el equilibrio y la estabilidad.",
+                                                  "Levanta la pierna que apoyada en la máquina y extiéndela hacia atrás en un movimiento controlado, manteniendo la rodilla ligeramente flexionada.",
+                                                  "Al llegar a la parte superior del movimiento, contrae los músculos de los glúteos y mantén esa contracción durante unos segundos.",
+                                                  "Baja la pierna controladamente hasta la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Multicadera para Glúteos/patadaGluteos.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Multicadera para Glúteos/multicaderaGluteos.mp4"
+                              },
+                              {
+                                        "id": "maquina-de-gluteos-horizontal",
+                                        "name": "Máquina de Glúteos Horizontal",
+                                        "steps": [
+                                                  "Ajusta el asiento y la almohadilla de la máquina de acuerdo a tu altura y posición. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Apóyate en la máquina de patada de glúteos con la espalda recta y coloca tus pies en los soportes de las almohadillas. Coloca tus manos en los agarres laterales de la máquina para mantener el equilibrio.",
+                                                  "Abre las piernas para que estén a la altura de las caderas. Coloca la pierna derecha en la almohadilla de la máquina y mantén la pierna izquierda doblada.",
+                                                  "Contrae los músculos de los glúteos y empuja hacia atrás la almohadilla de la máquina con la pierna derecha. Mantén la pierna izquierda en su posición durante todo el ejercicio. Regresa la pierna a la posición inicial y repite el ejercicio.",
+                                                  "Realiza el mismo número de repeticiones con ambas piernas."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Máquina de Glúteos Horizontal/patadaGluteos.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Máquina de Glúteos Horizontal/maquinaGluteoHorizontal.mp4"
+                              },
+                              {
+                                        "id": "maquina-de-gluteos-vertical",
+                                        "name": "Máquina de Glúteos Vertical",
+                                        "steps": [
+                                                  "Ajusta el asiento y la almohadilla de la máquina de acuerdo a tu altura y posición. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Apoyate en la máquina de patada de glúteos con la espalda recta y coloca tus pies en los soportes. Coloca tus manos en los agarres laterales de la máquina para mantener el equilibrio.",
+                                                  "Abre las piernas para que estén a la altura de las caderas. Coloca la pierna derecha en la almohadilla de la máquina y mantén la pierna izquierda doblada.",
+                                                  "Contrae los músculos de los glúteos y empuja hacia atrás la almohadilla de la máquina con la pierna derecha. Mantén la pierna izquierda en su posición durante todo el ejercicio. Regresa la pierna a la posición inicial y repite el ejercicio.",
+                                                  "Realiza el mismo número de repeticiones con ambas piernas."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Máquina de Glúteos Vertical/patadaGluteos.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Máquina de Glúteos Vertical/patadaGluteos.mp4"
+                              },
+                              {
+                                        "id": "patada-de-gluteos-con-polea",
+                                        "name": "Patada de Glúteos con Polea",
+                                        "steps": [
+                                                  "Asegúrate de que la polea de la máquina esté ajustada en su posición más baja y que el accesorio para tobillos esté conectado al cable.",
+                                                  "Selecciona el peso adecuado para ti ajustando el pin de la pila de pesas en la máquina. Comienza con un peso ligero y ve aumentando a medida que te sientas más cómodo/cómoda.",
+                                                  "Colócate de pie con la pierna más cercana a la máquina cerca del soporte. Coloca el accesorio para tobillos en la pierna opuesta y ajusta la correa para que quede bien ajustada",
+                                                  "Mantén una buena postura con la espalda recta, el pecho levantado y los hombros hacia atrás.",
+                                                  "Agarra el soporte de la máquina con una mano para mantener el equilibrio y la estabilidad.",
+                                                  "Levanta la pierna que está conectada al accesorio para tobillos y extiéndela hacia atrás en un movimiento controlado, manteniendo la rodilla ligeramente flexionada.",
+                                                  "Al llegar a la parte superior del movimiento, contrae los músculos de los glúteos y mantén esa contracción durante unos segundos.",
+                                                  "Baja la pierna controladamente hasta la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Patada de Glúteos con Polea/patadaGluteos.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Patada de Glúteos con Polea/gluteosPolea.mp4"
+                              },
+                              {
+                                        "id": "patada-de-gluteos-diagonal-con-polea",
+                                        "name": "Patada de Glúteos Diagonal con Polea",
+                                        "steps": [
+                                                  "Asegúrate de que la polea de la máquina esté ajustada en su posición más baja y que el accesorio para tobillos esté conectado al cable.",
+                                                  "Selecciona el peso adecuado para ti ajustando el pin de la pila de pesas en la máquina. Comienza con un peso ligero y ve aumentando a medida que te sientas más cómodo/cómoda.",
+                                                  "Colócate de pie con la pierna más cercana a la máquina cerca del soporte. Coloca el accesorio para tobillos en la pierna opuesta y ajusta la correa para que quede bien ajustada",
+                                                  "Mantén una buena postura con la espalda recta, el pecho levantado y los hombros hacia atrás.",
+                                                  "Agarra el soporte de la máquina con una mano para mantener el equilibrio y la estabilidad.",
+                                                  "Curza la pierna que extenderás sobre la otra pierna de apoyo",
+                                                  "Levanta la pierna que está conectada al accesorio para tobillos y extiéndela hacia atrás en un movimiento controlado, manteniendo la rodilla ligeramente flexionada.",
+                                                  "Al llegar a la parte superior del movimiento, contrae los músculos de los glúteos y mantén esa contracción durante unos segundos.",
+                                                  "Baja la pierna controladamente hasta la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Patada de Glúteos Diagonal con Polea/patadaGluteos.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Patada de Glúteos Diagonal con Polea/patadaDiagonalPolea.mp4"
+                              },
+                              {
+                                        "id": "peso-muerto-en-landmine",
+                                        "name": "Peso Muerto en Landmine",
+                                        "steps": [
+                                                  "Colócate frente a la barra sujetando con ambas manos la punta de la misma.",
+                                                  "Mantén las piernas ligeramente flexionadas y la espalda recta.",
+                                                  "Levanta la barra del suelo, llevando la cadera hacia atrás y manteniendo la espalda recta.",
+                                                  "Una vez que la barra esté a la altura de tus rodillas, comienza a bajarla lentamente mientras llevas la cadera hacia adelante y mantienes la espalda recta.",
+                                                  "Baja la barra hasta que llegue a la altura de tus tobillos o hasta que sientas un estiramiento en los isquiotibiales.",
+                                                  "Mantén la posición durante unos segundos y luego levanta la barra llevando la cadera hacia atrás y manteniendo la espalda recta.",
+                                                  "Realiza varias repeticiones de este movimiento, asegurándote de mantener la técnica adecuada y evitando cualquier tipo de balanceo o rebote."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Peso Muerto en Landmine/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Peso Muerto en Landmine/pesoMuertoLandmine.mp4",
+                                        "note": "Es importante recordar que el peso muerto rumano es un ejercicio avanzado que requiere de una buena técnica y fuerza en la cadena posterior. Si eres principiante, es recomendable que comiences con una carga más ligera y te enfoques en dominar la técnica antes de incrementar la carga."
+                              },
+                              {
+                                        "id": "peso-muerto-en-maquina",
+                                        "name": "Peso Muerto en Máquina",
+                                        "steps": [
+                                                  "Colócate en postura inicial con la cadera alineada.",
+                                                  "Empuja con la cadera o extiende la pierna contrayendo fuertemente el glúteo.",
+                                                  "Regresa a la posición inicial manteniendo el control del movimiento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Peso Muerto en Máquina/pesoMuerto.png",
+                                        "videoUrl": "/Entrenamientos/Gluteos/Poleas y maquinas/Peso Muerto en Máquina/pesoMuertoMaquina.mp4"
+                              }
+                    ]
+          }
+]
+    },
+                pecho: {
+        id: 'pecho',
+        name: 'Pecho',
+        subtitle: 'Pectorales',
+        cardImageUrl: '/Entrenamientos/Pecho/pechomini.png',
+        detailImageUrl: '/Entrenamientos/Pecho/pecho.png',
+        frontHighlight: true,
+        equipmentCategories: [
+          {
+                    "id": "barra",
+                    "name": "Barra",
+                    "exercises": [
+                              {
+                                        "id": "press-de-barra-unilateral",
+                                        "name": "Press de Barra Unilateral",
+                                        "steps": [
+                                                  "Comienza colocando una barra en el suelo cerca de tus pies. Párate junto a ella y agarra la barra con una mano en posición de agarre supino (palmas hacia arriba) y la otra mano en posición de agarre pronado (palmas hacia abajo).",
+                                                  "Levanta la barra hasta que quede sobre tus hombros, sosteniéndola con una mano y apoyando la otra mano en tu cadera.",
+                                                  "Extiende tu cuerpo hacia arriba para poner tu peso en el pie opuesto al lado de la mano que sostiene la barra.",
+                                                  "Lentamente baja la barra hacia tu hombro en el lado opuesto al pie que estás apoyando. Mantén el equilibrio con el pie opuesto.",
+                                                  "Empuja la barra hacia arriba, usando la fuerza de tu pecho, hombros y tríceps, y vuelve a la posición inicial.",
+                                                  "Realiza el número deseado de repeticiones y luego cambia de lado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Barra/Press de Barra Unilateral/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Barra/Press de Barra Unilateral/pressDeBarraConApoyoUnilateral.mp4",
+                                        "note": "Asegúrate de mantener una buena postura durante todo el ejercicio y de no arquear la espalda. Este ejercicio es desafiante para el equilibrio y la estabilidad, así que comienza con una carga ligera y aumenta gradualmente a medida que te sientas más cómodo."
+                              },
+                              {
+                                        "id": "press-de-pecho-acostado-en-el-piso",
+                                        "name": "Press de Pecho Acostado en el Piso",
+                                        "steps": [
+                                                  "Acuéstate boca arriba en el suelo, con las piernas dobladas y los pies planos sobre el suelo para mayor estabilidad. Asegúrate de que la espalda baja esté ligeramente arqueada y el core activado.",
+                                                  "Sostén una barra con ambas manos, utilizando un agarre prono (palmas hacia adelante) con las manos separadas a la anchura de los hombros. La barra debe estar alineada sobre tu pecho.",
+                                                  "Levanta la barra de manera controlada hacia arriba, extendiendo completamente los brazos. Esta es tu posición inicial.",
+                                                  "Inhala y, mientras exhalas, baja lentamente la barra hacia el pecho, doblando los codos a aproximadamente 90 grados. Los codos deben apuntar ligeramente hacia los lados y hacia abajo, asegurándote de que no se abran demasiado hacia los lados.",
+                                                  "Baja la barra hasta que los codos toquen el suelo suavemente, manteniendo el control en todo momento y evitando que la barra rebote en el pecho o el suelo.",
+                                                  "Exhala y empuja la barra hacia arriba, extendiendo completamente los brazos para regresar a la posición inicial. Concéntrate en contraer los músculos del pecho durante el levantamiento, manteniendo los hombros estables y el core activado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho Acostado en el Piso/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho Acostado en el Piso/pressPechoEnPiso.mp4",
+                                        "note": "Completa el número deseado de repeticiones, asegurándote de mantener una buena técnica y control en cada repetición."
+                              },
+                              {
+                                        "id": "press-de-pecho-declinado",
+                                        "name": "Press de Pecho Declinado",
+                                        "steps": [
+                                                  "Ajusta el banco declinado a una posición de aproximadamente 30-45 grados hacia abajo. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Siéntate en el banco declinado con la espalda recta y acostado sobre el banco. Asegúrate de que tus pies estén firmes en el suelo y que tus hombros y glúteos estén en contacto con el banco.",
+                                                  "Agarra la barra con las manoss separadas a la anchura de los hombros y los pulgares apuntando hacia adentro. Mantén los codos doblados y la barra sobre el pecho.",
+                                                  "Empuja la barra hacia arriba con los brazos y los hombros, manteniendo los codos ligeramente doblados. Levanta la barra hasta que tus brazos estén completamente extendidos y luego baja la barra hasta que esté a unos centímetros por encima de tu pecho.",
+                                                  "Repite el ejercicio por el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho Declinado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho Declinado/bancoDeclinado.mp4",
+                                        "note": "Es importante que mantengas la espalda recta y los hombros hacia atrás durante todo el ejercicio. Además, asegúrate de controlar la barra en todo momento y de no bloquear los codos al final del movimiento para evitar lesiones. Al hacer el press de banca declinado, el énfasis se coloca en la parte inferior del pecho y los tríceps, lo que ayuda a desarrollar un pecho más definido y separado."
+                              },
+                              {
+                                        "id": "press-de-pecho-en-banco-plano",
+                                        "name": "Press de Pecho en Banco Plano",
+                                        "steps": [
+                                                  "Ajusta el banco de acuerdo a tu altura y posición. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Siéntate en el banco con la espalda recta y acostado sobre el banco. Asegúrate de que tus pies estén firmes en el suelo y que tus hombros y glúteos estén en contacto con el banco.",
+                                                  "Agarra la barra con las manos separadas a la anchura de los hombros y los pulgares apuntando hacia adentro. Mantén los codos doblados y la barra sobre el pecho.",
+                                                  "Empuja la barra hacia arriba con los brazos y los hombros, manteniendo los codos ligeramente doblados. Levanta la barra hasta que tus brazos estén completamente extendidos y luego baja la barra hasta que esté a unos centímetros por encima de tu pecho.",
+                                                  "Repite el ejercicio por el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho en Banco Plano/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho en Banco Plano/bancoPlano.mp4"
+                              },
+                              {
+                                        "id": "press-de-pecho-en-smith",
+                                        "name": "Press de Pecho en Smith",
+                                        "steps": [
+                                                  "Ajusta el banco de acuerdo a tu altura y posición. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Siéntate en el banco con la espalda recta y acostado sobre el banco. Asegúrate de que tus pies estén firmes en el suelo y que tus hombros y glúteos estén en contacto con el banco.",
+                                                  "Agarra la barra con las manos separadas a la anchura de los hombros y los pulgares apuntando hacia adentro. Mantén los codos doblados y la barra sobre el pecho.",
+                                                  "Empuja la barra hacia arriba con los brazos y los hombros, manteniendo los codos ligeramente doblados. Levanta la barra hasta que tus brazos estén completamente extendidos y luego baja la barra hasta que esté a unos centímetros por encima de tu pecho.",
+                                                  "Repite el ejercicio por el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho en Smith/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho en Smith/pressBancaSmith.mp4"
+                              },
+                              {
+                                        "id": "press-de-pecho-inclinado",
+                                        "name": "Press de Pecho Inclinado",
+                                        "steps": [
+                                                  "Ajusta el banco inclinado a una posición de aproximadamente 30-45 grados. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Siéntate en el banco inclinado con la espalda recta y acostado sobre el banco. Asegúrate de que tus pies estén firmes en el suelo y que tus hombros y glúteos estén en contacto con el banco.",
+                                                  "Agarra la barra con las manos separadas a la anchura de los hombros y los pulgares apuntando hacia adentro. Mantén los codos doblados y la barra sobre el pecho.",
+                                                  "Empuja la barra hacia arriba con los brazos y los hombros, manteniendo los codos ligeramente doblados. Levanta la barra hasta que tus brazos estén completamente extendidos y luego baja la barra hasta que esté a unos centímetros por encima de tu pecho.",
+                                                  "Repite el ejercicio por el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho Inclinado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Barra/Press de Pecho Inclinado/bancoInclinado.mp4",
+                                        "note": "Es importante que mantengas la espalda recta y los hombros hacia atrás durante todo el ejercicio. Además, asegúrate de controlar la barra en todo momento y de no bloquear los codos al final del movimiento para evitar lesiones. Al hacer el press de banca inclinado, el énfasis se coloca en la parte superior del pecho y los hombros, lo que ayuda a desarrollar un pecho más completo y redondeado."
+                              }
+                    ]
+          },
+          {
+                    "id": "mancuernas",
+                    "name": "Mancuernas",
+                    "exercises": [
+                              {
+                                        "id": "apertura-con-mancuernas-en-banco-declinado",
+                                        "name": "Apertura con Mancuernas en Banco Declinado",
+                                        "steps": [
+                                                  "Ajusta el banco declinado en un ángulo de aproximadamente 30-45 grados. Si eres nuevo en el ejercicio, comienza con un ángulo menos pronunciado y aumenta gradualmente a medida que ganas fuerza y confianza.",
+                                                  "Siéntate en el banco y coloca las mancuernas en el suelo al alcance de tus manos. Luego, acuéstate en el banco con las piernas extendidas y los pies apoyados en el suelo para mantener la estabilidad.",
+                                                  "Agarra las mancuernas con un agarre pronado (palmas hacia los pies) y colócalas a la altura del pecho con los codos doblados.",
+                                                  "Empuja las mancuernas hacia arriba mientras exhalas y estira los brazos casi completamente. Asegúrate de mantener los codos en una posición estable y no los bloquees por completo en la parte superior del movimiento.",
+                                                  "Baja las mancuernas hacia abajo lentamente mientras inhalas y siente cómo los músculos del pecho se estiran. Trata de mantener un control total durante todo el movimiento y no permitas que las mancuernas caigan hacia abajo rápidamente."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Apertura con Mancuernas en Banco Declinado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Apertura con Mancuernas en Banco Declinado/aperturaBancoDeclinado.mp4",
+                                        "note": "Es importante tener en cuenta que, como con cualquier ejercicio de pesas, la técnica adecuada es crucial para evitar lesiones y obtener los mejores resultados. Si eres nuevo en el ejercicio, te recomiendo trabajar con un entrenador personal o un instructor de fitness para que te enseñe la técnica adecuada."
+                              },
+                              {
+                                        "id": "apertura-con-mancuernas-en-banco-inclinado",
+                                        "name": "Apertura con Mancuernas en Banco Inclinado",
+                                        "steps": [
+                                                  "Siéntate en un banco inclinado y asegúrate de que esté ajustado a un ángulo de aproximadamente 45 grados.",
+                                                  "Toma una mancuerna en cada mano y colócalas sobre tus muslos.",
+                                                  "Inclínate hacia atrás mientras levantas las mancuernas hasta que estén a la altura de tus hombros. Mantén los codos ligeramente flexionados.",
+                                                  "Ahora exhala y empuja las mancuernas hacia arriba, estirando los brazos y manteniendo las palmas de las manos mirando hacia adelante.",
+                                                  "Mantén la posición durante un segundo y luego inhala mientras bajas lentamente las mancuernas hacia abajo hasta que tus codos estén en línea con los hombros.",
+                                                  "Repite el movimiento durante varias repeticiones y asegúrate de mantener una técnica adecuada en todo momento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Apertura con Mancuernas en Banco Inclinado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Apertura con Mancuernas en Banco Inclinado/pechoInclinadoMancuernas.mp4",
+                                        "note": "Es importante recordar mantener los hombros hacia atrás y abajo en todo momento para evitar lesiones. Además, debes usar un peso que puedas controlar adecuadamente sin comprometer la técnica del ejercicio."
+                              },
+                              {
+                                        "id": "apertura-con-mancuernas-en-banco-plano",
+                                        "name": "Apertura con Mancuernas en Banco Plano",
+                                        "steps": [
+                                                  "Acuéstate en un banco plano con las mancuernas en tus rodillas. Asegúrate de que tus pies estén firmemente apoyados en el suelo y que tu espalda esté completamente apoyada en el banco.",
+                                                  "Con las mancuernas en tus manos, levanta los brazos para que estén completamente extendidos por encima de tu pecho. Las palmas de tus manos deben mirar hacia adelante y las mancuernas deben estar cerca pero no tocando entre sí.",
+                                                  "Lentamente baja las mancuernas hacia abajo, manteniendo los codos ligeramente flexionados y controlando el movimiento en todo momento.",
+                                                  "Cuando las mancuernas estén a la altura de tus hombros, exhala y empuja las mancuernas hacia arriba de nuevo a la posición inicial. Asegúrate de que los codos no se bloqueen en la posición extendida.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones.",
+                                                  "Es importante recordar mantener la forma adecuada durante todo el ejercicio y controlar el movimiento en todo momento. También se recomienda comenzar con un peso ligero y aumentar gradualmente para evitar lesiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Apertura con Mancuernas en Banco Plano/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Apertura con Mancuernas en Banco Plano/aperturaPlana.mp4"
+                              },
+                              {
+                                        "id": "empuje-en-press-banca-con-mancuernas",
+                                        "name": "Empuje en Press Banca con Mancuernas",
+                                        "steps": [
+                                                  "Acuéstate en una banca plana con una mancuerna en cada mano y los brazos extendidos hacia arriba, las palmas mirandose entre sí y los codos ligeramente doblados.",
+                                                  "Baja las mancuernas lentamente hacia los lados de tu pecho, manteniendo los codos cerca del cuerpo.",
+                                                  "Detente cuando las mancuernas estén a la altura de tus pectorales y asegúrate de mantener los codos ligeramente doblados.",
+                                                  "Empuja las mancuernas hacia arriba hasta que los brazos estén completamente extendidos.",
+                                                  "Mantén la posición por un momento y luego baja lentamente las mancuernas hacia la posición inicial.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Empuje en Press Banca con Mancuernas/pechoEmpuje.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Empuje en Press Banca con Mancuernas/empujePressBancaMancuerna.mp4",
+                                        "note": "Asegúrate de mantener una buena postura durante todo el ejercicio, manteniendo los pies planos en el suelo y los hombros hacia abajo y atrás. También es importante respirar adecuadamente, inhalando mientras bajas las mancuernas y exhalando mientras las levantas hacia arriba."
+                              },
+                              {
+                                        "id": "press-con-mancuernas-en-banco-declinado",
+                                        "name": "Press con Mancuernas en Banco Declinado",
+                                        "steps": [
+                                                  "Ajusta el banco declinado en un ángulo de aproximadamente 30-45 grados. Si eres nuevo en el ejercicio, comienza con un ángulo menos pronunciado y aumenta gradualmente a medida que ganas fuerza y confianza.",
+                                                  "Siéntate en el banco y coloca las mancuernas en el suelo al alcance de tus manos. Luego, acuéstate en el banco con las piernas extendidas y los pies apoyados en el suelo para mantener la estabilidad.",
+                                                  "Agarra las mancuernas con un agarre pronado (palmas hacia los pies) y colócalas a la altura del pecho con los codos doblados.",
+                                                  "Empuja las mancuernas hacia arriba mientras exhalas y estira los brazos casi completamente. Asegúrate de mantener los codos en una posición estable y no los bloquees por completo en la parte superior del movimiento.",
+                                                  "Baja las mancuernas hacia abajo lentamente mientras inhalas y siente cómo los músculos del pecho se estiran. Trata de mantener un control total durante todo el movimiento y no permitas que las mancuernas caigan hacia abajo rápidamente."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Press con Mancuernas en Banco Declinado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Press con Mancuernas en Banco Declinado/pechoDeclinadoMancuernas.mp4",
+                                        "note": "Es importante tener en cuenta que, como con cualquier ejercicio de pesas, la técnica adecuada es crucial para evitar lesiones y obtener los mejores resultados. Si eres nuevo en el ejercicio, te recomiendo trabajar con un entrenador personal o un instructor de fitness para que te enseñe la técnica adecuada."
+                              },
+                              {
+                                        "id": "press-con-mancuernas-en-banco-inclinado",
+                                        "name": "Press con Mancuernas en Banco Inclinado",
+                                        "steps": [
+                                                  "Siéntate en un banco inclinado y asegúrate de que esté ajustado a un ángulo de aproximadamente 45 grados.",
+                                                  "Toma una mancuerna en cada mano y colócalas sobre tus muslos.",
+                                                  "Inclínate hacia atrás mientras levantas las mancuernas hasta que estén a la altura de tus hombros. Mantén los codos ligeramente flexionados.",
+                                                  "Ahora exhala y empuja las mancuernas hacia arriba, estirando los brazos y manteniendo las palmas de las manos mirando hacia adelante.",
+                                                  "Mantén la posición durante un segundo y luego inhala mientras bajas lentamente las mancuernas hacia abajo hasta que tus codos estén en línea con los hombros.",
+                                                  "Repite el movimiento durante varias repeticiones y asegúrate de mantener una técnica adecuada en todo momento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Press con Mancuernas en Banco Inclinado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Press con Mancuernas en Banco Inclinado/pressPechoInclinado.mp4",
+                                        "note": "Es importante recordar mantener los hombros hacia atrás y abajo en todo momento para evitar lesiones. Además, debes usar un peso que puedas controlar adecuadamente sin comprometer la técnica del ejercicio."
+                              },
+                              {
+                                        "id": "press-con-mancuernas-en-banco-plano",
+                                        "name": "Press con Mancuernas en Banco Plano",
+                                        "steps": [
+                                                  "Acuéstate en un banco plano con las mancuernas en tus rodillas. Asegúrate de que tus pies estén firmemente apoyados en el suelo y que tu espalda esté completamente apoyada en el banco.",
+                                                  "Con las mancuernas en tus manos, levanta los brazos para que estén completamente extendidos por encima de tu pecho. Las palmas de tus manos deben mirar hacia adelante y las mancuernas deben estar cerca pero no tocando entre sí.",
+                                                  "Lentamente baja las mancuernas hacia abajo, manteniendo los codos ligeramente flexionados y controlando el movimiento en todo momento.",
+                                                  "Cuando las mancuernas estén a la altura de tus hombros, exhala y empuja las mancuernas hacia arriba de nuevo a la posición inicial. Asegúrate de que los codos no se bloqueen en la posición extendida.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones.",
+                                                  "Es importante recordar mantener la forma adecuada durante todo el ejercicio y controlar el movimiento en todo momento. También se recomienda comenzar con un peso ligero y aumentar gradualmente para evitar lesiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Mancuernas/Press con Mancuernas en Banco Plano/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Mancuernas/Press con Mancuernas en Banco Plano/pechoPlanoMancuernas.mp4"
+                              }
+                    ]
+          },
+          {
+                    "id": "peso-corporal",
+                    "name": "Peso Corporal",
+                    "exercises": [
+                              {
+                                        "id": "flexiones-con-agarre-cerrado",
+                                        "name": "Flexiones con Agarre Cerrado",
+                                        "steps": [
+                                                  "Colócate en posición de plancha con las manos directamente debajo de los hombros y los dedos de los pies apoyados en el suelo.",
+                                                  "Junta las manos debajo del centro del pecho para que los pulgares y los dedos índices se toquen y formen un triángulo o diamante.",
+                                                  "Manteniendo el cuerpo en línea recta desde la cabeza hasta los talones, baja lentamente el pecho hacia el suelo doblando los codos.",
+                                                  "Detente cuando los codos estén en un ángulo de 90 grados.",
+                                                  "Empuja hacia arriba con las manos para volver a la posición inicial, manteniendo el cuerpo en línea recta en todo momento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Peso Corporal/Flexiones con Agarre Cerrado/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Peso Corporal/Flexiones con Agarre Cerrado/flexionesConAgarreCerrado.mp4",
+                                        "note": "Es importante mantener el cuerpo en línea recta durante todo el ejercicio y evitar arquear o hundir la espalda. Además, asegúrate de respirar correctamente, inhalando mientras bajas y exhalando mientras subes."
+                              },
+                              {
+                                        "id": "flexiones-con-liberacion-de-manos",
+                                        "name": "Flexiones con Liberación de Manos",
+                                        "steps": [
+                                                  "Comienza en la posición de plancha alta, con las manos en el suelo directamente debajo de los hombros y las piernas estiradas detrás de ti.",
+                                                  "Baja el cuerpo hacia el suelo doblando los codos y manteniendo el cuerpo recto y los codos pegados al cuerpo. Mantén la cabeza en línea con la columna vertebral.",
+                                                  "Una vez que el pecho toque el suelo, levanta las manos del suelo y colócalas a un lado de tu cuerpo, justo debajo de tus hombros.",
+                                                  "Vuelve a colocar las manos en el suelo, justo debajo de tus hombros.",
+                                                  "Empuja hacia arriba para volver a la posición inicial de plancha alta. Repite el ejercicio por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Peso Corporal/Flexiones con Liberación de Manos/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Peso Corporal/Flexiones con Liberación de Manos/flexionesDeBrazosConLiberacionDeManos.mp4",
+                                        "note": "Es importante asegurarse de mantener una buena forma durante todo el ejercicio, manteniendo el cuerpo recto y los codos pegados al cuerpo al bajar y subir. Además, es importante no forzar la liberación de las manos si no se siente cómodo o si hay dolor. Puedes comenzar haciendo el ejercicio sin la liberación de manos hasta que te sientas más cómodo con la técnica."
+                              }
+                    ]
+          },
+          {
+                    "id": "poleas-maquinas",
+                    "name": "Poleas y Máquinas",
+                    "exercises": [
+                              {
+                                        "id": "apertura-en-maquina",
+                                        "name": "Apertura en Máquina",
+                                        "steps": [
+                                                  "Ajusta el asiento de la máquina para que tus hombros estén en línea con los ejes de movimiento de las almohadillas de la máquina. Asegúrate de que los agarres estén a la altura adecuada para tus brazos.",
+                                                  "Siéntate en la máquina con la espalda recta y los pies firmemente apoyados en el suelo.",
+                                                  "Agarra los agarres de las almohadillas de la máquina con las palmas hacia abajo y los codos doblados a 90 grados.",
+                                                  "Empuja las almohadillas juntas mientras exhala y mantén la contracción de los músculos del pecho durante unos segundos.",
+                                                  "Lentamente baja las almohadillas de la máquina de vuelta a la posición inicial mientras inhala.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones y series."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Apertura en Máquina/peckDeck.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Apertura en Máquina/peckdeck.mp4"
+                              },
+                              {
+                                        "id": "apertura-en-maquina-inclinada",
+                                        "name": "Apertura en Máquina Inclinada",
+                                        "steps": [
+                                                  "Carga la máquina con el peso adecuado.",
+                                                  "Siéntate en la máquina con la espalda recta y los pies firmemente apoyados en el suelo.",
+                                                  "Agarra los agarres de la máquina con las palmas hacia arriba y los codos doblados a 90 grados.",
+                                                  "Empuja las manijas juntas mientras exhala y mantén la contracción de los músculos del pecho durante unos segundos.",
+                                                  "Lentamente baja las manijas de la máquina de vuelta a la posición inicial mientras inhala.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones y series."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Apertura en Máquina Inclinada/peckDeck.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Apertura en Máquina Inclinada/maquinaAperturaInclinada.mp4"
+                              },
+                              {
+                                        "id": "banco-hammer",
+                                        "name": "Banco Hammer",
+                                        "steps": [
+                                                  "Selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Acuéstate en el banco con la espalda recta. Asegúrate de que tus pies estén firmes en el suelo y que tus hombros y glúteos estén en contacto con el banco.",
+                                                  "Agarra las manijas con las manos y los pulgares apuntando hacia arriba. Mantén los codos doblados.",
+                                                  "Empuja las manijas hacia arriba con los brazos y los hombros, manteniendo los codos ligeramente doblados. Levanta hasta que tus brazos estén completamente extendidos y luego baja hasta que esté a unos centímetros por encima de tu pecho.",
+                                                  "Repite el ejercicio por el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Banco Hammer/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Banco Hammer/pressHorizontal.mp4"
+                              },
+                              {
+                                        "id": "cruce-en-polea-alta",
+                                        "name": "Cruce en Polea Alta",
+                                        "steps": [
+                                                  "Ajusta la polea en la posición superior de la máquina de poleas y ajusta la resistencia de acuerdo a tu nivel de condición física.",
+                                                  "Párate de frente a la máquina, agarra los mangos de las poleas y da un paso hacia adelante para estabilizar tu cuerpo. Mantén los pies separados al ancho de los hombros y mantén la espalda recta.",
+                                                  "Levanta los brazos a la altura de los hombros y mantén los codos ligeramente doblados.",
+                                                  "Contrae los músculos del pecho y los hombros mientras cruzas los brazos frente a tu cuerpo. Mantén la contracción durante unos segundos.",
+                                                  "Lentamente vuelve a la posición inicial mientras controlas el movimiento.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones y series."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Cruce en Polea Alta/pechoPolea.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Cruce en Polea Alta/poleaPechoSuperior.mp4"
+                              },
+                              {
+                                        "id": "cruce-en-polea-inferior",
+                                        "name": "Cruce en Polea Inferior",
+                                        "steps": [
+                                                  "Ajusta la polea en la posición inferior de la máquina de poleas y ajusta la resistencia de acuerdo a tu nivel de condición física.",
+                                                  "Párate de frente a la máquina, agarra los mangos de las poleas y da un paso hacia adelante para estabilizar tu cuerpo. Mantén los pies separados al ancho de los hombros y mantén la espalda recta.",
+                                                  "Levanta los brazos a la altura de los hombros y mantén los codos ligeramente doblados.",
+                                                  "Contrae los músculos del pecho y los hombros mientras cruzas los brazos frente a tu cuerpo. Mantén la contracción durante unos segundos.",
+                                                  "Lentamente vuelve a la posición inicial mientras controlas el movimiento.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones y series."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Cruce en Polea Inferior/pechoPolea.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Cruce en Polea Inferior/poleaPechoInferior.mp4"
+                              },
+                              {
+                                        "id": "cruce-en-polea-medio",
+                                        "name": "Cruce en Polea Medio",
+                                        "steps": [
+                                                  "Ajusta la polea en la posición media de la máquina de poleas y ajusta la resistencia de acuerdo a tu nivel de condición física.",
+                                                  "Párate de frente a la máquina, agarra los mangos de las poleas y da un paso hacia adelante para estabilizar tu cuerpo. Mantén los pies separados al ancho de los hombros y mantén la espalda recta.",
+                                                  "Levanta los brazos a la altura de los hombros y mantén los codos ligeramente doblados.",
+                                                  "Contrae los músculos del pecho y los hombros mientras cruzas los brazos frente a tu cuerpo. Mantén la contracción durante unos segundos.",
+                                                  "Lentamente vuelve a la posición inicial mientras controlas el movimiento.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones y series."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Cruce en Polea Medio/pechoPolea.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Cruce en Polea Medio/poleaPechoMedio.mp4"
+                              },
+                              {
+                                        "id": "hammer-declinado",
+                                        "name": "Hammer Declinado",
+                                        "steps": [
+                                                  "Ajusta la máquina de Hammer declinado según tu altura y preferencias. Asegúrate de que el respaldo esté declinado de manera cómoda para tu posición.",
+                                                  "Siéntate en la máquina con la espalda bien apoyada en el respaldo y los pies firmemente colocados en el suelo.",
+                                                  "Agarra las asas de la máquina con un agarre neutral (las palmas mirándose entre sí) y extiende los brazos completamente.",
+                                                  "Inclínate ligeramente hacia adelante desde la cadera, manteniendo la espalda recta y los hombros hacia atrás.",
+                                                  "Flexiona los codos y tira de las asas hacia tu torso en un movimiento controlado. Mantén los codos cerca del cuerpo durante el movimiento.",
+                                                  "Lleva las asas hacia la parte baja del abdomen, sintiendo la contracción en los músculos de la espalda baja.",
+                                                  "Extiende los codos de manera controlada para volver a la posición inicial, manteniendo la tensión en los músculos de la espalda durante todo el movimiento.",
+                                                  "Realiza el mismo número de repeticiones, asegurándote de mantener una buena forma y control en todo momento.",
+                                                  "Ajusta la carga de la máquina según tu nivel de fuerza y comodidad, comenzando con un peso adecuado.",
+                                                  "Este ejercicio se enfoca en trabajar los músculos de la espalda, especialmente el músculo dorsal ancho, y puede ser integrado en tu rutina de entrenamiento para fortalecer y desarrollar la musculatura de la espalda."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Hammer Declinado/pechoEmpuje.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Hammer Declinado/hammerInclinado.mp4"
+                              },
+                              {
+                                        "id": "hammer-inclinado-sentado",
+                                        "name": "Hammer Inclinado Sentado",
+                                        "steps": [
+                                                  "Ajusta la máquina de hammer para que el respaldo esté en una posición inclinado. Asegúrate de que la altura del asiento sea cómoda para ti.",
+                                                  "Siéntate en la máquina con la espalda bien apoyada en el respaldo y los pies firmemente colocados en el suelo.",
+                                                  "Agarra las asas de la máquina con un agarre neutro (las palmas mirándose entre sí) y coloca los codos ligeramente flexionados.",
+                                                  "Mantén una postura estable con la espalda recta y los hombros hacia atrás.",
+                                                  "Extiende los brazos hacia adelante en un movimiento controlado, manteniendo el control de la máquina. La trayectoria del movimiento debe ser hacia afuera y hacia arriba, siguiendo la inclinación del respaldo.",
+                                                  "Lleva las asas hacia arriba hasta que los brazos estén casi completamente extendidos, sintiendo la contracción en los músculos del pecho.",
+                                                  "Regresa los brazos de manera controlada a la posición inicial, manteniendo la tensión en los músculos pectorales.",
+                                                  "Realiza el mismo número de repeticiones, asegurándote de mantener una buena forma y control en todo momento.",
+                                                  "Ajusta la carga de la máquina según tu nivel de fuerza y comodidad, comenzando con un peso adecuado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Hammer Inclinado Sentado/pechoEmpuje.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Hammer Inclinado Sentado/hamerDeclinadoSentado.mp4"
+                              },
+                              {
+                                        "id": "maquina-press-de-pecho",
+                                        "name": "Máquina Press de Pecho",
+                                        "steps": [
+                                                  "Siéntate en la máquina con la espalda recta y los pies apoyados en el suelo.",
+                                                  "Sujeta los agarres de la máquina con las manos mirando hacia adelante y las palmas hacia abajo.",
+                                                  "Exhala y empuja los agarres hacia adelante hasta que los brazos estén completamente extendidos, pero sin bloquear las articulaciones de los codos.",
+                                                  "Inhala y regresa lentamente los agarres hasta que los codos estén a la altura de los hombros o un poco más atrás.",
+                                                  "Repite el movimiento durante el número de repeticiones que hayas establecido para tu entrenamiento.",
+                                                  "Es importante que mantengas la espalda recta y los codos en línea con los hombros durante todo el movimiento. Evita balancearte o arquear la espalda para ayudarte a mover los agarres, ya que esto puede aumentar el riesgo de lesiones. Además, no bloques las articulaciones de los codos cuando extiendas los brazos, ya que esto puede aumentar la presión en las articulaciones y provocar lesiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Máquina Press de Pecho/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Máquina Press de Pecho/pressPecho.mp4"
+                              },
+                              {
+                                        "id": "peck-deck-con-apoyo",
+                                        "name": "Peck Deck con Apoyo",
+                                        "steps": [
+                                                  "Ajusta el asiento y las almohadillas para los hombros a tu altura.",
+                                                  "Siéntate en la máquina con la espalda apoyada y los pies firmemente en el suelo.",
+                                                  "Coloca los brazos en las almohadillas con los codos a 90 grados.",
+                                                  "Empuja las almohadillas hacia adelante, juntando los brazos frente a ti como si abrazaras el pecho.",
+                                                  "Mantén la contracción por un segundo y luego regresa lentamente a la posición inicial."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Peck Deck con Apoyo/pechoPolea.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Peck Deck con Apoyo/peckDeckApoyo.mp4",
+                                        "note": "Es importante mantener una postura estable y evita arquear la espalda o bloquear completamente los codos."
+                              },
+                              {
+                                        "id": "press-de-pecho-inclinado-en-smith",
+                                        "name": "Press de Pecho Inclinado en Smith",
+                                        "steps": [
+                                                  "Ajusta el banco inclinado a una posición de aproximadamente 30-45 grados. Luego, selecciona los discos adecuados de acuerdo a tu nivel de condición física.",
+                                                  "Siéntate en el banco inclinado con la espalda recta y acostado sobre el banco. Asegúrate de que tus pies estén firmes en el suelo y que tus hombros y glúteos estén en contacto con el banco.",
+                                                  "Agarra la barra con las manos separadas a la anchura de los hombros y los pulgares apuntando hacia adentro. Mantén los codos doblados y la barra sobre el pecho.",
+                                                  "Empuja la barra hacia arriba con los brazos y los hombros, manteniendo los codos ligeramente doblados. Levanta la barra hasta que tus brazos estén completamente extendidos y luego baja la barra hasta que esté a unos centímetros por encima de tu pecho.",
+                                                  "Repite el ejercicio por el número de repeticiones deseado."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press de Pecho Inclinado en Smith/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press de Pecho Inclinado en Smith/pechoInclinadoSmith.mp4",
+                                        "note": "Es importante que mantengas la espalda recta y los hombros hacia atrás durante todo el ejercicio. Además, asegúrate de controlar la barra en todo momento y de no bloquear los codos al final del movimiento para evitar lesiones. Al hacer el press de banca inclinado, el énfasis se coloca en la parte superior del pecho y los hombros, lo que ayuda a desarrollar un pecho más completo y redondeado."
+                              },
+                              {
+                                        "id": "press-de-pecho-vertical",
+                                        "name": "Press de Pecho Vertical",
+                                        "steps": [
+                                                  "Siéntate en la máquina con la espalda recta y los pies apoyados en el suelo.",
+                                                  "Sujeta los agarres de la máquina con las manos mirando hacia adelante y las palmas hacia abajo.",
+                                                  "Exhala y empuja los agarres hacia adelante hasta que los brazos estén completamente extendidos, pero sin bloquear las articulaciones de los codos.",
+                                                  "Inhala y regresa lentamente los agarres hasta que los codos estén a la altura de los hombros o un poco más atrás.",
+                                                  "Repite el movimiento durante el número de repeticiones que hayas establecido para tu entrenamiento.",
+                                                  "Es importante que mantengas la espalda recta y los codos en línea con los hombros durante todo el movimiento. Evita balancearte o arquear la espalda para ayudarte a mover los agarres, ya que esto puede aumentar el riesgo de lesiones. Además, no bloques las articulaciones de los codos cuando extiendas los brazos, ya que esto puede aumentar la presión en las articulaciones y provocar lesiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press de Pecho Vertical/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press de Pecho Vertical/pressVertical.mp4"
+                              },
+                              {
+                                        "id": "press-de-pecho-vertical-con-disco",
+                                        "name": "Press de Pecho Vertical con Disco",
+                                        "steps": [
+                                                  "Ajusta el peso de la máquina colocando el peso de forma equitativa entre los lados.",
+                                                  "Siéntate en la máquina con la espalda recta y los pies apoyados en el suelo.",
+                                                  "Sujeta los agarres de la máquina con las manos mirando hacia adelante y las palmas hacia abajo.",
+                                                  "Exhala y empuja los agarres hacia adelante hasta que los brazos estén completamente extendidos, pero sin bloquear las articulaciones de los codos.",
+                                                  "Inhala y regresa lentamente los agarres hasta que los codos estén a la altura de los hombros o un poco más atrás.",
+                                                  "Repite el movimiento durante el número de repeticiones que hayas establecido para tu entrenamiento.",
+                                                  "Es importante que mantengas la espalda recta y los codos en línea con los hombros durante todo el movimiento. Evita balancearte o arquear la espalda para ayudarte a mover los agarres, ya que esto puede aumentar el riesgo de lesiones. Además, no bloques las articulaciones de los codos cuando extiendas los brazos, ya que esto puede aumentar la presión en las articulaciones y provocar lesiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press de Pecho Vertical con Disco/pechoPress.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press de Pecho Vertical con Disco/pressPechoVerticalDisco.mp4"
+                              },
+                              {
+                                        "id": "press-hammer-declinado",
+                                        "name": "Press Hammer Declinado",
+                                        "steps": [
+                                                  "Ubícate en posición con la espalda estable y los codos flexionados a 90°.",
+                                                  "Empuja el peso o junta las manos contrayendo los pectorales.",
+                                                  "Desciende de manera controlada abriendo la caja torácica."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hammer-inclinado",
+                                        "name": "Press Hammer Inclinado",
+                                        "steps": [
+                                                  "Ajusta la máquina de Press Hammer Declinado según tu altura y preferencias. Asegúrate de que el respaldo esté inclinado de manera cómoda para tu posición.",
+                                                  "Siéntate en la máquina con la espalda bien apoyada en el respaldo y los pies firmemente colocados en el suelo.",
+                                                  "Agarra las asas de la máquina con un agarre neutro (las palmas mirándose entre sí) y extiende los brazos completamente.",
+                                                  "Empuja las asas hacia adelante en un movimiento controlado, manteniendo los codos ligeramente flexionados.",
+                                                  "Mantén una respiración regular y una postura estable durante todo el movimiento.",
+                                                  "Regresa las asas a la posición inicial de manera controlada, sintiendo la contracción en los músculos del pecho y los hombros.",
+                                                  "Realiza el mismo número de repeticiones, manteniendo una buena forma y control en todo momento.",
+                                                  "Este ejercicio se enfoca en trabajar los músculos del pecho y los hombros, y puede ser integrado en tu rutina de entrenamiento para fortalecer y desarrollar la musculatura de la parte superior del cuerpo."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press Hammer Inclinado/pechoEmpuje.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press Hammer Inclinado/pressHammerInclinado.mp4"
+                              },
+                              {
+                                        "id": "press-hammer-plano",
+                                        "name": "Press Hammer Plano",
+                                        "steps": [
+                                                  "Ajusta la máquina de Press Hammer Declinado según tu altura y preferencias. Asegúrate de que el respaldo esté inclinado de manera cómoda para tu posición.",
+                                                  "Siéntate en la máquina con la espalda bien apoyada en el respaldo y los pies firmemente colocados en el suelo.",
+                                                  "Agarra las asas de la máquina con un agarre neutro (las palmas mirándose entre sí) y extiende los brazos completamente.",
+                                                  "Empuja las asas hacia adelante en un movimiento controlado, manteniendo los codos ligeramente flexionados.",
+                                                  "Mantén una respiración regular y una postura estable durante todo el movimiento.",
+                                                  "Regresa las asas a la posición inicial de manera controlada, sintiendo la contracción en los músculos del pecho y los hombros.",
+                                                  "Realiza el mismo número de repeticiones, manteniendo una buena forma y control en todo momento.",
+                                                  "Este ejercicio se enfoca en trabajar los músculos del pecho y los hombros, y puede ser integrado en tu rutina de entrenamiento para fortalecer y desarrollar la musculatura de la parte superior del cuerpo."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press Hammer Plano/pechoEmpuje.png",
+                                        "videoUrl": "/Entrenamientos/Pecho/Poleas y maquinas/Press Hammer Plano/pressHammerPlano.mp4"
+                              }
+                    ]
+          }
+]
+    },
+        hombros: {
+        id: 'hombros',
+        name: 'Hombros',
+        subtitle: 'Deltoides anterior, lateral y posterior',
+        cardImageUrl: '/Entrenamientos/Hombros/hombros.png',
+        detailImageUrl: '/Entrenamientos/Hombros/hombros.png',
+        frontHighlight: true,
+        equipmentCategories: [
+          {
+                    "id": "barra",
+                    "name": "Barra",
+                    "exercises": [
+                              {
+                                        "id": "banco-press-de-hombro",
+                                        "name": "Banco Press de Hombro",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro-con-barra",
+                                        "name": "Press Hombro con Barra",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro-sentado-con-barra",
+                                        "name": "Press Hombro Sentado con Barra",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-nuca-con-barra",
+                                        "name": "Press Nuca con Barra",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "push-press-con-barra",
+                                        "name": "Push Press con Barra",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-frontales-con-barra",
+                                        "name": "Vuelos Frontales con Barra",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-frontales-con-disco",
+                                        "name": "Vuelos Frontales con Disco",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              }
+                    ]
+          },
+          {
+                    "id": "mancuernas",
+                    "name": "Mancuernas",
+                    "exercises": [
+                              {
+                                        "id": "arnold-press-sentado",
+                                        "name": "Arnold Press Sentado",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "elevacion-posterior-con-mancuerna",
+                                        "name": "Elevación Posterior con Mancuerna",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-de-hombro-con-mancuerna-arrodillado-unilateral",
+                                        "name": "Press de Hombro con Mancuerna Arrodillado Unilateral",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro-agarre-neutro",
+                                        "name": "Press Hombro Agarre Neutro",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro-sentado-con-mancuerna",
+                                        "name": "Press Hombro Sentado con Mancuerna",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-militar-sentado-con-mancuerna",
+                                        "name": "Press Militar Sentado con Mancuerna",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-frontales",
+                                        "name": "Vuelos Frontales",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-frontales-alternados",
+                                        "name": "Vuelos Frontales Alternados",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-laterales",
+                                        "name": "Vuelos Laterales",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-laterales-sentado",
+                                        "name": "Vuelos Laterales Sentado",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-posteriores",
+                                        "name": "Vuelos Posteriores",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-posteriores-en-banco-inclinado",
+                                        "name": "Vuelos Posteriores en Banco Inclinado",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
                                         ]
                               }
                     ]
@@ -1848,133 +3584,413 @@ export const MUSCLE_GROUPS_DATA: Record<string, MuscleGroupData> = {
           {
                     "id": "poleas-maquinas",
                     "name": "Poleas y Máquinas",
-                    "exercises": []
+                    "exercises": [
+                              {
+                                        "id": "ante-brazo-con-polea",
+                                        "name": "Ante Brazo con Polea",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "deltoides-en-polea-cruzadas",
+                                        "name": "Deltoides en Polea Cruzadas",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "elevacion-posterior-con-polea-baja",
+                                        "name": "Elevación Posterior con Polea Baja",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "maquina-de-vuelo-lateral",
+                                        "name": "Máquina de Vuelo Lateral",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "maquina-de-vuelos-laterales-a-pie",
+                                        "name": "Máquina de Vuelos Laterales a Pie",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "posteriores-en-maquina-de-apertura",
+                                        "name": "Posteriores en Máquina de Apertura",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro",
+                                        "name": "Press Hombro",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro-en-smith",
+                                        "name": "Press Hombro en Smith",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "press-hombro-inclinado",
+                                        "name": "Press Hombro Inclinado",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelo-lateral-con-polea",
+                                        "name": "Vuelo Lateral con Polea",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              },
+                              {
+                                        "id": "vuelos-frontales-en-polea",
+                                        "name": "Vuelos Frontales en Polea",
+                                        "steps": [
+                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
+                                                  "Mantén la postura erguida evitando forzar el cuello.",
+                                                  "Baja el peso de forma lenta y controlada."
+                                        ]
+                              }
+                    ]
           }
 ]
     },
-    femorales: {
-        id: 'femorales',
-        name: 'Femorales',
-        subtitle: 'Isquiosurales',
-        cardImageUrl: '/Entrenamientos/Femorales/femorales.png',
-        backHighlight: true,
-        equipmentCategories: [
-            {
-                id: 'poleas-maquinas',
-                name: 'Poleas y Máquinas',
-                exercises: [
-                    {
-                        id: 'curl-femoral-tumbado',
-                        name: 'Curl Femoral Tumbado',
-                        videoUrl: '/assets/piernas y gluteos/Curl Femoral Tumbado.gif',
-                        steps: [
-                            'Recuéstate boca abajo en la máquina con el rodillo justo por encima de los talones.',
-                            'Flexiona los rodillas llevando los talones hacia los glúteos.',
-                            'Desciende el peso de forma lenta y controlada.'
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    gluteos: {
-        id: 'gluteos',
-        name: 'Glúteos',
-        subtitle: 'Glúteo mayor y medio',
-        cardImageUrl: '/Entrenamientos/Gluteos/gluteos.png',
-        backHighlight: true,
-        equipmentCategories: [
-            {
-                id: 'poleas-maquinas',
-                name: 'Poleas y Máquinas',
-                exercises: [
-                    {
-                        id: 'hip-thrust',
-                        name: 'Hip Thrust (Empuje de Cadera)',
-                        videoUrl: '/assets/piernas y gluteos/Hip Thrust (Empuje de Cadera).gif',
-                        steps: [
-                            'Apoya la parte alta de la espalda sobre un banco.',
-                            'Coloca la barra sobre la pelvis.',
-                            'Empuja la cadera hacia arriba contrayendo fuertemente los glúteos al llegar al tope.'
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    pecho: {
-        id: 'pecho',
-        name: 'Pecho',
-        subtitle: 'Pectorales',
-        cardImageUrl: '/Entrenamientos/Pecho/pecho.png',
-        frontHighlight: true,
-        equipmentCategories: [
-            {
-                id: 'mancuernas',
-                name: 'Mancuernas',
-                exercises: [
-                    {
-                        id: 'press-superior-mancuernas',
-                        name: 'Press Superior con Mancuernas',
-                        videoUrl: '/assets/pecho/Press Superior con Mancuernas.gif',
-                        steps: [
-                            'Ajusta el banco a un ángulo de 30-45°.',
-                            'Empuja las mancuernas hacia arriba sin chocarlas en la cima.',
-                            'Desciende controladamente hasta la altura del pecho.'
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    hombros: {
-        id: 'hombros',
-        name: 'Hombros',
-        subtitle: 'Deltoides anterior, lateral y posterior',
-        cardImageUrl: '/Entrenamientos/Hombros/hombros.png',
-        frontHighlight: true,
-        equipmentCategories: [
-            {
-                id: 'mancuernas',
-                name: 'Mancuernas',
-                exercises: [
-                    {
-                        id: 'press-hombros-mancuernas',
-                        name: 'Press de Hombros con Mancuernas',
-                        videoUrl: '/assets/hombros/Press de Hombros con Mancuernas.gif',
-                        steps: [
-                            'Siéntate erguido en un banco a 90°.',
-                            'Eleva las mancuernas por encima de la cabeza hasta casi extender los brazos.',
-                            'Baja lentamente a la altura de las orejas.'
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    triceps: {
+            triceps: {
         id: 'triceps',
         name: 'Tríceps',
         subtitle: 'Extensores de codo',
-        cardImageUrl: '/Entrenamientos/Triceps/triceps.png',
+        cardImageUrl: '/Entrenamientos/Triceps/tricepsmini.png',
+        detailImageUrl: '/Entrenamientos/Triceps/triceps.png',
         backHighlight: true,
         equipmentCategories: [
-            {
-                id: 'poleas-maquinas',
-                name: 'Poleas y Máquinas',
-                exercises: [
-                    {
-                        id: 'extension-triceps-polea',
-                        name: 'Extensión de Tríceps en Polea Alta',
-                        videoUrl: '/assets/biceps y triceps/Extensión de Tríceps en Polea Alta.gif',
-                        steps: [
-                            'Sujeta la barra o cuerda en polea alta.',
-                            'Extiende los codos totalmente empujando el peso hacia abajo.',
-                            'Mantén los codos pegados a los costados del cuerpo.'
-                        ]
-                    }
-                ]
-            }
-        ]
+          {
+                    "id": "barra",
+                    "name": "Barra",
+                    "exercises": [
+                              {
+                                        "id": "crush-triceps-barra",
+                                        "name": "Crush Triceps Barra",
+                                        "steps": [
+                                                  "Acuéstate boca arriba en un banco plano, asegurándote de que tu cabeza, espalda y glúteos estén completamente apoyados en el banco. Mantén los pies firmemente plantados en el suelo para la estabilidad.",
+                                                  "Sostén una barra con ambas manos, usando un agarre prono (palmas hacia abajo), con las manos separadas a la anchura de los hombros.",
+                                                  "Levanta la barra hacia arriba, extendiendo completamente los brazos, de modo que la barra quede alineada con los hombros. Esta es tu posición inicial.",
+                                                  "Inhala y, mientras exhalas, flexiona los codos para bajar lentamente la barra hacia tu frente. Mantén los codos apuntando hacia adelante y cerca de tu cabeza durante todo el movimiento, sin que se desvíen hacia los lados.",
+                                                  "Continúa bajando la barra hasta que sientas un estiramiento en los tríceps, asegurándote de que la barra no toque la frente o la cabeza. Controla el movimiento en todo momento para evitar que los codos se abran hacia afuera.",
+                                                  "Exhala y extiende los brazos para llevar la barra de vuelta a la posición inicial, concentrándote en contraer los tríceps al final del movimiento. Mantén la tensión en los tríceps durante todo el ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Barra/Crush Triceps Barra/tricepExtencionCodos.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Barra/Crush Triceps Barra/CrushTricepsBarra.mp4",
+                                        "note": "Completa el número deseado de repeticiones, asegurándote de mantener una buena técnica y control en cada repetición."
+                              }
+                    ]
+          },
+          {
+                    "id": "mancuernas",
+                    "name": "Mancuernas",
+                    "exercises": [
+                              {
+                                        "id": "extension-de-codos-alternada-con-mancuerna",
+                                        "name": "Extensión de Codos Alternada con Mancuerna",
+                                        "steps": [
+                                                  "Colócate en posición de plancha alta, con las manos sosteniendo las mancuernas, los brazos extendidos y los pies separados al ancho de los hombros.",
+                                                  "Levanta un pie y colócalo en un banco, manteniendo la pierna opuesta extendida.",
+                                                  "Inclina el tronco hacia adelante y lleva la mano opuesta al pie que está en el banco hacia el mismo, manteniendo el codo cerca del cuerpo.",
+                                                  "Extiende el codo del brazo que sostiene la mancuerna hacia atrás, manteniendo el brazo cerca del cuerpo y el codo hacia arriba.",
+                                                  "Regresa a la posición inicial y repite con el otro brazo.",
+                                                  "Alterna los brazos para completar la serie.",
+                                                  "Es importante mantener el abdomen y los glúteos contraídos para evitar arquear la espalda. También es fundamental mantener la muñeca en posición neutral y no dejar que se doble hacia atrás. Este ejercicio puede ser realizado con mancuernas de peso ligero a moderado, dependiendo del nivel de condición física del individuo."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Mancuernas/Extensión de Codos Alternada con Mancuerna/tricepExtencionCodos.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Mancuernas/Extensión de Codos Alternada con Mancuerna/extensionDeTricepsConMancuerna.mp4"
+                              },
+                              {
+                                        "id": "extension-de-triceps-con-mancuerna",
+                                        "name": "Extensión de Triceps con Mancuerna",
+                                        "steps": [
+                                                  "Colócate en un banco plano, apoyando el torso sobre el banco con el pecho hacia abajo. Mantén los pies firmemente apoyados en el suelo para asegurar la estabilidad.",
+                                                  "Sostén una mancuerna con ambas manos, extendiendo los brazos hacia arriba y manteniendo los codos ligeramente flexionados. La mancuerna debe estar alineada con tu cabeza y los brazos estirados.",
+                                                  "Inhala y, mientras exhalas, flexiona los codos para bajar lentamente la mancuerna detrás de la cabeza. Asegúrate de mantener los codos inmóviles y cerca de tu cabeza durante el movimiento.",
+                                                  "Continúa bajando la mancuerna hasta que sientas un estiramiento en los tríceps, manteniendo el control en todo momento. No permitas que la mancuerna se balancee ni que tu torso se mueva.",
+                                                  "Exhala y extiende los brazos para volver a la posición inicial, concentrándote en contraer los tríceps al final del movimiento. Mantén la tensión en los tríceps durante todo el ejercicio."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Mancuernas/Extensión de Triceps con Mancuerna/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Mancuernas/Extensión de Triceps con Mancuerna/extensionDeTricepsConMancuerna.mp4",
+                                        "note": "Completa el número deseado de repeticiones, asegurándote de mantener una buena técnica y control en cada repetición."
+                              },
+                              {
+                                        "id": "press-frances",
+                                        "name": "Press Frances",
+                                        "steps": [
+                                                  "Acuéstate en un banco plano con las piernas apoyadas en el suelo y las mancuernas sostenidas en tus manos con un agarre neutral (las palmas de las manos mirando hacia adentro).",
+                                                  "Levanta las mancuernas y mantén los brazos extendidos perpendicular al cuerpo. Las palmas de las manos deben estar mirando hacia adentro y las mancuernas deben estar en línea con tus oídos.",
+                                                  "Baja lentamente las mancuernas hacia la cabeza, manteniendo los codos apuntando hacia el techo. El movimiento debe ser controlado y las mancuernas deben detenerse justo antes de tocar la cabeza.",
+                                                  "Vuelve a la posición inicial empujando las mancuernas hacia arriba y extendiendo los brazos.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones.",
+                                                  "Es importante mantener los codos apuntando hacia el techo en todo momento y asegurarse de que el movimiento sea controlado y fluido. También se puede variar el agarre de las mancuernas y la separación entre ellas para trabajar diferentes partes del tríceps."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Mancuernas/Press Frances/tricepExtencionCodos.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Mancuernas/Press Frances/pressFrances.mp4"
+                              },
+                              {
+                                        "id": "press-frances-sentado",
+                                        "name": "Press Frances Sentado",
+                                        "steps": [
+                                                  "Toma una mancuerna con ambas manos y colócala detrás de tu cabeza, con los brazos doblados en un ángulo de 90 grados. Los dedos deben estar entrelazados alrededor del peso de la mancuerna.",
+                                                  "Mantén tus codos estacionarios y levanta lentamente la mancuerna hacia arriba, extendiendo completamente los brazos hacia el techo. Asegúrate de mantener los codos apuntando hacia el techo y de no moverlos hacia afuera durante el movimiento.",
+                                                  "Baja lentamente la mancuerna de vuelta a la posición inicial detrás de la cabeza, manteniendo siempre el control del movimiento.",
+                                                  "Repite el movimiento por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Mancuernas/Press Frances Sentado/tricepExtencionCodos.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Mancuernas/Press Frances Sentado/extensionTricepsTrasnuca.mp4",
+                                        "note": "Es importante recordar que este ejercicio puede ser exigente para los músculos del cuello y de los hombros, por lo que es importante mantener una buena postura y no hacer demasiado peso. Si eres nuevo en el ejercicio, comienza con un peso ligero y aumenta gradualmente a medida que ganas fuerza y resistencia."
+                              },
+                              {
+                                        "id": "press-frances-sentado-a-una-mano",
+                                        "name": "Press Frances Sentado a una Mano",
+                                        "steps": [
+                                                  "Toma una mancuerna con una mano y colócala detrás de tu cabeza, con el brazoa doblado en un ángulo de 90 grados.",
+                                                  "Los dedos deben estar entrelazados alrededor del peso de la mancuerna.",
+                                                  "Levanta lentamente la mancuerna hacia arriba, extendiendo completamente el brazo hacia el techo. Asegúrate de no mover los codos hacia afuera durante el movimiento.",
+                                                  "Baja lentamente la mancuerna de vuelta a la posición inicial detrás de la cabeza, manteniendo siempre el control del movimiento.",
+                                                  "Repite el movimiento por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Mancuernas/Press Frances Sentado a una Mano/tricepExtencionCodos.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Mancuernas/Press Frances Sentado a una Mano/extensionTricepsUnaMano.mp4",
+                                        "note": "Es importante recordar que este ejercicio puede ser exigente para los músculos del cuello y de los hombros, por lo que es importante mantener una buena postura y no hacer demasiado peso. Si eres nuevo en el ejercicio, comienza con un peso ligero y aumenta gradualmente a medida que ganas fuerza y resistencia."
+                              }
+                    ]
+          },
+          {
+                    "id": "poleas-maquinas",
+                    "name": "Poleas y Máquinas",
+                    "exercises": [
+                              {
+                                        "id": "extension-de-codo-en-polea",
+                                        "name": "Extensión de Codo en Polea",
+                                        "steps": [
+                                                  "Primero, ajusta la polea en la posición más alta y sujeta la manija de la cuerda con las dos manos.",
+                                                  "Párate de frente a la polea, con los pies separados al ancho de los hombros y una ligera flexión en las rodillas. Mantén una buena postura y la espalda recta.",
+                                                  "Mantén los codos pegados a los lados del cuerpo y estira los brazos hacia abajo, manteniendo las palmas hacia abajo y las muñecas firmes.",
+                                                  "Luego, flexiona los codos y tira de las manos hacia abajo y hacia atrás, manteniendo los codos pegados al cuerpo. La manija de la cuerda debe bajar hasta que esté cerca de tus muslos y tus brazos estén completamente extendidos hacia atrás.",
+                                                  "Mantén la contracción en los tríceps durante un segundo, luego lentamente vuelve a la posición inicial, manteniendo la resistencia controlada en todo momento.",
+                                                  "Repite este movimiento para completar una serie de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Codo en Polea/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Codo en Polea/tricepsPolea.mp4",
+                                        "note": "Recuerda que es importante mantener una buena postura y una técnica adecuada para evitar lesiones y maximizar los beneficios del ejercicio. Además, puedes variar la posición de las manos y la altura de la polea para enfocar diferentes partes de los tríceps."
+                              },
+                              {
+                                        "id": "extension-de-codo-en-polea-alta-con-apoyo",
+                                        "name": "Extensión de Codo en Polea Alta con Apoyo",
+                                        "steps": [
+                                                  "Apoya la espalda alta en la colchoneta.",
+                                                  "Párate de frente a la polea, con los pies separados al ancho de los hombros y una ligera flexión en las rodillas. Mantén una buena postura y la espalda recta.",
+                                                  "Mantén los codos pegados a los lados del cuerpo y estira los brazos hacia abajo, manteniendo las palmas hacia abajo y las muñecas firmes.",
+                                                  "Luego, flexiona los codos y tira de las manos hacia abajo y hacia atrás, manteniendo los codos pegados al cuerpo. La manija de la cuerda debe bajar hasta que esté cerca de tus muslos y tus brazos estén completamente extendidos hacia atrás.",
+                                                  "Mantén la contracción en los tríceps durante un segundo, luego lentamente vuelve a la posición inicial, manteniendo la resistencia controlada en todo momento.",
+                                                  "Repite este movimiento para completar una serie de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Codo en Polea Alta con Apoyo/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Codo en Polea Alta con Apoyo/poleaAltaParaTricep.mp4",
+                                        "note": "Recuerda que es importante mantener una buena postura y una técnica adecuada para evitar lesiones y maximizar los beneficios del ejercicio. Además, puedes variar la posición de las manos y la altura de la polea para enfocar diferentes partes de los tríceps."
+                              },
+                              {
+                                        "id": "extension-de-codo-en-polea-unilateral",
+                                        "name": "Extensión de Codo en Polea Unilateral",
+                                        "steps": [
+                                                  "Coloca una polea a la altura máxima de la máquina.",
+                                                  "Párate de lado a la polea y agarra el asa o la cuerda con una mano.",
+                                                  "Mantén el codo pegado al costado del cuerpo y extiende el brazo hacia abajo, manteniendo la muñeca recta.",
+                                                  "Mantén la posición durante un segundo y luego lentamente vuelve a la posición inicial.",
+                                                  "Repite el movimiento para completar el número deseado de repeticiones.",
+                                                  "Luego cambia de lado y repite el ejercicio con la otra mano."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Codo en Polea Unilateral/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Codo en Polea Unilateral/tricepsIndividual.mp4",
+                                        "note": "Es importante mantener una buena postura durante todo el ejercicio, evitando inclinar el cuerpo hacia un lado o hacia adelante. También debes asegurarte de mantener el codo pegado al costado del cuerpo para asegurar que se aíslen adecuadamente los tríceps."
+                              },
+                              {
+                                        "id": "extension-de-triceps-en-polea-alta-unilateral",
+                                        "name": "Extensión de Triceps en Polea Alta Unilateral",
+                                        "steps": [
+                                                  "De pie frente a la máquina de poleas con una polea alta, y de espaldas a la misma.",
+                                                  "Asegura el agarre de una sola manija con una mano, manteniendo la palma de la mano mirando hacia abajo.",
+                                                  "Da un paso hacia adelante con el pie del lado opuesto al brazo que está sujetando la manija, para mantener el equilibrio.",
+                                                  "Inicia el movimiento con el codo ligeramente flexionado y la manija cerca de la cara, con el tríceps activado.",
+                                                  "Extiende el codo completamente, llevando la manija hacia abajo y hacia afuera, alejándola de tu cuerpo.",
+                                                  "Mantén la posición extendida por un segundo para maximizar la contracción en los tríceps.",
+                                                  "Controla el retorno de la manija a la posición inicial, flexionando el codo.",
+                                                  "Realiza el mismo número de repeticiones y luego cambia de lado para trabajar el otro brazo.",
+                                                  "Mantén una postura estable y evita balancear el cuerpo durante el movimiento.",
+                                                  "Ajusta el peso de la máquina según tu nivel de fuerza y comodidad."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Triceps en Polea Alta Unilateral/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Extensión de Triceps en Polea Alta Unilateral/extensionAltaTricepsTrasnucaUnilateral.mp4"
+                              },
+                              {
+                                        "id": "fondo-asistidos",
+                                        "name": "Fondo Asistidos",
+                                        "steps": [
+                                                  "Ajusta el asiento de la máquina de modo que la almohadilla de tu espalda esté en ángulo recto con los brazos extendidos hacia atrás y las manos agarrando las manijas de la máquina.",
+                                                  "Ajusta la cantidad de peso que deseas levantar, según tu nivel de fuerza y habilidad.",
+                                                  "Comienza el movimiento lentamente, doblando los codos para bajar los brazos mientras mantienes los hombros estables y las manos agarrando las manijas.",
+                                                  "Una vez que los brazos estén completamente doblados, extiéndelos hacia arriba para volver a la posición inicial.",
+                                                  "Continúa el movimiento durante varias repeticiones, manteniendo una respiración controlada y evitando balancear el cuerpo.",
+                                                  "Cuando hayas completado el número deseado de repeticiones, libera las manijas de la máquina y levántate del asiento."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Fondo Asistidos/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Fondo Asistidos/tricepsAsistidos.mp4",
+                                        "note": "Es importante mantener una buena forma durante todo el ejercicio para evitar lesiones y maximizar los beneficios. También es recomendable trabajar con un entrenador personal certificado para obtener una orientación adecuada sobre la técnica y el peso adecuado para tu nivel de habilidad."
+                              },
+                              {
+                                        "id": "fondo-de-triceps-sentado",
+                                        "name": "Fondo de Triceps Sentado",
+                                        "steps": [
+                                                  "Siéntate en la máquina con la espalda recta y los pies firmemente apoyados en el suelo. Ajusta la altura del asiento para alinear tus codos con los ejes de rotación de las palancas.",
+                                                  "Selecciona el peso adecuado para tu nivel de fuerza. Comienza con un peso ligero y ajusta según sea necesario.",
+                                                  "Agarra las empuñaduras con firmeza y comodidad, asegurándote de que tus manos estén a la altura de tus hombros.",
+                                                  "Inicia el movimiento extendiendo completamente los codos, empujando las empuñaduras hacia abajo. Exhala durante esta fase.",
+                                                  "Mantén la concentración en tus tríceps durante la extensión. Evita el impulso excesivo para que los tríceps realicen el trabajo.",
+                                                  "Después de la extensión completa, flexiona los codos para llevar las empuñaduras de vuelta a la posición inicial. Inhala durante esta fase.",
+                                                  "Realiza el ejercicio de manera controlada, evitando movimientos bruscos para maximizar la activación de los tríceps y reducir el riesgo de lesiones.",
+                                                  "Realiza el número deseado de series y repeticiones según tu programa de entrenamiento. Descansa adecuadamente entre las series.",
+                                                  "Si es necesario, ajusta el asiento o el peso durante tu sesión para garantizar un movimiento efectivo y seguro."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Fondo de Triceps Sentado/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Fondo de Triceps Sentado/fondoTricepsSentado.mp4"
+                              },
+                              {
+                                        "id": "maquina-de-extension-de-brazos",
+                                        "name": "Máquina de Extensión de Brazos",
+                                        "steps": [
+                                                  "Siéntate en la máquina de extensión de tríceps con la espalda recta y los pies firmemente apoyados en el suelo. Ajusta la altura del asiento para alinear tus codos con los ejes de rotación de las palancas.",
+                                                  "Selecciona el peso adecuado para tu nivel de fuerza. Comienza con un peso ligero y ajusta según sea necesario.",
+                                                  "Agarra las empuñaduras con firmeza y comodidad, asegurándote de que tus manos estén a la altura de tus hombros.",
+                                                  "Inicia el movimiento extendiendo completamente los codos, empujando las empuñaduras hacia abajo. Exhala durante esta fase.",
+                                                  "Mantén la concentración en tus tríceps durante la extensión. Evita el impulso excesivo para que los tríceps realicen el trabajo.",
+                                                  "Después de la extensión completa, flexiona los codos para llevar las empuñaduras de vuelta a la posición inicial. Inhala durante esta fase.",
+                                                  "Realiza el ejercicio de manera controlada, evitando movimientos bruscos para maximizar la activación de los tríceps y reducir el riesgo de lesiones.",
+                                                  "Realiza el número deseado de series y repeticiones según tu programa de entrenamiento. Descansa adecuadamente entre las series.",
+                                                  "Si es necesario, ajusta el asiento o el peso durante tu sesión para garantizar un movimiento efectivo y seguro."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Máquina de Extensión de Brazos/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Máquina de Extensión de Brazos/armExtension.mp4"
+                              },
+                              {
+                                        "id": "maquina-de-extension-de-triceps",
+                                        "name": "Máquina de Extensión de Triceps",
+                                        "steps": [
+                                                  "Siéntate en la máquina de extensión de tríceps con la espalda recta y los pies firmemente apoyados en el suelo. Ajusta la altura del asiento para alinear tus codos con los ejes de rotación de las palancas.",
+                                                  "Selecciona el peso adecuado para tu nivel de fuerza. Comienza con un peso ligero y ajusta según sea necesario.",
+                                                  "Agarra las empuñaduras con firmeza y comodidad, asegurándote de que tus manos estén a la altura de tus hombros.",
+                                                  "Inicia el movimiento extendiendo completamente los codos, empujando las empuñaduras hacia abajo. Exhala durante esta fase.",
+                                                  "Mantén la concentración en tus tríceps durante la extensión. Evita el impulso excesivo para que los tríceps realicen el trabajo.",
+                                                  "Después de la extensión completa, flexiona los codos para llevar las empuñaduras de vuelta a la posición inicial. Inhala durante esta fase.",
+                                                  "Realiza el ejercicio de manera controlada, evitando movimientos bruscos para maximizar la activación de los tríceps y reducir el riesgo de lesiones.",
+                                                  "Realiza el número deseado de series y repeticiones según tu programa de entrenamiento. Descansa adecuadamente entre las series.",
+                                                  "Si es necesario, ajusta el asiento o el peso durante tu sesión para garantizar un movimiento efectivo y seguro."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Máquina de Extensión de Triceps/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Máquina de Extensión de Triceps/maquinaExtensionTriceps.mp4"
+                              },
+                              {
+                                        "id": "maquina-de-press-frances",
+                                        "name": "Máquina de Press Frances",
+                                        "steps": [
+                                                  "Siéntate en la máquina y ajuste el peso adecuado para realizar el ejercicio",
+                                                  "Toma las astas con ambas manos y colócala detrás de tu cabeza, con los brazos doblados en un ángulo de 90 grados.",
+                                                  "Mantén tus codos estacionarios y levanta lentamente la mancuerna hacia arriba, extendiendo completamente los brazos hacia el techo. Asegúrate de mantener los codos apuntando hacia el techo y de no moverlos hacia afuera durante el movimiento.",
+                                                  "Baja lentamente de vuelta a la posición inicial detrás de la cabeza, manteniendo siempre el control del movimiento.",
+                                                  "Repite el movimiento por el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Máquina de Press Frances/tricepExtencionCodos.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Máquina de Press Frances/maquinaPressFrances.mp4",
+                                        "note": "Es importante recordar que este ejercicio puede ser exigente para los músculos del cuello y de los hombros, por lo que es importante mantener una buena postura y no hacer demasiado peso. Si eres nuevo en el ejercicio, comienza con un peso ligero y aumenta gradualmente a medida que ganas fuerza y resistencia."
+                              },
+                              {
+                                        "id": "patada-de-tricep-en-polea",
+                                        "name": "Patada de Trícep en Polea",
+                                        "steps": [
+                                                  "Ajusta una máquina de polea con una polea alta y selecciona un peso adecuado.",
+                                                  "Ajusta la posición de la máquina a la altura de tus hombros.",
+                                                  "Párate de frente a la máquina y agarra la cuerda con una mano, y con la otra apóyate en la máquina",
+                                                  "Da un paso atrás para crear tensión en la cuerda y mantener los músculos del tríceps activados.",
+                                                  "Inicia el movimiento llevando la mano hacia atrás, extendiendo completamente el codo.",
+                                                  "Asegúrate de que los codos permanezcan cerca de tu cuerpo y la parte superior de los brazos esté estacionaria.",
+                                                  "Mantén la posición extendida por un segundo para sentir la contracción en los tríceps.",
+                                                  "Controla el retorno de las manos hacia la posición inicial, flexionando los codos.",
+                                                  "Evita balancear el cuerpo o utilizar el impulso; concéntrate en el trabajo específico de los tríceps."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Patada de Trícep en Polea/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Patada de Trícep en Polea/patadaTricepsPolea.mp4"
+                              },
+                              {
+                                        "id": "triceps-trasnuca-en-polea",
+                                        "name": "Triceps Trasnuca en Polea",
+                                        "steps": [
+                                                  "Para comenzar, ajusta la polea a una posición alta y fija la barra en el cable. Asegúrate de que la polea esté en el punto más alto posible.",
+                                                  "Párate frente a la polea y agarra la barra con las dos manos, con las palmas hacia abajo y las manos separadas a la distancia de los hombros.",
+                                                  "Coloca los pies separados a la misma distancia de los hombros y da un paso hacia adelante para estabilizarte.",
+                                                  "Mantén los codos cerca de los lados del cuerpo y los brazos rectos. Los codos deben estar pegados al cuerpo y los antebrazos deben apuntar hacia la polea.",
+                                                  "Mantén los abdominales tensos y la espalda recta mientras estiras los brazos hacia abajo, hacia los lados de tu cuerpo. Asegúrate de mantener los codos pegados al cuerpo todo el tiempo.",
+                                                  "Cuando hayas estirado completamente los brazos, sostén la posición por un momento y siente la contracción en tus tríceps.",
+                                                  "Vuelve lentamente a la posición inicial, controlando el movimiento y evitando que la barra suba demasiado rápido.",
+                                                  "Repite el movimiento durante el número deseado de repeticiones."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Triceps Trasnuca en Polea/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Triceps Trasnuca en Polea/tricepsPoleaSuperior.mp4",
+                                        "note": "Recuerda mantener una buena postura y una técnica adecuada durante todo el ejercicio para evitar lesiones y lograr los mejores resultados."
+                              },
+                              {
+                                        "id": "triceps-trasnuca-en-polea-baja",
+                                        "name": "Triceps Trasnuca en Polea Baja",
+                                        "steps": [
+                                                  "Ajusta una máquina de polea con una polea baja y selecciona un peso adecuado.",
+                                                  "Coloca un accesorio de cuerda en la polea.",
+                                                  "Párate de espaldas a la máquina y agarra la cuerda con ambas manos y los codos flexionados.",
+                                                  "Lleva las manos hacia la parte posterior de la cabeza, manteniendo los codos apuntando hacia el techo.",
+                                                  "Inicia el movimiento extendiendo completamente los codos, llevando las manos hacia arriba y alejándolas de la cabeza.",
+                                                  "Mantén la posición extendida por un segundo y luego controla el retorno de las manos hacia la parte posterior de la cabeza.",
+                                                  "Evita balancear el cuerpo o utilizar el impulso; concéntrate en el trabajo específico de los tríceps."
+                                        ],
+                                        "imageUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Triceps Trasnuca en Polea Baja/trapecioBanco.png",
+                                        "videoUrl": "/Entrenamientos/Triceps/Poleas y maquinas/Triceps Trasnuca en Polea Baja/tricepsTrasnucaPoleaBaja.mp4"
+                              }
+                    ]
+          }
+]
     },
 };
