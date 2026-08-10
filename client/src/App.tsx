@@ -62,7 +62,7 @@ function App() {
 
     // Load history from localStorage
     useEffect(() => {
-        const savedHistory = localStorage.getItem('routine_pro_history')
+        const savedHistory = localStorage.getItem('fiberfit_history') || localStorage.getItem('routine_pro_history')
         if (savedHistory) {
             setHistory(JSON.parse(savedHistory))
         }
@@ -365,7 +365,7 @@ function App() {
 
         const updatedHistory = [newSavedRoutine, ...history];
         setHistory(updatedHistory);
-        localStorage.setItem('routine_pro_history', JSON.stringify(updatedHistory));
+        localStorage.setItem('fiberfit_history', JSON.stringify(updatedHistory));
 
         // Show success toast
         setToastType('success');
@@ -390,7 +390,7 @@ function App() {
         const routineToDelete = history.find(item => item.id === id);
         const updatedHistory = history.filter(item => item.id !== id);
         setHistory(updatedHistory);
-        localStorage.setItem('routine_pro_history', JSON.stringify(updatedHistory));
+        localStorage.setItem('fiberfit_history', JSON.stringify(updatedHistory));
 
         // Show delete toast
         setToastType('delete');
@@ -438,16 +438,12 @@ function App() {
                         <div ref={logoRef} className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer" onClick={() => { setView('generator'); setRoutine(null); }}>
                             <Dumbbell size={24} />
                         </div>
-                        <h1 ref={titleRef} className="header-title text-xl font-bold text-white tracking-tight">Routine<span className="text-green-500">Pro</span></h1>
+                        <h1 ref={titleRef} className="header-title text-xl font-bold text-white tracking-tight">Fiber<span className="text-green-500">Fit</span></h1>
                     </div>
 
                     <div ref={navRef}>
                         <NavLinks view={view} setView={setView} setRoutine={setRoutine} />
                     </div>
-
-                    <button ref={loginBtnRef} className="header-btn bg-green-600/10 text-green-500 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-green-600 hover:text-white transition-all border border-green-600/20 hover:scale-105 active:scale-95">
-                        Iniciar Sesión
-                    </button>
                 </div>
             </header>
 
@@ -561,9 +557,9 @@ function App() {
 
             {/* Footer */}
             <footer ref={footerRef} className="bg-gray-950 border-t border-green-900/30 py-4 px-4 relative z-10">
-                <div className="max-w-7xl mx-auto text-center">
-                    <p className="text-gray-600 text-sm">
-                        © 2026 RoutinePro | Desarrollado por <a href="https://waveframe.com.ar/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline hover:text-green-500 transition-colors">WaveFrame Studio</a>.
+                <div className="max-w-7xl mx-auto text-center overflow-x-auto whitespace-nowrap">
+                    <p className="text-gray-600 text-xs sm:text-sm whitespace-nowrap inline-block">
+                        © 2026 FiberFit | Desarrollado por <a href="https://waveframe.com.ar/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline hover:text-green-500 transition-colors font-medium">WaveFrame Studio</a>.
                     </p>
                 </div>
             </footer>

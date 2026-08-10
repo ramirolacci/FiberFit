@@ -21,7 +21,9 @@ export const BodyDiagram: React.FC<BodyDiagramProps> = ({
     const isGlutes = highlightedMuscle === 'gluteos';
     const isTriceps = highlightedMuscle === 'triceps';
 
-    const getHighlightColor = (active: boolean) => (active ? '#ef4444' : '#27272a');
+    const isCalves = highlightedMuscle === 'gemelos' || highlightedMuscle === 'pantorrillas';
+
+    const getHighlightColor = (active: boolean) => (active ? '#ef4444' : '#18181b');
     const getStrokeColor = (active: boolean) => (active ? '#f87171' : '#3f3f46');
 
     return (
@@ -100,8 +102,16 @@ export const BodyDiagram: React.FC<BodyDiagramProps> = ({
                             />
 
                             {/* Calves */}
-                            <path d="M 62,240 C 58,260 58,290 64,305 C 70,305 72,280 76,242 Z" fill="#18181b" stroke="#3f3f46" />
-                            <path d="M 98,240 C 102,260 102,290 96,305 C 90,305 88,280 84,242 Z" fill="#18181b" stroke="#3f3f46" />
+                            <path
+                                d="M 62,240 C 58,260 58,290 64,305 C 70,305 72,280 76,242 Z"
+                                fill={getHighlightColor(isCalves)}
+                                stroke={getStrokeColor(isCalves)}
+                            />
+                            <path
+                                d="M 98,240 C 102,260 102,290 96,305 C 90,305 88,280 84,242 Z"
+                                fill={getHighlightColor(isCalves)}
+                                stroke={getStrokeColor(isCalves)}
+                            />
                         </g>
                     </svg>
                 </div>
@@ -175,8 +185,16 @@ export const BodyDiagram: React.FC<BodyDiagramProps> = ({
                             />
 
                             {/* Calves */}
-                            <path d="M 62,240 C 58,260 58,290 64,305 C 70,305 72,280 76,242 Z" fill="#18181b" stroke="#3f3f46" />
-                            <path d="M 98,240 C 102,260 102,290 96,305 C 90,305 88,280 84,242 Z" fill="#18181b" stroke="#3f3f46" />
+                            <path
+                                d="M 62,240 C 58,260 58,290 64,305 C 70,305 72,280 76,242 Z"
+                                fill={getHighlightColor(isCalves)}
+                                stroke={getStrokeColor(isCalves)}
+                            />
+                            <path
+                                d="M 98,240 C 102,260 102,290 96,305 C 90,305 88,280 84,242 Z"
+                                fill={getHighlightColor(isCalves)}
+                                stroke={getStrokeColor(isCalves)}
+                            />
                         </g>
                     </svg>
                 </div>
