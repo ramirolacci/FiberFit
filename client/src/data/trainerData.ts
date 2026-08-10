@@ -3394,301 +3394,373 @@ export const MUSCLE_GROUPS_DATA: Record<string, MuscleGroupData> = {
         id: 'hombros',
         name: 'Hombros',
         subtitle: 'Deltoides anterior, lateral y posterior',
-        cardImageUrl: '/Entrenamientos/Hombros/hombros.png',
-        detailImageUrl: '/Entrenamientos/Hombros/hombros.png',
+        cardImageUrl: '/Entrenamientos/Hombros/hombromini.png',
+        detailImageUrl: '/Entrenamientos/Hombros/hombro.png',
         frontHighlight: true,
+        backHighlight: true,
         equipmentCategories: [
-          {
-                    "id": "barra",
-                    "name": "Barra",
-                    "exercises": [
-                              {
-                                        "id": "banco-press-de-hombro",
-                                        "name": "Banco Press de Hombro",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro-con-barra",
-                                        "name": "Press Hombro con Barra",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro-sentado-con-barra",
-                                        "name": "Press Hombro Sentado con Barra",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-nuca-con-barra",
-                                        "name": "Press Nuca con Barra",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "push-press-con-barra",
-                                        "name": "Push Press con Barra",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-frontales-con-barra",
-                                        "name": "Vuelos Frontales con Barra",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-frontales-con-disco",
-                                        "name": "Vuelos Frontales con Disco",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              }
-                    ]
-          },
-          {
-                    "id": "mancuernas",
-                    "name": "Mancuernas",
-                    "exercises": [
-                              {
-                                        "id": "arnold-press-sentado",
-                                        "name": "Arnold Press Sentado",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "elevacion-posterior-con-mancuerna",
-                                        "name": "Elevación Posterior con Mancuerna",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-de-hombro-con-mancuerna-arrodillado-unilateral",
-                                        "name": "Press de Hombro con Mancuerna Arrodillado Unilateral",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro-agarre-neutro",
-                                        "name": "Press Hombro Agarre Neutro",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro-sentado-con-mancuerna",
-                                        "name": "Press Hombro Sentado con Mancuerna",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-militar-sentado-con-mancuerna",
-                                        "name": "Press Militar Sentado con Mancuerna",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-frontales",
-                                        "name": "Vuelos Frontales",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-frontales-alternados",
-                                        "name": "Vuelos Frontales Alternados",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-laterales",
-                                        "name": "Vuelos Laterales",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-laterales-sentado",
-                                        "name": "Vuelos Laterales Sentado",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-posteriores",
-                                        "name": "Vuelos Posteriores",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-posteriores-en-banco-inclinado",
-                                        "name": "Vuelos Posteriores en Banco Inclinado",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              }
-                    ]
-          },
-          {
-                    "id": "poleas-maquinas",
-                    "name": "Poleas y Máquinas",
-                    "exercises": [
-                              {
-                                        "id": "ante-brazo-con-polea",
-                                        "name": "Ante Brazo con Polea",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "deltoides-en-polea-cruzadas",
-                                        "name": "Deltoides en Polea Cruzadas",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "elevacion-posterior-con-polea-baja",
-                                        "name": "Elevación Posterior con Polea Baja",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "maquina-de-vuelo-lateral",
-                                        "name": "Máquina de Vuelo Lateral",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "maquina-de-vuelos-laterales-a-pie",
-                                        "name": "Máquina de Vuelos Laterales a Pie",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "posteriores-en-maquina-de-apertura",
-                                        "name": "Posteriores en Máquina de Apertura",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro",
-                                        "name": "Press Hombro",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro-en-smith",
-                                        "name": "Press Hombro en Smith",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "press-hombro-inclinado",
-                                        "name": "Press Hombro Inclinado",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelo-lateral-con-polea",
-                                        "name": "Vuelo Lateral con Polea",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              },
-                              {
-                                        "id": "vuelos-frontales-en-polea",
-                                        "name": "Vuelos Frontales en Polea",
-                                        "steps": [
-                                                  "Eleva o empuja la carga focalizando la fuerza en los deltoides.",
-                                                  "Mantén la postura erguida evitando forzar el cuello.",
-                                                  "Baja el peso de forma lenta y controlada."
-                                        ]
-                              }
-                    ]
-          }
-]
-    },
-            triceps: {
+            {
+                id: 'mancuernas',
+                name: 'Mancuernas',
+                exercises: [
+                    {
+                        id: 'elevacion-posterior-con-mancuerna',
+                        name: 'Elevación Posterior con Mancuerna',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Elevación Posterior con Mancuerna/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Elevación Posterior con Mancuerna/elevacionPosteriorMancuerna.mp4',
+                        steps: [
+                            "Sostén una mancuerna en cada mano y flexiona el torso hacia adelante desde las caderas, manteniendo la espalda recta.",
+                            "Deja que los brazos cuelguen hacia el suelo con una ligera flexión en los codos.",
+                            "Eleva las mancuernas hacia los lados hasta que los brazos estén paralelos al suelo, contrayendo la parte posterior del hombro.",
+                            "Mantén la contracción durante un segundo en la parte superior.",
+                            "Baja lentamente las mancuernas a la posición inicial."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-posteriores',
+                        name: 'Vuelos Posteriores',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Posteriores/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Posteriores/vuelosPosteriores.mp4',
+                        steps: [
+                            "De pie o sentado, inclina el torso hacia adelante manteniendo la espalda recta.",
+                            "Sostén las mancuernas con las palmas mirándose entre sí por debajo del torso.",
+                            "Eleva los brazos hacia los laterales apretando los deltoides posteriores.",
+                            "Baja las mancuernas de manera controlada."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-posteriores-en-banco-inclinado',
+                        name: 'Vuelos Posteriores en Banco Inclinado',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Posteriores en Banco Inclinado/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Posteriores en Banco Inclinado/vuelosPosterioresEnBancoInclinado.mp4',
+                        steps: [
+                            "Acuéstate boca abajo en un banco inclinado apoyando el pecho.",
+                            "Sostén una mancuerna en cada mano colgando hacia el suelo.",
+                            "Eleva los brazos lateralmente hacia atrás concentrando el esfuerzo en los deltoides posteriores.",
+                            "Regresa a la posición inicial controlando el descenso."
+                        ]
+                    },
+                    {
+                        id: 'press-militar-sentado-con-mancuerna',
+                        name: 'Press Militar Sentado con Mancuerna',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Press Militar Sentado con Mancuerna/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Press Militar Sentado con Mancuerna/pressMilitarSentadoMancuerna.mp4',
+                        steps: [
+                            "Siéntate en un banco con respaldo vertical sosteniendo dos mancuernas a la altura de los hombros.",
+                            "Mantén los codos hacia los lados y las palmas mirando al frente.",
+                            "Empuja las mancuernas verticalmente hacia arriba hasta extender los brazos casi por completo.",
+                            "Baja lentamente las mancuernas a la altura de las orejas."
+                        ]
+                    },
+                    {
+                        id: 'arnold-press-sentado',
+                        name: 'Arnold Press Sentado',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Arnold Press Sentado/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Arnold Press Sentado/arnoldPressSentado.mp4',
+                        steps: [
+                            "Siéntate en un banco con las mancuernas frente a tus hombros, palmas mirando hacia tu cuerpo (supinación).",
+                            "A medida que empujas las mancuernas hacia arriba, gira las muñecas de modo que las palmas miren hacia el frente (pronación) arriba.",
+                            "Extiende los brazos por completo por encima de la cabeza.",
+                            "Baja las mancuernas invirtiendo el giro de las muñecas para volver a la posición inicial."
+                        ]
+                    },
+                    {
+                        id: 'press-de-hombro-con-mancuerna-arrodillado-unilateral',
+                        name: 'Press de Hombro con Mancuerna Arrodillado Unilateral',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Press de Hombro con Mancuerna Arrodillado Unilateral/hombrosArrodillado.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Press de Hombro con Mancuerna Arrodillado Unilateral/pressDeHombroConMancuernaArrodillado.mp4',
+                        steps: [
+                            "Colócate en posición arrodillada sobre una rodilla (rodilla opuesta al brazo que empuja en el suelo).",
+                            "Sostén una mancuerna a la altura del hombro con la palma hacia el centro o al frente.",
+                            "Mantén el core firme y empuja la mancuerna hacia arriba sobre la cabeza.",
+                            "Baja lentamente de manera controlada."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-laterales',
+                        name: 'Vuelos Laterales',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Laterales/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Laterales/vueloLateral.mp4',
+                        steps: [
+                            "De pie con los pies al ancho de los hombros, sostén una mancuerna en cada mano a los costados del cuerpo.",
+                            "Eleva los brazos lateralmente hasta que estén paralelos al suelo, manteniendo una leve flexión en los codos.",
+                            "Evita balancear el torso para impulsarte.",
+                            "Desciende las mancuernas lentamente a la posición inicial."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-laterales-sentado',
+                        name: 'Vuelos Laterales Sentado',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Laterales Sentado/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Laterales Sentado/vuelosLateralesSentado.mp4',
+                        steps: [
+                            "Siéntate en el extremo de un banco plano manteniendo la espalda recta.",
+                            "Sostén las mancuernas a los costados del cuerpo.",
+                            "Eleva los brazos hacia los laterales hasta que queden paralelos al suelo.",
+                            "Controla el descenso de las mancuernas de vuelta a los costados."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-frontales',
+                        name: 'Vuelos Frontales',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Frontales/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Frontales/vueloFrontal.mp4',
+                        steps: [
+                            "De pie con las mancuernas apoyadas sobre la parte frontal de tus muslos, palmas mirando hacia tu cuerpo.",
+                            "Eleva las mancuernas hacia el frente hasta la altura de los ojos manteniendo los brazos semi-extendidos.",
+                            "Baja controladamente a la posición inicial."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-frontales-alternados',
+                        name: 'Vuelos Frontales Alternados',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Frontales Alternados/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Vuelos Frontales Alternados/vueloFrontalAlternado.mp4',
+                        steps: [
+                            "De pie, eleva una mancuerna hacia el frente hasta la altura del hombro mientras la otra permanece abajo.",
+                            "Baja la mancuerna controladamente y comienza a elevar la del brazo opuesto.",
+                            "Alterna consecutivamente los movimientos de cada brazo."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro-agarre-neutro',
+                        name: 'Press Hombro Agarre Neutro',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Press Hombro Agarre Neutro/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Press Hombro Agarre Neutro/pressHombroSentadoAgarraNeutro.mp4',
+                        steps: [
+                            "De pie o sentado, sostén las mancuernas a la altura de los hombros con las palmas de las manos mirándose entre sí (agarre neutro).",
+                            "Empuja las mancuernas hacia arriba de manera vertical hasta extender los brazos.",
+                            "Baja lentamente manteniendo los codos hacia el frente, protegiendo la articulación del hombro."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro-sentado-con-mancuerna',
+                        name: 'Press Hombro Sentado con Mancuerna',
+                        imageUrl: '/Entrenamientos/Hombros/Mancuernas/Press Hombro Sentado con Mancuerna/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Mancuernas/Press Hombro Sentado con Mancuerna/pressHombroMancuernaSentado.mp4',
+                        steps: [
+                            "Siéntate en un banco, levanta las mancuernas a la altura de las orejas con un agarre prono.",
+                            "Empuja hacia arriba con fuerza controlada hasta que las mancuernas se acercen arriba.",
+                            "Baja de forma controlada hasta la altura inicial."
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'barra',
+                name: 'Barra',
+                exercises: [
+                    {
+                        id: 'push-press-con-barra',
+                        name: 'Push Press con Barra',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Push Press con Barra/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Push Press con Barra/pushPressBarra.mp4',
+                        steps: [
+                            "Sostén la barra sobre la parte superior del pecho con un agarre ligeramente más ancho que los hombros.",
+                            "Realiza una flexión rápida y ligera de rodillas (dip) para generar impulso.",
+                            "Extiende explosivamente las rodillas y caderas al mismo tiempo que empujas la barra hacia arriba sobre tu cabeza.",
+                            "Bloquea los brazos en la parte superior y baja la barra de manera controlada hacia el pecho."
+                        ]
+                    },
+                    {
+                        id: 'press-nuca-con-barra',
+                        name: 'Press Nuca con Barra',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Press Nuca con Barra/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Press Nuca con Barra/pressNucaBarra.mp4',
+                        steps: [
+                            "Coloca la barra detrás de tu nuca, apoyada sobre los trapecios superiores.",
+                            "Sostén la barra con un agarre ancho y empuja verticalmente hacia arriba hasta que tus brazos estén extendidos.",
+                            "Desciende la barra lentamente detrás de la cabeza hasta la posición inicial con cuidado."
+                        ]
+                    },
+                    {
+                        id: 'banco-press-de-hombro',
+                        name: 'Banco Press de Hombro',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Banco Press de Hombro/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Banco Press de Hombro/bancoPressHombro.mp4',
+                        steps: [
+                            "Siéntate en el banco de press de hombros y sujeta la barra por delante con las manos a una anchura superior a los hombros.",
+                            "Baja la barra de forma controlada hacia la parte superior del pecho/clavícula.",
+                            "Empuja la barra hacia arriba con fuerza hasta la extensión completa de los codos."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-frontales-con-barra',
+                        name: 'Vuelos Frontales con Barra',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Vuelos Frontales con Barra/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Vuelos Frontales con Barra/vueloFrontalBarra.mp4',
+                        steps: [
+                            "De pie con la espalda erguida, toma una barra con agarre prono frente a tus muslos.",
+                            "Manteniendo los brazos casi extendidos, eleva la barra hacia el frente hasta que quede al nivel de los hombros.",
+                            "Baja la barra lentamente hacia la posición inicial."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-frontales-con-disco',
+                        name: 'Vuelos Frontales con Disco',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Vuelos Frontales con Disco/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Vuelos Frontales con Disco/vueloFrontalDisco.mp4',
+                        steps: [
+                            "Sostén un disco de peso con ambas manos a los lados del disco frente a tu pelvis.",
+                            "Manteniendo los codos casi bloqueados, eleva el disco hacia adelante hasta la altura de tus ojos.",
+                            "Baja de forma lenta y controlada."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro-con-barra',
+                        name: 'Press Hombro con Barra',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Press Hombro con Barra/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Press Hombro con Barra/hombrosPressBarra.mp4',
+                        steps: [
+                            "De pie, sostén la barra a la altura del pecho superior, manteniendo los codos apuntando hacia adelante.",
+                            "Empuja la barra hacia arriba pasando cerca del rostro hasta extender los brazos completamente.",
+                            "Mantén el abdomen y glúteos contraídos para estabilizar la columna."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro-sentado-con-barra',
+                        name: 'Press Hombro Sentado con Barra',
+                        imageUrl: '/Entrenamientos/Hombros/Barra/Press Hombro Sentado con Barra/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Barra/Press Hombro Sentado con Barra/pressHombroBarra.mp4',
+                        steps: [
+                            "Siéntate en un banco con respaldo erguido y coloca la barra a la altura del pecho superior.",
+                            "Empuja la barra hacia arriba sobre la cabeza de manera fluida.",
+                            "Baja de forma controlada hasta que toque levemente la parte superior del pecho."
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'poleas-maquinas',
+                name: 'Poleas y Máquinas',
+                exercises: [
+                    {
+                        id: 'elevacion-posterior-con-polea-baja',
+                        name: 'Elevación Posterior con Polea Baja',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Elevación Posterior con Polea Baja/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Elevación Posterior con Polea Baja/elevacionesPosterioresPoleaBaja.mp4',
+                        steps: [
+                            "Coloca la polea en la posición más baja. Inclínate hacia adelante manteniendo la espalda recta.",
+                            "Sujeta el cable con la mano opuesta y eleva el brazo hacia afuera y atrás en un arco controlado.",
+                            "Siente el trabajo en el deltoides posterior y regresa lentamente."
+                        ]
+                    },
+                    {
+                        id: 'posteriores-en-maquina-de-apertura',
+                        name: 'Posteriores en Máquina de Apertura',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Posteriores en Máquina de Apertura/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Posteriores en Máquina de Apertura/posterioresEnMaquinaApertura.mp4',
+                        steps: [
+                            "Siéntate mirando hacia la máquina (pecho apoyado en el respaldo).",
+                            "Agarra las empuñaduras y empuja los brazos hacia atrás manteniéndolos casi paralelos al suelo.",
+                            "Aprieta la parte posterior del hombro al final del recorrido y regresa controlando el peso."
+                        ]
+                    },
+                    {
+                        id: 'deltoides-en-polea-cruzadas',
+                        name: 'Deltoides en Polea Cruzadas',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Deltoides en Polea Cruzadas/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Deltoides en Polea Cruzadas/cruzadasPoleaAlta.mp4',
+                        steps: [
+                            "Párate en medio de una polea doble con las poleas en position alta o media.",
+                            "Cruza los brazos y agarra el cable izquierdo con la mano derecha y el cable derecho con la mano izquierda.",
+                            "Lleva los brazos hacia atrás y afuera de manera fluida.",
+                            "Controla el retorno al centro."
+                        ]
+                    },
+                    {
+                        id: 'vuelo-lateral-con-polea',
+                        name: 'Vuelo Lateral con Polea',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Vuelo Lateral con Polea/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Vuelo Lateral con Polea/hombrosPolea.mp4',
+                        steps: [
+                            "Párate de lado a una polea baja, sujeta el agarre con la mano más alejada.",
+                            "Eleva la mano lateralmente hasta la altura del hombro, manteniendo el cable bajo tensión constante.",
+                            "Desciende el brazo lentamente a la posición inicial."
+                        ]
+                    },
+                    {
+                        id: 'maquina-de-vuelo-lateral',
+                        name: 'Máquina de Vuelo Lateral',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Máquina de Vuelo Lateral/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Máquina de Vuelo Lateral/maquinaVueloLateral.mp4',
+                        steps: [
+                            "Ajusta el asiento de la máquina de vuelo lateral para que tus hombros se alineen con los puntos de pivote.",
+                            "Coloca los brazos contra los soportes acolchados.",
+                            "Eleva los codos hacia afuera hasta que queden paralelos al suelo.",
+                            "Desciende lentamente manteniendo el control."
+                        ]
+                    },
+                    {
+                        id: 'maquina-de-vuelos-laterales-a-pie',
+                        name: 'Máquina de Vuelos Laterales a Pie',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Máquina de Vuelos Laterales a Pie/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Máquina de Vuelos Laterales a Pie/maquinaVuelosLaterales.mp4',
+                        steps: [
+                            "De pie en la máquina de deltoides lateral, coloca los brazos contra los rodillos o almohadillas laterales.",
+                            "Eleva los brazos hacia los laterales sintiendo la tensión en la porción lateral del deltoides.",
+                            "Baja lentamente el peso controlando la resistencia."
+                        ]
+                    },
+                    {
+                        id: 'vuelos-frontales-en-polea',
+                        name: 'Vuelos Frontales en Polea',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Vuelos Frontales en Polea/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Vuelos Frontales en Polea/vueloFrontalPolea.mp4',
+                        steps: [
+                            "Párate de espaldas a una polea baja, sosteniendo el asa o la cuerda entre tus piernas.",
+                            "Eleva los brazos hacia el frente hasta la altura del hombro.",
+                            "Regresa a la posición inicial de manera lenta."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro',
+                        name: 'Press Hombro',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Press Hombro/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Press Hombro/hombrosPress.mp4',
+                        steps: [
+                            "Siéntate en la máquina de press de hombros y ajusta las empuñaduras a la altura de los hombros.",
+                            "Empuja verticalmente hacia arriba hasta que tus brazos estén extendidos casi por completo.",
+                            "Baja controlando el peso hasta la posición de inicio."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro-inclinado',
+                        name: 'Press Hombro Inclinado',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Press Hombro Inclinado/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Press Hombro Inclinado/pressHombroInclinado.mp4',
+                        steps: [
+                            "Ajusta el asiento inclinado de la máquina.",
+                            "Empuja la carga hacia arriba y ligeramente al frente en un ángulo inclinado.",
+                            "Desciende lentamente controlando la carga."
+                        ]
+                    },
+                    {
+                        id: 'press-hombro-en-smith',
+                        name: 'Press Hombro en Smith',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Press Hombro en Smith/hombros.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Press Hombro en Smith/hombrosPressSmith.mp4',
+                        steps: [
+                            "Coloca un banco con respaldo bajo la barra de la máquina multipower (Smith).",
+                            "Desbloquea la barra a la altura del pecho superior y empuja hacia arriba a lo largo de las guías.",
+                            "Baja lentamente controlando el recorrido de la barra guiada."
+                        ]
+                    },
+                    {
+                        id: 'ante-brazo-con-polea',
+                        name: 'Ante Brazo con Polea',
+                        imageUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Ante Brazo con Polea/antebrazo.png',
+                        videoUrl: '/Entrenamientos/Hombros/Poleas y maquinas/Ante Brazo con Polea/antebrazoPolea.mp4',
+                        steps: [
+                            "Sujeta la barra conectada a la polea baja con un agarre prono o supino.",
+                            "Realiza flexiones o extensiones de muñeca concentrando el esfuerzo en el antebrazo.",
+                            "Baja controlando el movimiento."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },triceps: {
         id: 'triceps',
         name: 'Tríceps',
         subtitle: 'Extensores de codo',
