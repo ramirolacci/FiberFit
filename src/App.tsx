@@ -3,24 +3,27 @@ import gsap from 'gsap'
 import FormConfig from './components/FormConfig'
 import RoutineView from './components/RoutineView'
 import { TrainerView } from './components/TrainerView'
+import { NutritionView } from './components/NutritionView'
 import { apiService } from './services/apiService'
 import { Routine, GOAL_MAP, LEVEL_MAP, TYPE_MAP, MUSCLE_GROUP_MAP } from './types/routine'
-import { Dumbbell, History, Layout, Trash2, Calendar, CheckCircle2, X } from 'lucide-react'
+import { Dumbbell, History, Layout, Trash2, Calendar, CheckCircle2, X, Apple } from 'lucide-react'
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 
-// Helper mappings for Spanish display (Removed redundant local maps as they are now imported from types)
+// Helper mappings for Spanish display
 
 interface SavedRoutine extends Routine {
     id: string;
     savedAt: string;
 }
 
-const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: string, setView: (v: 'generator' | 'history' | 'trainer') => void, setRoutine: (r: any) => void, isMobile?: boolean }) => (
+type ViewType = 'generator' | 'nutrition' | 'trainer' | 'history';
+
+const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: ViewType, setView: (v: ViewType) => void, setRoutine: (r: any) => void, isMobile?: boolean }) => (
     <nav className={`${isMobile ? 'flex md:hidden justify-center gap-6 mt-6 pb-2' : 'header-nav hidden md:flex items-center gap-8'}`}>
         <button
             onClick={() => { setView('generator'); setRoutine(null); }}
-            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'generator' || view === 'history' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
         >
             <Layout size={18} /> Generador
         </button>
@@ -31,10 +34,10 @@ const NavLinks = ({ view, setView, setRoutine, isMobile = false }: { view: strin
             <Dumbbell size={18} /> Trainer
         </button>
         <button
-            onClick={() => { setView('history'); setRoutine(null); }}
-            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'history' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
+            onClick={() => { setView('nutrition'); setRoutine(null); }}
+            className={`flex items-center gap-2 text-sm font-semibold transition-colors ${view === 'nutrition' ? 'text-green-500' : 'text-gray-300 hover:text-green-500'}`}
         >
-            <History size={18} /> Historial
+            <Apple size={18} /> Nutrición
         </button>
     </nav>
 );
@@ -43,7 +46,7 @@ function App() {
     const [routine, setRoutine] = useState<Routine | null>(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
-    const [view, setView] = useState<'generator' | 'history' | 'trainer'>('generator')
+    const [view, setView] = useState<ViewType>('generator')
     const [history, setHistory] = useState<SavedRoutine[]>([])
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
@@ -100,7 +103,6 @@ function App() {
                 )
             }
 
-            // Fixed selector to be more specific and check for existence
             const navButtons = navRef.current?.querySelectorAll('button');
             if (navButtons && navButtons.length > 0) {
                 tl.fromTo(navButtons,
@@ -118,14 +120,13 @@ function App() {
                 )
             }
 
-            // Footer entrance
             if (footerRef.current) {
                 gsap.fromTo(footerRef.current,
                     { opacity: 0 },
                     { opacity: 1, duration: 1, delay: 1.2, ease: 'power2.out' }
                 )
             }
-        }, headerRef) // Scope to header
+        }, headerRef)
         return () => ctx.revert()
     }, [])
 
@@ -217,7 +218,6 @@ function App() {
     const handlePrintAndDownloadPDF = async () => {
         if (!routine) return;
 
-        // 1. Open Print Tab (Existing Logic)
         const printWindow = window.open('', '_blank');
         if (printWindow) {
             printWindow.document.write(`
@@ -252,7 +252,6 @@ function App() {
                                         <tbody>
                                             ${day.exercises.map((ex, i) => {
                 const isSuperset = !!ex.supersetId;
-                const nextIsSameSuperset = isSuperset && day.exercises[i + 1]?.supersetId === ex.supersetId;
                 return `
                                                 <tr class="exercise-row ${isSuperset ? 'superset-row' : ''}">
                                                     <td style="${isSuperset ? 'border-left: 3px solid #059669; padding-left: 10px;' : ''}">
@@ -277,8 +276,6 @@ function App() {
             printWindow.document.close();
         }
 
-        // 2. Trigger Actual PDF Download (Using jsPDF + html2canvas on the printable window content is hard, 
-        // let's render the current view instead or use a more direct jsPDF approach)
         const doc = new jsPDF('p', 'mm', 'a4');
         let yPos = 20;
 
@@ -292,7 +289,7 @@ function App() {
         doc.text(`Objetivo: ${GOAL_MAP[routine.goal] || routine.goal} | Nivel: ${LEVEL_MAP[routine.level] || routine.level}`, 20, yPos);
         yPos += 15;
 
-        routine.routineDays.forEach((day, index) => {
+        routine.routineDays.forEach((day) => {
             if (yPos > 250) {
                 doc.addPage();
                 yPos = 20;
@@ -367,12 +364,10 @@ function App() {
         setHistory(updatedHistory);
         localStorage.setItem('fiberfit_history', JSON.stringify(updatedHistory));
 
-        // Show success toast
         setToastType('success');
         setToastMessage(`¡Rutina "${routine.name}" guardada con éxito!`);
         setShowToast(true);
 
-        // Visual feedback on button
         const btnCtx = gsap.context(() => {
             gsap.to('.save-btn', {
                 scale: 1.05,
@@ -392,7 +387,6 @@ function App() {
         setHistory(updatedHistory);
         localStorage.setItem('fiberfit_history', JSON.stringify(updatedHistory));
 
-        // Show delete toast
         setToastType('delete');
         setToastMessage(`Rutina "${routineToDelete?.name || ''}" eliminada del historial`);
         setShowToast(true);
@@ -413,7 +407,7 @@ function App() {
 
     return (
         <div className="min-h-screen bg-black flex flex-col overflow-hidden">
-            {/* Decorative triangle from top-right corner */}
+            {/* Background triangles */}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <div
                     className="absolute top-0 right-0 w-full h-full opacity-20"
@@ -433,7 +427,7 @@ function App() {
 
             {/* Header */}
             <header ref={headerRef} className="bg-gray-950 border-b border-green-900/30 py-6 px-4 sticky top-0 z-50 backdrop-blur-md bg-gray-950/80">
-                <div className="max-w-7xl mx-auto flex items-center justify-between">
+                <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center">
                     <div className="flex items-center gap-3">
                         <div ref={logoRef} className="header-logo bg-green-600 p-2 rounded-xl text-white cursor-pointer" onClick={() => { setView('generator'); setRoutine(null); }}>
                             <Dumbbell size={24} />
@@ -441,9 +435,11 @@ function App() {
                         <h1 ref={titleRef} className="header-title text-xl font-bold text-white tracking-tight">Fiber<span className="text-green-500">Fit</span></h1>
                     </div>
 
-                    <div ref={navRef}>
+                    <div ref={navRef} className="flex justify-center">
                         <NavLinks view={view} setView={setView} setRoutine={setRoutine} />
                     </div>
+
+                    <div className="hidden md:block"></div>
                 </div>
             </header>
 
@@ -451,7 +447,7 @@ function App() {
                 {view === 'generator' ? (
                     !routine ? (
                         <div ref={heroRef} className="py-10 px-4">
-                            <div className="text-center mb-10">
+                            <div className="text-center mb-8">
                                 <h2 className="hero-title text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
                                     Entrena con <span className="hero-accent text-green-500">Inteligencia</span>
                                 </h2>
@@ -459,6 +455,17 @@ function App() {
                                     Algoritmos de entrenamiento basados en ciencia para maximizar tus resultados en el gimnasio.
                                 </p>
                                 <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
+
+                                {/* History button inside generator hero */}
+                                <div className="mt-6">
+                                    <button
+                                        onClick={() => setView('history')}
+                                        className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 px-5 py-2.5 rounded-full text-xs font-bold transition-all hover:border-green-500/40"
+                                    >
+                                        <History size={15} className="text-green-500" />
+                                        Ver Mis Rutinas Guardadas ({history.length})
+                                    </button>
+                                </div>
                             </div>
                             <FormConfig onGenerate={handleGenerate} loading={loading} />
                             {error && (
@@ -469,14 +476,20 @@ function App() {
                         </div>
                     ) : (
                         <div className="pb-10">
-                            <div ref={routineBarRef} className="max-w-7xl mx-auto py-8 px-4 flex justify-between items-center">
+                            <div ref={routineBarRef} className="max-w-7xl mx-auto py-8 px-4 flex justify-between items-center flex-wrap gap-4">
                                 <button
                                     onClick={() => setRoutine(null)}
                                     className="text-sm font-bold text-gray-400 hover:text-green-500 flex items-center gap-2 transition-colors hover:-translate-x-1 transform duration-200"
                                 >
                                     ← Crear nueva rutina
                                 </button>
-                                <div className="flex gap-4">
+                                <div className="flex gap-3 items-center">
+                                    <button
+                                        onClick={() => setView('history')}
+                                        className="bg-white/5 text-gray-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/10 border border-white/10 flex items-center gap-2 transition-all"
+                                    >
+                                        <History size={16} /> Historial ({history.length})
+                                    </button>
                                     <button
                                         onClick={handlePrintAndDownloadPDF}
                                         className="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-700 border border-gray-700 hover:scale-105 active:scale-95 transition-all"
@@ -500,10 +513,24 @@ function App() {
                         <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
                         <TrainerView />
                     </div>
+                ) : view === 'nutrition' ? (
+                    <div className="py-2 px-0 md:py-8 md:px-4">
+                        <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
+                        <NutritionView />
+                    </div>
                 ) : (
+                    /* History View */
                     <div ref={historyRef} className="max-w-5xl mx-auto py-12 px-4">
                         <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-3xl font-black text-white tracking-tight">Tu Historial</h2>
+                            <div>
+                                <button
+                                    onClick={() => setView('generator')}
+                                    className="text-xs font-bold text-gray-400 hover:text-green-500 mb-2 flex items-center gap-1 transition-colors"
+                                >
+                                    ← Volver al Generador
+                                </button>
+                                <h2 className="text-3xl font-black text-white tracking-tight">Tu Historial de Rutinas</h2>
+                            </div>
                             <span className="text-gray-500 text-sm font-medium">{history.length} rutinas guardadas</span>
                         </div>
                         <NavLinks view={view} setView={setView} setRoutine={setRoutine} isMobile={true} />
@@ -577,10 +604,7 @@ function App() {
                             </div>
                         </div>
                         <button
-                            onClick={() => {
-                                // Direct state change for manual close to avoid selector conflicts
-                                setShowToast(false);
-                            }}
+                            onClick={() => setShowToast(false)}
                             className="text-gray-500 hover:text-white transition-colors"
                         >
                             <X size={18} />

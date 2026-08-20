@@ -75,50 +75,12 @@ const DayCard: React.FC<{ day: RoutineDay; index: number }> = ({ day, index }) =
     const [hoveredExercise, setHoveredExercise] = useState<string | null>(null);
     const previewRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-    const handleMouseEnter = () => {
-        if (!cardRef.current) return;
-        gsap.to(cardRef.current, {
-            y: -8,
-            scale: 1.02,
-            boxShadow: '0 20px 60px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(34, 197, 94, 0.1)',
-            duration: 0.35,
-            ease: 'power2.out'
-        })
-        // Animate rows on hover
-        gsap.to(cardRef.current.querySelectorAll('.exercise-row'), {
-            x: 4,
-            duration: 0.3,
-            ease: 'power2.out',
-            stagger: 0.03
-        })
-    }
-
-    const handleMouseLeave = () => {
-        if (!cardRef.current) return;
-        gsap.to(cardRef.current, {
-            y: 0,
-            scale: 1,
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-            duration: 0.35,
-            ease: 'power2.out'
-        })
-        gsap.to(cardRef.current.querySelectorAll('.exercise-row'), {
-            x: 0,
-            duration: 0.3,
-            ease: 'power2.out',
-            stagger: 0.03
-        })
-    }
-
     return (
         <div
             ref={cardRef}
-            className="day-card bg-white/10 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl shadow-black/50 border border-white/20 transition-colors w-full max-w-[500px] md:w-[460px] min-h-[580px] md:min-h-[620px] flex-shrink-0 flex flex-col"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{ transformStyle: 'preserve-3d' }}
+            className="day-card bg-gray-900 rounded-2xl md:rounded-3xl shadow-2xl shadow-black/80 border border-white/10 w-full max-w-[500px] md:w-[460px] min-h-[580px] md:min-h-[620px] flex-shrink-0 flex flex-col overflow-hidden"
         >
-            <div className="bg-white/5 p-4 md:p-6 border-b border-white/10 relative overflow-hidden rounded-t-[inherit]">
+            <div className="bg-white/5 p-4 md:p-6 border-b border-white/10 relative overflow-hidden">
                 {/* Subtle green glow in card header */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl" />
                 <h3 className="text-xl font-bold text-white relative z-10">{day.dayName}</h3>
