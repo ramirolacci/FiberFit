@@ -1,8 +1,8 @@
 /*!
- * PathEditor 3.14.2
+ * PathEditor 3.15.0
  * https://gsap.com
  *
- * Copyright 2008-2025, GreenSock. All rights reserved.
+ * Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -1819,6 +1819,6 @@ PathEditor.getSnapFunction = function (vars) {
   };
 };
 
-PathEditor.version = "3.14.2";
+PathEditor.version = "3.15.0";
 PathEditor.register = _initCore;
 export { PathEditor as default };

@@ -1,8 +1,8 @@
 /*!
- * Observer 3.14.2
+ * Observer 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -108,7 +108,7 @@ let gsap, _coreInitted, _clamp, _win, _doc, _docEl, _body, _isTouch, _pointerTyp
 		return {update, reset, getVelocity};
 	},
 	_getEvent = (e, preventDefault) => {
-		preventDefault && !e._gsapAllow && e.preventDefault();
+		preventDefault && !e._gsapAllow && e.cancelable !== false && e.preventDefault();
 		return e.changedTouches ? e.changedTouches[0] : e;
 	},
 	_getAbsoluteMax = a => {
@@ -135,9 +135,9 @@ let gsap, _coreInitted, _clamp, _win, _doc, _docEl, _body, _isTouch, _pointerTyp
 			_isTouch = Observer.isTouch = _win.matchMedia && _win.matchMedia("(hover: none), (pointer: coarse)").matches ? 1 : ("ontouchstart" in _win || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0) ? 2 : 0;
 			_eventTypes = Observer.eventTypes = ("ontouchstart" in _docEl ? "touchstart,touchmove,touchcancel,touchend" : !("onpointerdown" in _docEl) ? "mousedown,mousemove,mouseup,mouseup" : "pointerdown,pointermove,pointercancel,pointerup").split(",");
 			setTimeout(() => _startup = 0, 500);
-			_setScrollTrigger();
 			_coreInitted = 1;
 		}
+		ScrollTrigger || _setScrollTrigger(); // Observer might be initted BEFORE ScrollTrigger, so don't put this with the initting code. ScrollTrigger will call Observer.register() when it inits.
 		return _coreInitted;
 	};
 
@@ -428,7 +428,7 @@ export class Observer {
 
 }
 
-Observer.version = "3.14.2";
+Observer.version = "3.15.0";
 Observer.create = vars => new Observer(vars);
 Observer.register = _initCore;
 Observer.getAll = () => _observers.slice();

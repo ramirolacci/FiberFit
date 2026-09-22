@@ -1,13 +1,14 @@
 /*!
- * VelocityTracker: 3.14.2
+ * VelocityTracker: 3.15.0
  * https://gsap.com
  *
- * Copyright 2008-2025, GreenSock. All rights reserved.
+ * Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /* eslint-disable */
+// @ts-nocheck
 var gsap,
     _coreInitted,
     _toArray,

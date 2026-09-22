@@ -19,10 +19,10 @@
   }
 
   /*!
-   * GSAP 3.14.2
+   * GSAP 3.15.0
    * https://gsap.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * @license Copyright 2008-2026, GreenSock. All rights reserved.
    * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   */
@@ -1357,27 +1357,6 @@
       return 1 - ease(1 - p);
     };
   },
-      _propagateYoyoEase = function _propagateYoyoEase(timeline, isYoyo) {
-    var child = timeline._first,
-        ease;
-
-    while (child) {
-      if (child instanceof Timeline) {
-        _propagateYoyoEase(child, isYoyo);
-      } else if (child.vars.yoyoEase && (!child._yoyo || !child._repeat) && child._yoyo !== isYoyo) {
-        if (child.timeline) {
-          _propagateYoyoEase(child.timeline, isYoyo);
-        } else {
-          ease = child._ease;
-          child._ease = child._yEase;
-          child._yEase = ease;
-          child._yoyo = isYoyo;
-        }
-      }
-
-      child = child._next;
-    }
-  },
       _parseEase = function _parseEase(ease, defaultEase) {
     return !ease ? defaultEase : (_isFunction(ease) ? ease : _easeMap[ease] || _configEaseFromString(ease)) || defaultEase;
   },
@@ -2054,8 +2033,6 @@
             if (!this._ts && !prevPaused) {
               return this;
             }
-
-            _propagateYoyoEase(this, isYoyo);
           }
         }
 
@@ -2069,7 +2046,7 @@
 
         this._tTime = tTime;
         this._time = time;
-        this._act = !timeScale;
+        this._act = !!timeScale;
 
         if (!this._initted) {
           this._onUpdate = this.vars.onUpdate;
@@ -2692,6 +2669,7 @@
         fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets,
         autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites,
         tl = tween.timeline,
+        reverseEase = vars.easeReverse || yoyoEase,
         cleanVars,
         i,
         p,
@@ -2707,15 +2685,9 @@
         overwritten;
     tl && (!keyframes || !ease) && (ease = "none");
     tween._ease = _parseEase(ease, _defaults.ease);
-    tween._yEase = yoyoEase ? _invertEase(_parseEase(yoyoEase === true ? ease : yoyoEase, _defaults.ease)) : 0;
-
-    if (yoyoEase && tween._yoyo && !tween._repeat) {
-      yoyoEase = tween._yEase;
-      tween._yEase = tween._ease;
-      tween._ease = yoyoEase;
-    }
-
+    tween._rEase = reverseEase && (_parseEase(reverseEase) || tween._ease);
     tween._from = !tl && !!vars.runBackwards;
+    if (tween._from) tween.ratio = 1;
 
     if (!tl || keyframes && !vars.stagger) {
       harness = targets[0] ? _getCache(targets[0]).harness : 0;
@@ -2863,7 +2835,7 @@
           _initTween(tween, time);
 
           _forceAllPropTweens = 0;
-          return skipRecursion ? _warn(property + " not eligible for reset") : 1;
+          return skipRecursion ? _warn(property + " not eligible for reset. Try splitting into individual properties") : 1;
         }
 
         ptCache.push(pt);
@@ -2936,7 +2908,7 @@
       _parseFuncOrString = function _parseFuncOrString(value, tween, i, target, targets) {
     return _isFunction(value) ? value.call(tween, i, target, targets) : _isString(value) && ~value.indexOf("random(") ? _replaceRandom(value) : value;
   },
-      _staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase,autoRevert",
+      _staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase,easeReverse,autoRevert",
       _staggerPropsToSkip = {};
 
   _forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", function (name) {
@@ -2965,7 +2937,6 @@
           keyframes = _this3$vars.keyframes,
           defaults = _this3$vars.defaults,
           scrollTrigger = _this3$vars.scrollTrigger,
-          yoyoEase = _this3$vars.yoyoEase,
           parent = vars.parent || _globalTimeline,
           parsedTargets = (_isArray(targets) || _isTypedArray(targets) ? _isNumber(targets[0]) : "length" in vars) ? [targets] : toArray(targets),
           tl,
@@ -2982,6 +2953,7 @@
 
       if (keyframes || stagger || _isFuncOrString(duration) || _isFuncOrString(delay)) {
         vars = _this3.vars;
+        var easeReverse = vars.easeReverse || vars.yoyoEase;
         tl = _this3.timeline = new Timeline({
           data: "nested",
           defaults: defaults || {},
@@ -3007,7 +2979,7 @@
           for (i = 0; i < l; i++) {
             copy = _copyExcluding(vars, _staggerPropsToSkip);
             copy.stagger = 0;
-            yoyoEase && (copy.yoyoEase = yoyoEase);
+            easeReverse && (copy.easeReverse = easeReverse);
             staggerVarsToMerge && _merge(copy, staggerVarsToMerge);
             curTarget = parsedTargets[i];
             copy.duration = +_parseFuncOrString(duration, _assertThisInitialized(_this3), i, curTarget, parsedTargets);
@@ -3114,8 +3086,7 @@
           prevIteration,
           isYoyo,
           ratio,
-          timeline,
-          yoyoEase;
+          timeline;
 
       if (!dur) {
         _renderZeroDurationTween(this, totalTime, suppressEvents, force);
@@ -3148,12 +3119,7 @@
           }
 
           isYoyo = this._yoyo && iteration & 1;
-
-          if (isYoyo) {
-            yoyoEase = this._yEase;
-            time = dur - time;
-          }
-
+          if (isYoyo) time = dur - time;
           prevIteration = _animationCycle(this._tTime, cycleDuration);
 
           if (time === prevTime && !force && this._initted && iteration === prevIteration) {
@@ -3162,8 +3128,6 @@
           }
 
           if (iteration !== prevIteration) {
-            timeline && this._yEase && _propagateYoyoEase(timeline, isYoyo);
-
             if (this.vars.repeatRefresh && !isYoyo && !this._lock && time !== cycleDuration && this._initted) {
               this._lock = force = 1;
               this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
@@ -3186,18 +3150,32 @@
           }
         }
 
+        if (this._rEase) {
+          var inv = time < prevTime;
+
+          if (inv !== this._inv) {
+            var segDur = inv ? prevTime : dur - prevTime;
+            this._inv = inv;
+            if (this._from) this.ratio = 1 - this.ratio;
+            this._invRatio = this.ratio;
+            this._invTime = prevTime;
+            this._invRecip = segDur ? (inv ? -1 : 1) / segDur : 0;
+            this._invScale = inv ? -this.ratio : 1 - this.ratio;
+            this._invEase = inv ? this._rEase : this._ease;
+          }
+
+          this.ratio = ratio = this._invRatio + this._invScale * this._invEase((time - this._invTime) * this._invRecip);
+        } else {
+          this.ratio = ratio = this._ease(time / dur);
+        }
+
+        if (this._from) this.ratio = ratio = 1 - ratio;
         this._tTime = tTime;
         this._time = time;
 
         if (!this._act && this._ts) {
           this._act = 1;
           this._lazy = 0;
-        }
-
-        this.ratio = ratio = (yoyoEase || this._ease)(time / dur);
-
-        if (this._from) {
-          this.ratio = ratio = 1 - ratio;
         }
 
         if (!prevTime && tTime && !suppressEvents && !prevIteration) {
@@ -3558,7 +3536,7 @@
     return PropTween;
   }();
 
-  _forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger", function (name) {
+  _forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger,easeReverse", function (name) {
     return _reservedProps[name] = 1;
   });
 
@@ -4150,7 +4128,7 @@
       }
     }
   }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap;
-  Tween.version = Timeline.version = gsap.version = "3.14.2";
+  Tween.version = Timeline.version = gsap.version = "3.15.0";
   _coreReady = 1;
   _windowExists() && _wake();
   var Power0 = _easeMap.Power0,

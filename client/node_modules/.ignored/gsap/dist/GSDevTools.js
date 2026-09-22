@@ -2982,14 +2982,14 @@
   });
 
   Draggable.zIndex = 1000;
-  Draggable.version = "3.14.2";
+  Draggable.version = "3.15.0";
   _getGSAP() && gsap.registerPlugin(Draggable);
 
   /*!
-   * GSDevTools 3.14.2
+   * GSDevTools 3.15.0
    * https://gsap.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * @license Copyright 2008-2026, GreenSock. All rights reserved.
    * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   */
@@ -4434,7 +4434,7 @@
     _context$1(this);
   };
 
-  GSDevTools.version = "3.14.2";
+  GSDevTools.version = "3.15.0";
   GSDevTools.globalRecordingTime = 2;
 
   GSDevTools.getById = function (id) {

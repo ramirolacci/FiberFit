@@ -3,10 +3,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /*!
- * ScrollSmoother 3.14.2
+ * ScrollSmoother 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -996,7 +996,7 @@ export var ScrollSmoother = /*#__PURE__*/function () {
 
   return ScrollSmoother;
 }();
-ScrollSmoother.version = "3.14.2";
+ScrollSmoother.version = "3.15.0";
 
 ScrollSmoother.create = function (vars) {
   return _mainInstance && vars && _mainInstance.content() === _toArray(vars.content)[0] ? _mainInstance : new ScrollSmoother(vars);

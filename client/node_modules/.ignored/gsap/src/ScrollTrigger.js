@@ -1,8 +1,8 @@
 /*!
- * ScrollTrigger 3.14.2
+ * ScrollTrigger 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -46,9 +46,9 @@ let gsap, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _toArray
 	_isNumber = value => typeof(value) === "number",
 	_isObject = value => typeof(value) === "object",
 	_endAnimation = (animation, reversed, pause) => animation && animation.progress(reversed ? 0 : 1) && pause && animation.pause(),
-	_callback = (self, func) => {
+	_callback = (self, func, extraParam) => {
 		if (self.enabled) {
-			let result = self._ctx ? self._ctx.add(() => func(self)) : func(self);
+			let result = self._ctx ? self._ctx.add(() => func(self, extraParam)) : func(self, extraParam);
 			result && result.totalTime && (self.callbackAnimation = result);
 		}
 	},
@@ -68,7 +68,7 @@ let gsap, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _toArray
 	_Width = "Width",
 	_Height = "Height",
 	_px = "px",
-	_getComputedStyle = element => _win.getComputedStyle(element),
+	_getComputedStyle = element => _win.getComputedStyle(element.nodeType === Node.DOCUMENT_NODE ? element.scrollingElement : element),
 	_makePositionable = element => { // if the element already has position: absolute or fixed, leave that, otherwise make it position: relative
 		let position = _getComputedStyle(element).position;
 		element.style.position = (position === "absolute" || position === "fixed") ? position : "relative";
@@ -81,7 +81,7 @@ let gsap, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _toArray
 	},
 	_getBounds = (element, withoutTransforms) => {
 		let tween = withoutTransforms && _getComputedStyle(element)[_transformProp] !== "matrix(1, 0, 0, 1, 0, 0)" && gsap.to(element, {x: 0, y: 0, xPercent: 0, yPercent: 0, rotation: 0, rotationX: 0, rotationY: 0, scale: 1, skewX: 0, skewY: 0}).progress(1),
-			bounds = element.getBoundingClientRect();
+			bounds = element.getBoundingClientRect ? element.getBoundingClientRect() : element.scrollingElement.getBoundingClientRect();
 		tween && tween.progress(0).kill();
 		return bounds;
 	},
@@ -158,7 +158,7 @@ let gsap, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _toArray
 		let e = _doc.createElement("div"),
 			useFixedPosition = _isViewport(container) || _getProxyProp(container, "pinType") === "fixed",
 			isScroller = type.indexOf("scroller") !== -1,
-			parent = useFixedPosition ? _body : container,
+			parent = useFixedPosition ? _body : container.tagName === "IFRAME" ? container.contentDocument.body : container,
 			isStart = type.indexOf("start") !== -1,
 			color = isStart ? startColor : endColor,
 			css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
@@ -706,7 +706,7 @@ export class ScrollTrigger {
 							duration: snapDurClamp(_abs( (Math.max(_abs(naturalEnd - totalProgress), _abs(endValue - totalProgress)) * 0.185 / velocity / 0.05) || 0)),
 							ease: snap.ease || "power3",
 							data: _abs(endScroll - scroll), // record the distance so that if another snap tween occurs (conflict) we can prioritize the closest snap.
-							onInterrupt: () => snapDelayedCall.restart(true) && onInterrupt && onInterrupt(self),
+							onInterrupt: () => snapDelayedCall.restart(true) && onInterrupt && _callback(self, onInterrupt),
 							onComplete() {
 								self.update();
 								lastSnap = scrollFunc();
@@ -715,10 +715,10 @@ export class ScrollTrigger {
 								}
 								snap1 = snap2 = animation && !isToggle ? animation.totalProgress() : self.progress;
 								onSnapComplete && onSnapComplete(self);
-								onComplete && onComplete(self);
+								onComplete && _callback(self, onComplete);
 							}
 						}, scroll, change1 * change, endScroll - scroll - change1 * change);
-						onStart && onStart(self, tweenTo.tween);
+						onStart && _callback(self, onStart, tweenTo.tween);
 					}
 				} else if (self.isActive && lastSnap !== scroll) {
 					snapDelayedCall.restart(true);
@@ -1424,6 +1424,9 @@ export class ScrollTrigger {
 					_wheelListener(_removeListener, _scrollers[i], _scrollers[i+1]);
 					_wheelListener(_removeListener, _scrollers[i], _scrollers[i+2]);
 				}
+			} else if (_doc) {
+				let onLoad = () => { ScrollTrigger.enable(); _doc.removeEventListener("DOMContentLoaded", onLoad); };
+				_doc.addEventListener("DOMContentLoaded", onLoad);
 			}
 		}
 	}
@@ -1480,7 +1483,7 @@ export class ScrollTrigger {
 
 }
 
-ScrollTrigger.version = "3.14.2";
+ScrollTrigger.version = "3.15.0";
 ScrollTrigger.saveStyles = targets => targets ? _toArray(targets).forEach(target => { // saved styles are recorded in a consecutive alternating Array, like [element, cssText, transform attribute, cache, matchMedia, ...]
 	if (target && target.style) {
 		let i = _savedStyles.indexOf(target);

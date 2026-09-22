@@ -3,10 +3,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /*!
- * Observer 3.14.2
+ * Observer 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -199,7 +199,7 @@ var gsap,
   };
 },
     _getEvent = function _getEvent(e, preventDefault) {
-  preventDefault && !e._gsapAllow && e.preventDefault();
+  preventDefault && !e._gsapAllow && e.cancelable !== false && e.preventDefault();
   return e.changedTouches ? e.changedTouches[0] : e;
 },
     _getAbsoluteMax = function _getAbsoluteMax(a) {
@@ -231,11 +231,10 @@ var gsap,
     setTimeout(function () {
       return _startup = 0;
     }, 500);
-
-    _setScrollTrigger();
-
     _coreInitted = 1;
   }
+
+  ScrollTrigger || _setScrollTrigger(); // Observer might be initted BEFORE ScrollTrigger, so don't put this with the initting code. ScrollTrigger will call Observer.register() when it inits.
 
   return _coreInitted;
 };
@@ -686,7 +685,7 @@ export var Observer = /*#__PURE__*/function () {
 
   return Observer;
 }();
-Observer.version = "3.14.2";
+Observer.version = "3.15.0";
 
 Observer.create = function (vars) {
   return new Observer(vars);

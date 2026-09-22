@@ -1,15 +1,15 @@
 /*!
- * SplitText 3.14.2
+ * SplitText 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2025, GreenSock. All rights reserved. Subject to the terms at https://gsap.com/standard-license.
+ * @license Copyright 2026, GreenSock. All rights reserved. Subject to the terms at https://gsap.com/standard-license.
  * @author: Jack Doyle
  */
 
-let gsap, _fonts, _splitProp = typeof Symbol === "function" ? Symbol() : "_split", _coreInitted, _initIfNecessary = () => _coreInitted || SplitText.register(window.gsap), _charSegmenter = typeof Intl !== "undefined" && "Segmenter" in Intl ? new Intl.Segmenter() : 0, _toArray = (r) => typeof r === "string" ? _toArray(document.querySelectorAll(r)) : "length" in r ? Array.from(r).reduce((acc, cur) => {
+let gsap, _fonts, _splitProp = typeof Symbol === "function" ? Symbol() : "_split", _coreInitted, _initIfNecessary = () => _coreInitted || SplitText.register(window.gsap), _charSegmenter = typeof Intl !== "undefined" && "Segmenter" in Intl ? new Intl.Segmenter() : 0, _toArray = (r) => !r ? [] : typeof r === "string" ? _toArray(document.querySelectorAll(r)) : "length" in r ? Array.from(r).reduce((acc, cur) => {
   typeof cur === "string" ? acc.push(..._toArray(cur)) : acc.push(cur);
   return acc;
-}, []) : [r], _elements = (targets) => _toArray(targets).filter((e) => e instanceof HTMLElement), _emptyArray = [], _context = function() {
+}, []) : [r], _elements = (targets) => _toArray(targets).filter((e) => e && e.nodeType === 1), _emptyArray = [], _context = function() {
 }, _defaultContext = { add: (f) => f() }, _spacesRegEx = /\s+/g, _emojiSafeRegEx = new RegExp("\\p{RI}\\p{RI}|\\p{Emoji}(\\p{EMod}|\\u{FE0F}\\u{20E3}?|[\\u{E0020}-\\u{E007E}]+\\u{E007F})?(\\u{200D}\\p{Emoji}(\\p{EMod}|\\u{FE0F}\\u{20E3}?|[\\u{E0020}-\\u{E007E}]+\\u{E007F})?)*|.", "gu"), _emptyBounds = { left: 0, top: 0, width: 0, height: 0 }, _findNextValidBounds = (allBounds, startIndex) => {
   while (++startIndex < allBounds.length && allBounds[startIndex] === _emptyBounds) {
   }
@@ -274,13 +274,13 @@ const _SplitText = class _SplitText {
           let maskEl = el.cloneNode();
           el.replaceWith(maskEl);
           maskEl.appendChild(el);
-          el.className && (maskEl.className = el.className.trim() + "-mask");
+          el.className && (maskEl.className = el.className.trim().split(" ").map((s) => s + "-mask").join(" "));
           maskEl.style.overflow = "clip";
           return maskEl;
         }));
       }
       this.isSplit = true;
-      _fonts && splitLines && (autoSplit ? _fonts.addEventListener("loadingdone", this._split) : _fonts.status === "loading" && console.warn("SplitText called before fonts loaded"));
+      _fonts && splitLines && autoSplit && _fonts.addEventListener("loadingdone", this._split);
       if ((onSplitResult = onSplit && onSplit(this)) && onSplitResult.totalTime) {
         this._data.anim = animTime ? onSplitResult.totalTime(animTime) : onSplitResult;
       }
@@ -327,7 +327,7 @@ const _SplitText = class _SplitText {
     }
   }
 };
-_SplitText.version = "3.14.2";
+_SplitText.version = "3.15.0";
 let SplitText = _SplitText;
 
 export { SplitText, SplitText as default };

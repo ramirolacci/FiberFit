@@ -1,0 +1,12 @@
+{
+  "name": "routine-generator",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter routine-generator-client dev",
+    "build": "pnpm --filter routine-generator-client build",
+    "lint": "pnpm --filter routine-generator-client lint",
+    "preview": "pnpm --filter routine-generator-client preview"
+  }
+}

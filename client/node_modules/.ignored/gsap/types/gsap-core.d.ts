@@ -24,7 +24,7 @@ declare namespace gsap {
   type DOMTarget = Element | string | null | Window | ArrayLike<Element | string | Window | null>;
   type TweenTarget = string | object | null; 
 
-  type Callback = (...args: any[]) => void | null;
+  type Callback = (...args: any[]) => any;
   type ContextSafeFunc = (func: Function) => Function;
   type ContextFunc = (context: Context, contextSafe?: ContextSafeFunc) => Function | any | void;
   type CallbackType = "onComplete" | "onInterrupt" | "onRepeat" | "onReverseComplete" | "onStart" | "onUpdate";
@@ -148,7 +148,9 @@ declare namespace gsap {
     repeatDelay?: number;
     repeatRefresh?: boolean;
     yoyo?: boolean;
+    /** @deprecated since version 3.15.0. Use `easeReverse` instead. **/
     yoyoEase?: boolean | string | EaseFunction;
+    easeReverse?: boolean | EaseString | EaseFunction;
   }
 
   interface Ticker {
@@ -197,7 +199,9 @@ declare namespace gsap {
     runBackwards?: boolean;
     stagger?: NumberValue | StaggerVars;
     startAt?: TweenVars;
+    /** @deprecated since version 3.15.0. Use `easeReverse` instead. **/
     yoyoEase?: boolean | string | EaseFunction;
+    easeReverse?: boolean | EaseString | EaseFunction;
   }
 
   const effects: EffectsMap;

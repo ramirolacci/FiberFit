@@ -1,8 +1,8 @@
 /*!
- * GSAP 3.14.2
+ * GSAP 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -1019,25 +1019,6 @@ let _config = {
 		return (ease && split.length > 1 && ease.config) ? ease.config.apply(null, ~name.indexOf("{") ? [_parseObjectInString(split[1])] : _valueInParentheses(name).split(",").map(_numericIfPossible)) : (_easeMap._CE && _customEaseExp.test(name)) ? _easeMap._CE("", name) : ease;
 	},
 	_invertEase = ease => p => 1 - ease(1 - p),
-	// allow yoyoEase to be set in children and have those affected when the parent/ancestor timeline yoyos.
-	_propagateYoyoEase = (timeline, isYoyo) => {
-		let child = timeline._first, ease;
-		while (child) {
-			if (child instanceof Timeline) {
-				_propagateYoyoEase(child, isYoyo);
-			} else if (child.vars.yoyoEase && (!child._yoyo || !child._repeat) && child._yoyo !== isYoyo) {
-				if (child.timeline) {
-					_propagateYoyoEase(child.timeline, isYoyo);
-				} else {
-					ease = child._ease;
-					child._ease = child._yEase;
-					child._yEase = ease;
-					child._yoyo = isYoyo;
-				}
-			}
-			child = child._next;
-		}
-	},
 	_parseEase = (ease, defaultEase) => !ease ? defaultEase : (_isFunction(ease) ? ease : _easeMap[ease] || _configEaseFromString(ease)) || defaultEase,
 	_insertEase = (names, easeIn, easeOut = p => 1 - easeIn(1 - p), easeInOut = (p => p < .5 ? easeIn(p * 2) / 2 : 1 - easeIn((1 - p) * 2) / 2)) => {
 		let ease = {easeIn, easeOut, easeInOut},
@@ -1636,8 +1617,6 @@ export class Timeline extends Animation {
 					if (!this._ts && !prevPaused) {
 						return this;
 					}
-					//in order for yoyoEase to work properly when there's a stagger, we must swap out the ease in each sub-tween.
-					_propagateYoyoEase(this, isYoyo);
 				}
 			}
 			if (this._hasPause && !this._forcing && this._lock < 2) {
@@ -1649,7 +1628,7 @@ export class Timeline extends Animation {
 
 			this._tTime = tTime;
 			this._time = time;
-			this._act = !timeScale; //as long as it's not paused, force it to be active so that if the user renders independent of the parent timeline, it'll be forced to re-render on the next tick.
+			this._act = !!timeScale; // as long as it's not paused, force it to be active so that if the user renders independent of the parent timeline, it'll be forced to re-render on the next tick.
 
 			if (!this._initted) {
 				this._onUpdate = this.vars.onUpdate;
@@ -2143,16 +2122,13 @@ let _addComplexStringPropTween = function(target, prop, start, end, setter, stri
 			fullTargets = (parent && parent.data === "nested") ? parent.vars.targets : targets,
 			autoOverwrite = (tween._overwrite === "auto") && !_suppressOverwrites,
 			tl = tween.timeline,
+			reverseEase = vars.easeReverse || yoyoEase, // easeReverse came a long time after yoyoEase and replaced its functionality internally in v 3.15.0
 			cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
 		tl && (!keyframes || !ease) && (ease = "none");
 		tween._ease = _parseEase(ease, _defaults.ease);
-		tween._yEase = yoyoEase ? _invertEase(_parseEase(yoyoEase === true ? ease : yoyoEase, _defaults.ease)) : 0;
-		if (yoyoEase && tween._yoyo && !tween._repeat) { //there must have been a parent timeline with yoyo:true that is currently in its yoyo phase, so flip the eases.
-			yoyoEase = tween._yEase;
-			tween._yEase = tween._ease;
-			tween._ease = yoyoEase;
-		}
+		tween._rEase = reverseEase && (_parseEase(reverseEase) || tween._ease);
 		tween._from = !tl && !!vars.runBackwards; //nested timelines should never run backwards - the backwards-ness is in the child tweens.
+		if (tween._from) tween.ratio = 1;
 		if (!tl || (keyframes && !vars.stagger)) { //if there's an internal timeline, skip all the parsing because we passed that task down the chain.
 			harness = targets[0] ? _getCache(targets[0]).harness : 0;
 			harnessVars = harness && vars[harness.prop]; //someone may need to specify CSS-specific values AND non-CSS values, like if the element has an "x" property plus it's a standard DOM element. We allow people to distinguish by wrapping plugin-specific stuff in a css:{} object for example.
@@ -2175,7 +2151,7 @@ let _addComplexStringPropTween = function(target, prop, start, end, setter, stri
 					}
 				}
 			} else if (runBackwards && dur) {
-				//from() tweens must be handled uniquely: their beginning values must be rendered but we don't want overwriting to occur yet (when time is still 0). Wait until the tween actually begins before doing all the routines like overwriting. At that time, we should render at the END of the tween to ensure that things initialize correctly (remember, from() tweens go backwards)
+				// from() tweens must be handled uniquely: their beginning values must be rendered but we don't want overwriting to occur yet (when time is still 0). Wait until the tween actually begins before doing all the routines like overwriting. At that time, we should render at the END of the tween to ensure that things initialize correctly (remember, from() tweens go backwards)
 				if (!prevStartAt) {
 					time && (immediateRender = false); //in rare cases (like if a from() tween runs and then is invalidate()-ed), immediateRender could be true but the initial forced-render gets skipped, so there's no need to force the render in this context when the _time is greater than 0
 					p = _setDefaults({
@@ -2258,7 +2234,7 @@ let _addComplexStringPropTween = function(target, prop, start, end, setter, stri
 					tween.vars[property] = "+=0";
 					_initTween(tween, time);
 					_forceAllPropTweens = 0;
-					return skipRecursion ? _warn(property + " not eligible for reset") : 1; // if someone tries to do a quickTo() on a special property like borderRadius which must get split into 4 different properties, that's not eligible for .resetTo().
+					return skipRecursion ? _warn(property + " not eligible for reset. Try splitting into individual properties") : 1; // if someone tries to do a quickTo() on a special property like borderRadius which must get split into 4 different properties, that's not eligible for .resetTo().
 				}
 				ptCache.push(pt);
 			}
@@ -2309,7 +2285,7 @@ let _addComplexStringPropTween = function(target, prop, start, end, setter, stri
 		}
 	},
 	_parseFuncOrString = (value, tween, i, target, targets) => (_isFunction(value) ? value.call(tween, i, target, targets) : (_isString(value) && ~value.indexOf("random(")) ? _replaceRandom(value) : value),
-	_staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase,autoRevert",
+	_staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase,easeReverse,autoRevert",
 	_staggerPropsToSkip = {};
 _forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", name => _staggerPropsToSkip[name] = 1);
 
@@ -2350,7 +2326,7 @@ export class Tween extends Animation {
 			position = null;
 		}
 		super(skipInherit ? vars : _inheritDefaults(vars));
-		let { duration, delay, immediateRender, stagger, overwrite, keyframes, defaults, scrollTrigger, yoyoEase } = this.vars,
+		let { duration, delay, immediateRender, stagger, overwrite, keyframes, defaults, scrollTrigger } = this.vars,
 			parent = vars.parent || _globalTimeline,
 			parsedTargets = (_isArray(targets) || _isTypedArray(targets) ? _isNumber(targets[0]) : ("length" in vars)) ? [targets] : toArray(targets), // edge case: someone might try animating the "length" of an object with a "length" property that's initially set to 0 so don't interpret that as an empty Array-like object.
 			tl, i, copy, l, p, curTarget, staggerFunc, staggerVarsToMerge;
@@ -2359,6 +2335,7 @@ export class Tween extends Animation {
 		this._overwrite = overwrite;
 		if (keyframes || stagger || _isFuncOrString(duration) || _isFuncOrString(delay)) {
 			vars = this.vars;
+			let easeReverse = vars.easeReverse || vars.yoyoEase;
 			tl = this.timeline = new Timeline({data: "nested", defaults: defaults || {}, targets: parent && parent.data === "nested" ? parent.vars.targets : parsedTargets}); // we need to store the targets because for staggers and keyframes, we end up creating an individual tween for each but function-based values need to know the index and the whole Array of targets.
 			tl.kill();
 			tl.parent = tl._dp = this;
@@ -2377,7 +2354,7 @@ export class Tween extends Animation {
 				for (i = 0; i < l; i++) {
 					copy = _copyExcluding(vars, _staggerPropsToSkip);
 					copy.stagger = 0;
-					yoyoEase && (copy.yoyoEase = yoyoEase);
+					easeReverse && (copy.easeReverse = easeReverse);
 					staggerVarsToMerge && _merge(copy, staggerVarsToMerge);
 					curTarget = parsedTargets[i];
 					//don't just copy duration or delay because if they're a string or function, we'd end up in an infinite loop because _isFuncOrString() would evaluate as true in the child tweens, entering this loop, etc. So we parse the value straight from vars and default to 0.
@@ -2446,7 +2423,7 @@ export class Tween extends Animation {
 			dur = this._dur,
 			isNegative = totalTime < 0,
 			tTime = (totalTime > tDur - _tinyNum && !isNegative) ? tDur : (totalTime < _tinyNum) ? 0 : totalTime,
-			time, pt, iteration, cycleDuration, prevIteration, isYoyo, ratio, timeline, yoyoEase;
+			time, pt, iteration, cycleDuration, prevIteration, isYoyo, ratio, timeline;
 		if (!dur) {
 			_renderZeroDurationTween(this, totalTime, suppressEvents, force);
 		} else if (tTime !== this._tTime || !totalTime || force || (!this._initted && this._tTime) || (this._startAt && (this._zTime < 0) !== isNegative) || this._lazy) { // this senses if we're crossing over the start time, in which case we must record _zTime and force the render, but we do it in this lengthy conditional way for performance reasons (usually we can skip the calculations): this._initted && (this._zTime < 0) !== (totalTime < 0)
@@ -2472,10 +2449,7 @@ export class Tween extends Animation {
 					}
 				}
 				isYoyo = this._yoyo && (iteration & 1);
-				if (isYoyo) {
-					yoyoEase = this._yEase;
-					time = dur - time;
-				}
+				if (isYoyo) time = dur - time;
 				prevIteration = _animationCycle(this._tTime, cycleDuration);
 				if (time === prevTime && !force && this._initted && iteration === prevIteration) {
 					//could be during the repeatDelay part. No need to render and fire callbacks.
@@ -2483,7 +2457,6 @@ export class Tween extends Animation {
 					return this;
 				}
 				if (iteration !== prevIteration) {
-					timeline && this._yEase && _propagateYoyoEase(timeline, isYoyo);
 					//repeatRefresh functionality
 					if (this.vars.repeatRefresh && !isYoyo && !this._lock && time !== cycleDuration && this._initted) { // this._time will === cycleDuration when we render at EXACTLY the end of an iteration. Without this condition, it'd often do the repeatRefresh render TWICE (again on the very next tick).
 						this._lock = force = 1; //force, otherwise if lazy is true, the _attemptInitTween() will return and we'll jump out and get caught bouncing on each tick.
@@ -2505,17 +2478,30 @@ export class Tween extends Animation {
 				}
 			}
 
+			if (this._rEase) {
+				let inv = time < prevTime;
+				if (inv !== this._inv) {
+					let segDur = inv ? prevTime : dur - prevTime;
+					this._inv = inv;
+					if (this._from) this.ratio = 1 - this.ratio;
+					this._invRatio = this.ratio;
+					this._invTime = prevTime;
+					this._invRecip = segDur ? (inv ? -1 : 1) / segDur : 0;
+					this._invScale = inv ? -this.ratio : 1 - this.ratio;
+					this._invEase = inv ? this._rEase : this._ease;
+				}
+				this.ratio = ratio = this._invRatio + this._invScale * this._invEase((time - this._invTime) * this._invRecip);
+			} else {
+				this.ratio = ratio = this._ease(time / dur);
+			}
+			if (this._from) this.ratio = ratio = 1 - ratio;
+
 			this._tTime = tTime;
 			this._time = time;
 
 			if (!this._act && this._ts) {
 				this._act = 1; //as long as it's not paused, force it to be active so that if the user renders independent of the parent timeline, it'll be forced to re-render on the next tick.
 				this._lazy = 0;
-			}
-
-			this.ratio = ratio = (yoyoEase || this._ease)(time / dur);
-			if (this._from) {
-				this.ratio = ratio = 1 - ratio;
 			}
 
 			if (!prevTime && tTime && !suppressEvents && !prevIteration) {
@@ -2826,7 +2812,7 @@ export class PropTween {
 
 
 //Initialization tasks
-_forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger", name => _reservedProps[name] = 1);
+_forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger,easeReverse", name => _reservedProps[name] = 1);
 _globals.TweenMax = _globals.TweenLite = Tween;
 _globals.TimelineLite = _globals.TimelineMax = Timeline;
 _globalTimeline = new Timeline({sortChildren: false, defaults: _defaults, autoRemoveChildren: true, id:"root", smoothChildTiming: true});
@@ -3260,7 +3246,7 @@ export const gsap = _gsap.registerPlugin({
 	_buildModifierPlugin("snap", snap)
 ) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.14.2";
+Tween.version = Timeline.version = gsap.version = "3.15.0";
 _coreReady = 1;
 _windowExists() && _wake();
 

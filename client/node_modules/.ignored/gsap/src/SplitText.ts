@@ -1,8 +1,8 @@
 /*!
- * SplitText 3.14.2
+ * SplitText 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle
 */
@@ -71,8 +71,8 @@ let gsap: any,
 	_coreInitted: boolean, // set to true when the GSAP core is registered
 	_initIfNecessary = () => _coreInitted || SplitText.register((window as any).gsap),
 	_charSegmenter: any = typeof Intl !== "undefined" && "Segmenter" in Intl ? new (Intl as any).Segmenter() : 0, // not all older browsers support Intl.Segmenter
-	_toArray = (r: string | NodeList | Node | Node[]): Node[] => typeof r === "string" ? _toArray(document.querySelectorAll(r)) : "length" in r ? Array.from(r).reduce((acc: Node[], cur: Node | string) => { typeof cur === "string" ? acc.push(..._toArray(cur)) : acc.push(cur); return acc; }, []) : [r],
-	_elements = (targets: SplitTextTarget): HTMLElement[] => _toArray(targets).filter((e) => e instanceof HTMLElement) as HTMLElement[],
+	_toArray = (r: string | NodeList | Node | Node[]): Node[] => !r ? [] : typeof r === "string" ? _toArray(document.querySelectorAll(r)) : "length" in r ? Array.from(r).reduce((acc: Node[], cur: Node | string) => { typeof cur === "string" ? acc.push(..._toArray(cur)) : acc.push(cur); return acc; }, []) : [r],
+	_elements = (targets: SplitTextTarget): HTMLElement[] => _toArray(targets).filter((e) => e && e.nodeType === 1) as HTMLElement[], // don't use instanceof HTMLElement because it's not always reliable (e.g. in an iframe). See https://github.com/greensock/GSAP/issues/640
 	_emptyArray: string[] = [],
 	_context: ContextFunction = function() {},
 	_defaultContext: {add:(f: Function) => any} = {add:f => f()},
@@ -451,7 +451,7 @@ export class SplitText {
 					let maskEl: HTMLElement = el.cloneNode() as HTMLElement;
 					el.replaceWith(maskEl);
 					maskEl.appendChild(el);
-					el.className && (maskEl.className = el.className.trim() + "-mask");
+					el.className && (maskEl.className = el.className.trim().split(" ").map((s: string) => s + "-mask").join(" "));
 					maskEl.style.overflow = "clip";
 					return maskEl;
 				}));
@@ -460,7 +460,7 @@ export class SplitText {
 
 			this.isSplit = true;
 
-			_fonts && splitLines && (autoSplit ? _fonts.addEventListener("loadingdone", this._split) : _fonts.status === "loading" && console.warn("SplitText called before fonts loaded"));
+			_fonts && splitLines && autoSplit && _fonts.addEventListener("loadingdone", this._split);
 
 			if ((onSplitResult = onSplit && onSplit(this)) && onSplitResult.totalTime) {
 				this._data.anim = animTime ? onSplitResult.totalTime(animTime) : onSplitResult;
@@ -512,7 +512,7 @@ export class SplitText {
 		}
 	}
 
-	static readonly version: string = "3.14.2";
+	static readonly version: string = "3.15.0";
 }
 
 export { SplitText as default };

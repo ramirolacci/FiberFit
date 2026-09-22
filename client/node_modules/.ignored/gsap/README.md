@@ -23,7 +23,7 @@ View the <a href="https://gsap.com/docs">full documentation here</a>, including 
 ### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.14/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
 ```
 
 See <a href="https://www.jsdelivr.com/gsap">JSDelivr's dedicated GSAP page</a> for quick CDN links to the core files/plugins. There are more <a href="https://gsap.com/install">installation instructions</a> at gsap.com.
@@ -90,4 +90,4 @@ Ask in the friendly <a href="https://gsap.com/community/">GSAP forums</a>. Or sh
 ### License
 GreenSock's standard "no charge" license can be viewed at <a href="https://gsap.com/standard-license">https://gsap.com/standard-license</a>.
 
-Copyright (c) 2008-2025, GreenSock. All rights reserved.
+Copyright (c) 2008-2026, GreenSock. All rights reserved.

@@ -1,8 +1,8 @@
 /*!
- * CustomBounce 3.14.2
+ * CustomBounce 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -161,5 +161,5 @@ export var CustomBounce = /*#__PURE__*/function () {
   return CustomBounce;
 }();
 _getGSAP() && gsap.registerPlugin(CustomBounce);
-CustomBounce.version = "3.14.2";
+CustomBounce.version = "3.15.0";
 export { CustomBounce as default };

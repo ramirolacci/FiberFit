@@ -1590,7 +1590,7 @@
   };
 
   var MorphSVGPlugin = {
-    version: "3.14.2",
+    version: "3.15.0",
     name: "morphSVG",
     rawVars: 1,
     register: function register(core, Plugin) {

@@ -1,8 +1,8 @@
 /*!
- * ScrollTrigger 3.14.2
+ * ScrollTrigger 3.15.0
  * https://gsap.com
  *
- * @license Copyright 2008-2025, GreenSock. All rights reserved.
+ * @license Copyright 2008-2026, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license
  * @author: Jack Doyle, jack@greensock.com
 */
@@ -137,11 +137,11 @@ _pointerDownHandler = function _pointerDownHandler() {
     _endAnimation = function _endAnimation(animation, reversed, pause) {
   return animation && animation.progress(reversed ? 0 : 1) && pause && animation.pause();
 },
-    _callback = function _callback(self, func) {
+    _callback = function _callback(self, func, extraParam) {
   if (self.enabled) {
     var result = self._ctx ? self._ctx.add(function () {
-      return func(self);
-    }) : func(self);
+      return func(self, extraParam);
+    }) : func(self, extraParam);
     result && result.totalTime && (self.callbackAnimation = result);
   }
 },
@@ -162,7 +162,7 @@ _pointerDownHandler = function _pointerDownHandler() {
     _Height = "Height",
     _px = "px",
     _getComputedStyle = function _getComputedStyle(element) {
-  return _win.getComputedStyle(element);
+  return _win.getComputedStyle(element.nodeType === Node.DOCUMENT_NODE ? element.scrollingElement : element);
 },
     _makePositionable = function _makePositionable(element) {
   // if the element already has position: absolute or fixed, leave that, otherwise make it position: relative
@@ -190,7 +190,7 @@ _pointerDownHandler = function _pointerDownHandler() {
     skewX: 0,
     skewY: 0
   }).progress(1),
-      bounds = element.getBoundingClientRect();
+      bounds = element.getBoundingClientRect ? element.getBoundingClientRect() : element.scrollingElement.getBoundingClientRect();
   tween && tween.progress(0).kill();
   return bounds;
 },
@@ -332,7 +332,7 @@ _pointerDownHandler = function _pointerDownHandler() {
   var e = _doc.createElement("div"),
       useFixedPosition = _isViewport(container) || _getProxyProp(container, "pinType") === "fixed",
       isScroller = type.indexOf("scroller") !== -1,
-      parent = useFixedPosition ? _body : container,
+      parent = useFixedPosition ? _body : container.tagName === "IFRAME" ? container.contentDocument.body : container,
       isStart = type.indexOf("start") !== -1,
       color = isStart ? startColor : endColor,
       css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
@@ -1138,7 +1138,7 @@ export var ScrollTrigger = /*#__PURE__*/function () {
               data: _abs(endScroll - scroll),
               // record the distance so that if another snap tween occurs (conflict) we can prioritize the closest snap.
               onInterrupt: function onInterrupt() {
-                return snapDelayedCall.restart(true) && _onInterrupt && _onInterrupt(self);
+                return snapDelayedCall.restart(true) && _onInterrupt && _callback(self, _onInterrupt);
               },
               onComplete: function onComplete() {
                 self.update();
@@ -1151,10 +1151,10 @@ export var ScrollTrigger = /*#__PURE__*/function () {
 
                 snap1 = snap2 = animation && !isToggle ? animation.totalProgress() : self.progress;
                 onSnapComplete && onSnapComplete(self);
-                _onComplete && _onComplete(self);
+                _onComplete && _callback(self, _onComplete);
               }
             }, scroll, change1 * change, endScroll - scroll - change1 * change);
-            onStart && onStart(self, tweenTo.tween);
+            onStart && _callback(self, onStart, tweenTo.tween);
           }
         } else if (self.isActive && lastSnap !== scroll) {
           snapDelayedCall.restart(true);
@@ -2156,6 +2156,14 @@ export var ScrollTrigger = /*#__PURE__*/function () {
 
           _wheelListener(_removeListener, _scrollers[i], _scrollers[i + 2]);
         }
+      } else if (_doc) {
+        var onLoad = function onLoad() {
+          ScrollTrigger.enable();
+
+          _doc.removeEventListener("DOMContentLoaded", onLoad);
+        };
+
+        _doc.addEventListener("DOMContentLoaded", onLoad);
       }
     }
   };
@@ -2222,7 +2230,7 @@ export var ScrollTrigger = /*#__PURE__*/function () {
 
   return ScrollTrigger;
 }();
-ScrollTrigger.version = "3.14.2";
+ScrollTrigger.version = "3.15.0";
 
 ScrollTrigger.saveStyles = function (targets) {
   return targets ? _toArray(targets).forEach(function (target) {

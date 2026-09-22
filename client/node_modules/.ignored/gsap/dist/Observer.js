@@ -21,10 +21,10 @@
   }
 
   /*!
-   * Observer 3.14.2
+   * Observer 3.15.0
    * https://gsap.com
    *
-   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * @license Copyright 2008-2026, GreenSock. All rights reserved.
    * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   */
@@ -207,7 +207,7 @@
     };
   },
       _getEvent = function _getEvent(e, preventDefault) {
-    preventDefault && !e._gsapAllow && e.preventDefault();
+    preventDefault && !e._gsapAllow && e.cancelable !== false && e.preventDefault();
     return e.changedTouches ? e.changedTouches[0] : e;
   },
       _getAbsoluteMax = function _getAbsoluteMax(a) {
@@ -238,12 +238,10 @@
       setTimeout(function () {
         return _startup = 0;
       }, 500);
-
-      _setScrollTrigger();
-
       _coreInitted = 1;
     }
 
+    ScrollTrigger || _setScrollTrigger();
     return _coreInitted;
   };
 
@@ -681,7 +679,7 @@
 
     return Observer;
   }();
-  Observer.version = "3.14.2";
+  Observer.version = "3.15.0";
 
   Observer.create = function (vars) {
     return new Observer(vars);
