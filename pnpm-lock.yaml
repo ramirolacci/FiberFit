@@ -6,9 +6,7 @@ settings:
 
 importers:
 
-  .: {}
-
-  client:
+  .:
     dependencies:
       '@supabase/supabase-js':
         specifier: ^2.43.1
