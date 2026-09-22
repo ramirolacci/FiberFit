@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/dumbbell.svg" alt="FiberFit Logo" width="120" style="margin-bottom: 20px;"/>
   
-  <h1 style="font-size: 3rem; margin-top: 10px;">💪 Fiber<span style="color: #22c55e;">Fit</span></h1>
+  <h1 style="font-size: 3rem; margin-top: 10px;">💪🏻 Fiber<span style="color: #22c55e;">Fit</span></h1>
   
   <p style="font-size: 1.2rem; margin: 15px 0;">
     <strong>Plataforma Integral de Entrenamiento Inteligente, Algoritmos Adaptativos & Guía Nutricional.</strong>
